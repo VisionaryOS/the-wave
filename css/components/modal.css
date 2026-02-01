@@ -1,4 +1,7 @@
-/* modal - css-only using :target */
+/* modal - css-only using :target (not checkbox hack) because:
+   - each article gets a bookmarkable URL (#article-name)
+   - browser back button closes modal (expected behaviour)
+   - users can share direct links to specific articles */
 
 .modal {
 	position: fixed;
@@ -23,7 +26,8 @@
 	opacity: 1;
 }
 
-/* dark blurred backdrop */
+/* 70% dark backdrop - dark enough to focus on modal, light enough to 
+   see you're still on the site. 90%+ feels oppressive and disorienting */
 .modal__backdrop {
 	position: absolute;
 	inset: 0;
@@ -44,7 +48,7 @@
 	background: var(--color-white);
 	border-radius: var(--radius);
 	overflow-y: auto;
-	overscroll-behavior: contain;
+	overscroll-behavior: contain; /* trap scroll inside modal, don't scroll page behind */
 	scrollbar-width: none;
 	-ms-overflow-style: none;
 	transform: translateY(20px) scale(0.98);

@@ -19,7 +19,8 @@
 		border-color var(--duration-normal) ease;
 }
 
-/* hover - 14px lift + slight scale */
+/* hover - 14px lift (more than tabs' 4px because cards are primary content)
+   two shadows: large diffuse one for depth, small tight one for crispness */
 .story-card:hover {
 	transform: translateY(-14px) scale(1.03);
 	box-shadow: 
@@ -82,7 +83,8 @@
 	text-shadow: 0 2px 8px var(--black-30);
 }
 
-/* "Read" pill - hidden until hover */
+/* "Read" pill - slides up on hover. translateY is smoother than 
+   animating height/bottom because it's compositor-only (no layout) */
 .story-card__pill {
 	position: absolute;
 	bottom: var(--space-6);

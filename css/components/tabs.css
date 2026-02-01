@@ -16,6 +16,10 @@
 	padding: 0 var(--gutter);
 }
 
+/* filled pills instead of underline tabs because:
+   - bigger touch targets on mobile
+   - underlines feel weak for primary navigation
+   - filled bg showcases each topic's brand colour prominently */
 .tabs__tab {
 	padding: var(--space-3) var(--space-8);
 	font-family: var(--font-primary);
@@ -35,6 +39,7 @@
 		box-shadow var(--duration-normal) ease-out;
 }
 
+/* 4px lift on hover (cards lift 14px) - hierarchy: tabs are nav, cards are content */
 .tabs__tab:hover {
 	color: var(--color-text);
 	transform: translateY(-4px) scale(1.02);
@@ -78,7 +83,7 @@
 	border-color: var(--color-gold);
 }
 
-/* panels container - stacked via grid */
+/* panels container - grid lets us stack panels in same cell */
 .tabs__panels {
 	display: grid;
 	max-width: 1150px;
@@ -87,14 +92,14 @@
 	padding: 0 var(--gutter);
 }
 
-/* panels - hidden by default, all in same grid cell */
+/* panels - all occupy same grid cell (1/1), only active one is visible */
 .tabs__panel {
-	grid-area: 1 / 1;
+	grid-area: 1 / 1; /* stack all panels, css toggling handles which shows */
 	position: relative;
 	opacity: 0;
 	visibility: hidden;
 	pointer-events: none;
-	scroll-margin-top: 6rem;
+	scroll-margin-top: 6rem; /* offset for fixed header when jumping to panel */
 }
 
 /* cards inside panels start transformed for stagger animation */

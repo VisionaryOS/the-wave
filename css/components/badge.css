@@ -8,7 +8,7 @@
 	font-size: var(--text-sm);
 	font-weight: var(--weight-semibold);
 	background: var(--color-white);
-	color: var(--color-blue);
+	color: var(--color-text);
 	border-radius: var(--radius-pill);
 	box-shadow: 0 2px 8px var(--black-10);
 }

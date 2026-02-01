@@ -1,9 +1,15 @@
+/* design tokens - single source of truth for all values
+   change once here, updates everywhere. no magic numbers in components.
+   
+   visual philosophy: bright and airy (AI news feels less intimidating),
+   generous whitespace, vibrant topic colours for quick categorisation */
+
 :root {
 	/* base colors */
 	--color-white: #ffffff;
 	--color-surface: #f7f7f6;
 
-	/* brand palette - vibrant but not neon, works on white and dark backgrounds */
+	/* topic colours - each category gets a signature colour */
 	--color-cyan: rgb(0, 149, 255);
 	--color-blue: rgb(0, 117, 250);
 	--color-purple: rgb(173, 109, 255);

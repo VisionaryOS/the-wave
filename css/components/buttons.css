@@ -1,4 +1,5 @@
-/* base button - uses css custom props for hover states so variants can override */
+/* buttons lift on hover (physical metaphor: finger approaching lifts the element)
+   css custom props let each variant override the lift/scale/shadow values */
 .btn {
 	--btn-hover-lift: -2px;
 	--btn-hover-scale: 1;
@@ -41,7 +42,7 @@
 	--btn-hover-color: var(--color-white);
 }
 
-/* mobile - 44px min touch target */
+/* 44px = Apple HIG minimum touch target. prevents frustrating mis-taps */
 @media (max-width: 768px) {
 	.btn {
 		min-height: 44px;

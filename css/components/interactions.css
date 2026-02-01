@@ -71,7 +71,9 @@
 	display: block;
 }
 
-/* floating action button - scroll to top */
+/* FAB instead of footer link - with 18 articles the page is long, need
+   quick escape. bottom-right follows Material Design thumb-reach convention.
+   hidden until 10vh scroll (no point showing "back to top" at the top) */
 .fab {
 	position: fixed;
 	bottom: var(--space-6);
@@ -109,7 +111,7 @@
 	letter-spacing: 0.01em;
 }
 
-/* mobile - center the fab */
+/* mobile - centered so it's thumb-neutral (reachable from either hand) */
 @media (max-width: 768px) {
 	.fab {
 		right: auto;

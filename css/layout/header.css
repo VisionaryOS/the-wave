@@ -12,7 +12,14 @@
 	animation-range: 0 300px;
 }
 
-/* nav pill - starts transparent, becomes white floating pill on scroll */
+/* floating pill nav - not full-width because:
+   - lets hero gradient show through (transparent on blue looks better)
+   - whitespace around it feels less cramped than edge-to-edge bar
+   - rounded shape matches the "wave" brand (organic, friendly)
+   
+   two scroll-driven animations at different ranges:
+   1. 0-300px: transparent → white pill (hero leaves viewport)
+   2. 60-80vh: shrink to logo-only (user is reading, CTA is noise) */
 .nav {
 	display: flex;
 	align-items: center;
