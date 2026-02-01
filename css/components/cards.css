@@ -1,106 +1,6 @@
-/* ===========================================
-   CARDS
-   Card component styles (feature cards, story cards)
-   =========================================== */
+/* cards - story cards with image backgrounds */
 
-/* --- Image Placeholder --- */
-.img-placeholder {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	width: 100%;
-	height: 100%;
-	min-height: 200px;
-	background: linear-gradient(135deg, var(--color-surface) 0%, var(--color-surface-alt) 100%);
-	border-radius: var(--radius-lg);
-	overflow: hidden;
-}
-
-.img-placeholder__icon {
-	font-size: var(--icon-lg);
-	opacity: 0.5;
-}
-
-/* Light variant for colored backgrounds */
-.img-placeholder--light {
-	background: rgba(255, 255, 255, 0.2);
-}
-
-/* --- Feature Cards (colored topic cards) --- */
-.feature-card {
-	display: flex;
-	flex-direction: column;
-	padding: var(--space-10);
-	border-radius: var(--radius-xl);
-	min-height: 350px;
-	transition: transform var(--duration-fast) var(--ease-out);
-}
-
-.feature-card:hover {
-	transform: translateY(-4px);
-}
-
-/* Feature card color variants */
-.feature-card--light {
-	background: var(--color-surface);
-}
-
-.feature-card--cyan {
-	background: var(--color-cyan);
-	color: var(--color-white);
-}
-
-.feature-card--purple {
-	background: var(--color-purple);
-	color: var(--color-white);
-}
-
-.feature-card--orange {
-	background: var(--color-orange);
-	color: var(--color-white);
-}
-
-.feature-card--green {
-	background: var(--color-green);
-	color: var(--color-white);
-}
-
-.feature-card__icon {
-	font-size: var(--icon-md);
-	margin-bottom: var(--space-4);
-}
-
-.feature-card__title {
-	font-size: var(--text-4xl);
-	font-weight: var(--weight-black);
-	line-height: var(--leading-snug);
-	letter-spacing: var(--tracking-heading);
-	margin-bottom: var(--space-2);
-}
-
-.feature-card__text {
-	font-size: var(--text-lg);
-	font-weight: var(--weight-normal);
-	line-height: var(--leading-normal);
-	opacity: 0.9;
-}
-
-.feature-card__image {
-	flex: 1;
-	display: flex;
-	align-items: flex-end;
-	justify-content: center;
-	margin-top: var(--space-6);
-}
-
-.feature-card__image .img-placeholder {
-	border-radius: var(--radius-lg);
-	max-height: 200px;
-	width: 100%;
-	object-fit: cover;
-}
-
-/* --- Story Cards (gradient overlay cards) --- */
+/* --- Story Cards --- */
 .story-card {
 	flex: 0 0 300px;
 	scroll-snap-align: start;
@@ -114,7 +14,7 @@
 	display: block;
 	border: 5px solid rgba(255, 255, 255, 0.6);
 	box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-	/* Bouncy spring - uses global token */
+	/* TODO: test this animation on safari */
 	transition: 
 		transform 0.5s var(--ease-spring-bouncy),
 		box-shadow var(--duration-slow) ease-out,
@@ -139,43 +39,7 @@
 	border-radius: calc(var(--radius-xl) - 5px);
 }
 
-/* ===========================================
-   IMAGE GALLERY
-   Story cards as image gallery with hover effects
-   Images sourced from Unsplash (copyright-free)
-   =========================================== */
-
-/* Story card image variants - real images */
-/* Paths are relative to THIS CSS file (css/components/), so ../../ goes to project root */
-.story-card__bg--policy {
-	background: url('../../images/gallery/policy-eu-ai.jpg') center/cover no-repeat;
-	background-color: #1a1a2e; /* Fallback */
-}
-
-.story-card__bg--healthcare {
-	background: url('../../images/gallery/healthcare-ai.jpg') center/cover no-repeat;
-	background-color: #1a1a2e; /* Fallback */
-}
-
-.story-card__bg--opensource {
-	background: url('../../images/gallery/opensource-code.jpg') center/cover no-repeat;
-	background-color: #1a1a2e; /* Fallback */
-}
-
-.story-card__bg--robotics {
-	background: url('../../images/gallery/robotics.jpg') center/cover no-repeat;
-	background-color: #1a1a2e; /* Fallback */
-}
-
-.story-card__bg--research {
-	background: url('../../images/gallery/research.jpg') center/cover no-repeat;
-	background-color: #1a1a2e; /* Fallback */
-}
-
-.story-card__bg--climate {
-	background: url('../../images/gallery/climate.jpg') center/cover no-repeat;
-	background-color: #1a1a2e; /* Fallback */
-}
+/* images use inline styles now, removed the old --policy/healthcare/etc classes */
 
 .story-card__overlay {
 	position: absolute;
@@ -227,9 +91,7 @@
 	font-weight: var(--weight-normal);
 }
 
-/* --- Read More Pill (progressive disclosure) ---
-   Slides up from bottom when content lifts on hover
-   =========================================== */
+/* pill slides up on hover - translateY smoother than animating height */
 .story-card__pill {
 	/* Position at bottom center */
 	position: absolute;
@@ -288,10 +150,7 @@
 	scroll-snap-align: start;
 }
 
-/* --- Founder Note ---
-   Simple, personal intro from the founder
-   No decorative elements - just honest text
-   =========================================== */
+/* founder section - kept simple so it doesn't compete with cards */
 .founder-note {
 	max-width: 42rem;
 	margin: 0 auto;
@@ -389,11 +248,7 @@
 	margin-bottom: var(--space-4);
 }
 
-/* --- Secret Reveal ---
-   Playful collapsible that reveals founder intro
-   CSS-only using <details> and <summary>
-   Now lives in footer gradient
-   =========================================== */
+/* secret reveal - details/summary gives us toggle for free */
 .secret-reveal {
 	position: relative;
 	z-index: 1;

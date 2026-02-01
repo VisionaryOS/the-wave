@@ -1,7 +1,4 @@
-/* ===========================================
-   BADGE
-   Status indicator with optional live pulse
-   =========================================== */
+/* badge - the "Live" pill with pulsing dot */
 
 .badge {
 	display: inline-flex;

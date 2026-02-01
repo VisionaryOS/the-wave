@@ -1,81 +1,4 @@
-/* ===========================================
-   SUBSCRIBE / VOTE SECTION
-   Vote CTA with blue gradient card
-   =========================================== */
-
-.subscribe {
-	text-align: center;
-	padding: var(--space-8) var(--gutter);
-	background: var(--color-white);
-}
-
-/* Inline variant - inside secret reveal, no outer padding */
-.subscribe--inline {
-	padding: 0;
-	margin-top: var(--space-12);
-	background: transparent;
-}
-
-/* Reuses topic-box sizing for visual consistency */
-.subscribe__container {
-	position: relative;
-	max-width: 640px;
-	margin: 0 auto;
-	padding: var(--space-10) var(--space-6) var(--space-8);
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	background: transparent;
-	border-radius: var(--radius-2xl);
-}
-
-.subscribe__container::before {
-	content: "";
-	position: absolute;
-	inset: 0;
-	border: 4px dashed rgba(255, 255, 255, 0.6);
-	border-radius: var(--radius-2xl);
-	pointer-events: none;
-}
-
-.subscribe__title {
-	position: relative;
-	z-index: 1;
-	font-size: clamp(1.75rem, 4vw, var(--text-4xl));
-	font-weight: var(--weight-black);
-	line-height: var(--leading-tight);
-	letter-spacing: var(--tracking-tight);
-	margin-bottom: var(--space-3);
-	color: var(--color-white);
-}
-
-.subscribe__text {
-	position: relative;
-	z-index: 1;
-	font-size: var(--text-base);
-	color: rgba(255, 255, 255, 0.85);
-	margin-bottom: var(--space-6);
-}
-
-.subscribe__text--large {
-	font-size: var(--text-xl);
-	line-height: var(--leading-relaxed);
-}
-
-.subscribe__disclaimer {
-	position: relative;
-	z-index: 1;
-	font-size: var(--text-xs);
-	color: rgba(255, 255, 255, 0.6);
-	margin-top: var(--space-4);
-}
-
-/* ===========================================
-   VOTE BUTTONS
-   CSS-only interactive vote with feedback
-   Uses radio button hack for state management
-   =========================================== */
+/* vote buttons - radio button hack for yes/no feedback */
 
 .vote {
 	position: relative;
@@ -164,10 +87,7 @@
 	}
 }
 
-/* ===========================================
-   FLOATING ACTION BUTTON (FAB)
-   Simple back-to-top link
-   =========================================== */
+/* fab - scroll to top, hidden in hero then fades in */
 
 .fab {
 	position: fixed;

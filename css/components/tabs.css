@@ -1,9 +1,4 @@
-/* ===========================================
-   TABS
-   CSS-only tabs using the radio button hack
-   No JavaScript required - uses :checked selector
-   Styled to match hero story cards
-   =========================================== */
+/* tabs - radio button hack, :checked shows the right panel */
 
 /* --- Hide radio inputs (visually, not from screen readers) --- */
 .tabs__input {

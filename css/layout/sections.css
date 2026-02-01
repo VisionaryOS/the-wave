@@ -1,13 +1,9 @@
-/* ===========================================
-   SECTIONS
-   Section layout and grid styles
-   =========================================== */
+/* sections - basic layout, topics gradient fades into footer */
 
 .section {
 	padding: var(--space-12) var(--gutter);
 }
 
-/* Topics section - gradient blends into footer */
 .section--topics {
 	padding-bottom: 0;
 	background: linear-gradient(180deg,
@@ -15,17 +11,6 @@
 		var(--color-white) 70%,
 		var(--color-hero-bottom) 100%
 	);
-}
-
-.section--alt {
-	background: var(--color-surface);
-}
-
-.section--secret {
-	text-align: center;
-	padding-top: var(--space-16);
-	padding-bottom: var(--space-8);
-	background: var(--color-white);
 }
 
 .section__header {
@@ -42,51 +27,4 @@
 	letter-spacing: var(--tracking-tight);
 	color: var(--color-text);
 	margin-bottom: var(--space-4);
-}
-
-.section__subtitle {
-	font-size: var(--text-lg);
-	font-weight: var(--weight-normal);
-	line-height: var(--leading-normal);
-	color: var(--color-text-muted);
-}
-
-/* Features grid (2-column topic cards) */
-.features-grid {
-	display: grid;
-	grid-template-columns: repeat(2, 1fr);
-	gap: var(--grid-gap);
-	max-width: var(--max-width);
-	margin: 0 auto;
-}
-
-@media (max-width: 768px) {
-	.features-grid {
-		grid-template-columns: 1fr;
-	}
-}
-
-/* Stories carousel */
-.stories-carousel {
-	position: relative;
-	max-width: var(--max-width-wide);
-	margin: 0 auto;
-	overflow: hidden;
-}
-
-.stories-carousel__track {
-	display: flex;
-	gap: var(--space-6);
-	overflow-x: auto;
-	scroll-snap-type: x mandatory;
-	scroll-behavior: smooth;
-	-webkit-overflow-scrolling: touch;
-	padding: var(--space-4) var(--gutter);
-	margin: 0 calc(var(--gutter) * -1);
-	scrollbar-width: none;
-	-ms-overflow-style: none;
-}
-
-.stories-carousel__track::-webkit-scrollbar {
-	display: none;
 }

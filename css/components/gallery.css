@@ -1,19 +1,4 @@
-/* ===========================================
-   TOPIC BOXES
-   Colorful boxes containing story card galleries
-   =========================================== */
-
-/* Container - full width with max */
-.topics-grid {
-	display: flex;
-	flex-direction: column;
-	gap: var(--space-6);
-	max-width: 1100px;
-	margin: 0 auto;
-	padding: 0 var(--gutter);
-}
-
-/* Colorful box - full width */
+/* topic boxes - colorful containers for story cards */
 .topic-box {
 	position: relative;
 	padding: var(--space-6) var(--space-8);

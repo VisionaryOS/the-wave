@@ -1,7 +1,4 @@
-/* ===========================================
-   DESIGN TOKENS
-   Single source of truth for all design values
-   =========================================== */
+/* tokens - change these to update colors/spacing everywhere */
 
 :root {
 	/* Colors - Brand */

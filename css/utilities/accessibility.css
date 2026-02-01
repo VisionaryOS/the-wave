@@ -1,9 +1,5 @@
-/* ===========================================
-   ACCESSIBILITY
-   A11y utilities and focus styles
-   =========================================== */
+/* a11y - skip link and focus styles */
 
-/* Skip link for keyboard navigation */
 .skip-link {
 	position: absolute;
 	top: var(--space-4);
@@ -22,20 +18,7 @@
 	transform: translateY(0);
 }
 
-/* Visually hidden (screen reader only) */
-.visually-hidden {
-	position: absolute;
-	width: 1px;
-	height: 1px;
-	padding: 0;
-	margin: -1px;
-	overflow: hidden;
-	clip: rect(0, 0, 0, 0);
-	white-space: nowrap;
-	border: 0;
-}
-
-/* Focus visible styles */
+/* focus ring for keyboard nav */
 :focus-visible {
 	outline: 2px solid var(--color-cyan);
 	outline-offset: 2px;

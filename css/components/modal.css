@@ -1,7 +1,4 @@
-/* ===========================================
-   MODAL
-   Article modal component (CSS-only with :target)
-   =========================================== */
+/* modal - css-only using :target, no js needed */
 
 .modal {
 	position: fixed;
@@ -28,9 +25,7 @@
 	opacity: 1;
 }
 
-/* Backdrop - clickable to close
-   No transition - blur and dark overlay appear instantly
-   will-change hints browser to pre-render the blur effect */
+/* backdrop - blur was laggy without will-change */
 .modal__backdrop {
 	position: absolute;
 	inset: 0;

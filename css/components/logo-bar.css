@@ -1,7 +1,4 @@
-/* ===========================================
-   LOGO BAR
-   Row of publication/brand wordmarks
-   =========================================== */
+/* logo bar - "curated from" publication names */
 
 .logo-bar {
 	display: flex;

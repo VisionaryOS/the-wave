@@ -1,7 +1,4 @@
-/* ===========================================
-   LIGHT RAYS
-   Animated underwater sun ray effect
-   =========================================== */
+/* light rays - underwater sun effect, reused in hero and topic boxes */
 
 .light-rays {
 	position: absolute;
@@ -39,15 +36,4 @@
 	50%      { opacity: 0.85; transform: rotate(var(--angle, 0deg)) scaleX(1.5); }
 }
 
-/* Flipped version for footer - rays come from bottom */
-.light-rays--flip .light-rays__ray {
-	top: auto;
-	bottom: -20%;
-	transform-origin: bottom center;
-	background: linear-gradient(0deg,
-		rgba(255, 255, 255, 0.5) 0%,
-		rgba(255, 255, 255, 0.3) 20%,
-		rgba(255, 255, 255, 0.1) 50%,
-		transparent 100%
-	);
-}
+

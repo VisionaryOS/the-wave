@@ -1,13 +1,5 @@
-/* ===========================================
-   BUTTONS
-   Reusable button component styles
-   =========================================== */
+/* buttons - had like 6 different hover patterns before, unified them here */
 
-/* ===========================================
-   UNIFIED HOVER SYSTEM
-   Single source of truth for button hover effects.
-   Variants override these custom properties as needed.
-   =========================================== */
 .btn {
 	/* Hover tokens - override per variant */
 	--btn-hover-lift: -2px;
@@ -42,18 +34,6 @@
 	border-color: var(--btn-hover-border-color);
 }
 
-/* Size variants */
-.btn--md {
-	padding: var(--space-3) var(--space-6);
-	font-size: var(--text-sm);
-}
-
-.btn--lg {
-	padding: 1.125rem var(--space-6);
-	font-size: var(--text-sm);
-}
-
-/* Color variants - each sets hover tokens */
 .btn--primary {
 	padding: var(--space-3) var(--space-6);
 	font-size: var(--text-sm);
@@ -64,42 +44,7 @@
 	--btn-hover-color: var(--color-white);
 }
 
-.btn--secondary {
-	padding: var(--space-3) var(--space-6);
-	font-size: var(--text-sm);
-	background: var(--color-cyan);
-	color: var(--color-white);
-	/* Hover: slightly lighter cyan, lift */
-	--btn-hover-bg: oklch(from var(--color-cyan) calc(l + 0.05) c h);
-	--btn-hover-color: var(--color-white);
-}
-
-.btn--outline {
-	padding: var(--space-3) var(--space-6);
-	font-size: var(--text-sm);
-	background: var(--color-white);
-	color: var(--color-text);
-	border: 1px solid #e5e5e5;
-	/* Hover: darken border, lift */
-	--btn-hover-bg: var(--color-white);
-	--btn-hover-color: var(--color-text);
-	--btn-hover-border-color: #cccccc;
-}
-
-.btn--white {
-	padding: var(--space-3) var(--space-5);
-	font-size: var(--text-sm);
-	background: var(--color-white);
-	color: var(--color-text);
-	/* Hover: subtle transparency, lift */
-	--btn-hover-bg: rgba(255, 255, 255, 0.9);
-	--btn-hover-color: var(--color-text);
-}
-
-/* ===========================================
-   MOBILE TAP TARGETS
-   Ensure minimum 44px touch targets (WCAG 2.5.5)
-   =========================================== */
+/* 44px min for fat fingers */
 @media (max-width: 768px) {
 	.btn {
 		min-height: 44px;

@@ -1,7 +1,4 @@
-/* ===========================================
-   HEADER / NAVIGATION
-   Floating pill navigation with scroll animation
-   =========================================== */
+/* header - floating pill that shrinks on scroll */
 
 .site-header {
 	position: fixed;
@@ -70,7 +67,7 @@
 	font-weight: var(--weight-black);
 	letter-spacing: -0.03125rem;
 	color: var(--color-white);
-	/* Bouncy spring - uses global token for consistency */
+	/* spring easing makes logo feel alive on hover */
 	transition: 
 		color var(--duration-normal) var(--ease-out),
 		transform var(--duration-slow) var(--ease-spring);
@@ -93,39 +90,7 @@
 	}
 }
 
-/* Nav links */
-.nav__links {
-	display: flex;
-	align-items: center;
-	gap: var(--space-8);
-}
-
-.nav__link {
-	font-family: var(--font-primary);
-	font-size: var(--text-base);
-	font-weight: var(--weight-bold);
-	transition: color var(--duration-normal) var(--ease-out), opacity var(--duration-fast);
-	color: var(--color-white);
-
-	animation: link-color linear both;
-	animation-timeline: scroll();
-	animation-range: 0 300px;
-}
-
-@keyframes link-color {
-	0% {
-		color: var(--color-white);
-	}
-	100% {
-		color: var(--color-text);
-	}
-}
-
-.nav__link:hover {
-	opacity: 0.6;
-}
-
-/* CTA button - uses unified hover token pattern */
+/* CTA button */
 .nav__cta {
 	padding: 0.625rem 1.25rem;
 	font-size: var(--text-base);

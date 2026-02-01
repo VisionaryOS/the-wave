@@ -1,30 +1,12 @@
-/* ===========================================
-   TYPOGRAPHY
-   Base text styles and heading hierarchy
-   =========================================== */
+/* typography - headings and prose for modal articles */
 
-/* Heading base styles */
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+h1, h2, h3, h4, h5, h6 {
 	font-family: var(--font-primary);
 	font-weight: var(--weight-black);
 	color: var(--color-text);
 }
 
-/* Text utility classes */
-.text-muted {
-	color: var(--color-text-muted);
-}
-
-.text-subtle {
-	color: var(--color-text-subtle);
-}
-
-/* Prose content styling (for article body) */
+/* prose for article body text */
 .prose {
 	font-family: var(--font-serif);
 	font-size: var(--text-xl);

@@ -145,20 +145,20 @@
                 <input type="radio" name="topic-tab" id="tab-money" class="tabs__input">
                 
                 <!-- Tab labels (pill buttons) -->
-                <div class="tabs__nav" role="tablist">
-                    <label for="tab-security" class="tabs__tab" role="tab">Security</label>
-                    <label for="tab-relationships" class="tabs__tab" role="tab">Relationships</label>
-                    <label for="tab-careers" class="tabs__tab" role="tab">Careers</label>
-                    <label for="tab-trust" class="tabs__tab" role="tab">Trust</label>
-                    <label for="tab-education" class="tabs__tab" role="tab">Education</label>
-                    <label for="tab-weird" class="tabs__tab" role="tab">Weird</label>
-                    <label for="tab-money" class="tabs__tab" role="tab">Money</label>
+                <div class="tabs__nav">
+                    <label for="tab-security" class="tabs__tab">Security</label>
+                    <label for="tab-relationships" class="tabs__tab">Relationships</label>
+                    <label for="tab-careers" class="tabs__tab">Careers</label>
+                    <label for="tab-trust" class="tabs__tab">Trust</label>
+                    <label for="tab-education" class="tabs__tab">Education</label>
+                    <label for="tab-weird" class="tabs__tab">Weird</label>
+                    <label for="tab-money" class="tabs__tab">Money</label>
                 </div>
                 
                 <!-- Tab panels -->
                 <div class="tabs__panels">
                     <!-- Security Panel -->
-                    <article id="panel-security" class="tabs__panel tabs__panel--security" role="tabpanel">
+                    <article id="panel-security" class="tabs__panel tabs__panel--security">
                         <div class="topic-box topic-box--cyan">
                             <div class="light-rays" aria-hidden="true">
                                 <span class="light-rays__ray"></span>
@@ -203,7 +203,7 @@
                     </article>
 
                     <!-- Relationships Panel -->
-                    <article id="panel-relationships" class="tabs__panel tabs__panel--relationships" role="tabpanel">
+                    <article id="panel-relationships" class="tabs__panel tabs__panel--relationships">
                         <div class="topic-box topic-box--purple">
                             <div class="light-rays" aria-hidden="true">
                                 <span class="light-rays__ray"></span>
@@ -248,7 +248,7 @@
                     </article>
 
                     <!-- Careers Panel -->
-                    <article id="panel-careers" class="tabs__panel tabs__panel--careers" role="tabpanel">
+                    <article id="panel-careers" class="tabs__panel tabs__panel--careers">
                         <div class="topic-box topic-box--orange">
                             <div class="light-rays" aria-hidden="true">
                                 <span class="light-rays__ray"></span>
@@ -293,7 +293,7 @@
                     </article>
 
                     <!-- Trust Panel -->
-                    <article id="panel-trust" class="tabs__panel tabs__panel--trust" role="tabpanel">
+                    <article id="panel-trust" class="tabs__panel tabs__panel--trust">
                         <div class="topic-box topic-box--green">
                             <div class="light-rays" aria-hidden="true">
                                 <span class="light-rays__ray"></span>
@@ -338,7 +338,7 @@
                     </article>
 
                     <!-- Education Panel -->
-                    <article id="panel-education" class="tabs__panel tabs__panel--education" role="tabpanel">
+                    <article id="panel-education" class="tabs__panel tabs__panel--education">
                         <div class="topic-box topic-box--blue">
                             <div class="light-rays" aria-hidden="true">
                                 <span class="light-rays__ray"></span>
@@ -383,7 +383,7 @@
                     </article>
 
                     <!-- Weird Panel -->
-                    <article id="panel-weird" class="tabs__panel tabs__panel--weird" role="tabpanel">
+                    <article id="panel-weird" class="tabs__panel tabs__panel--weird">
                         <div class="topic-box topic-box--pink">
                             <div class="light-rays" aria-hidden="true">
                                 <span class="light-rays__ray"></span>
@@ -428,7 +428,7 @@
                     </article>
 
                     <!-- Money Panel -->
-                    <article id="panel-money" class="tabs__panel tabs__panel--money" role="tabpanel">
+                    <article id="panel-money" class="tabs__panel tabs__panel--money">
                         <div class="topic-box topic-box--gold">
                             <div class="light-rays" aria-hidden="true">
                                 <span class="light-rays__ray"></span>
@@ -477,11 +477,7 @@
 
 		    </main>
 
-    <!-- =============================================
-         FOOTER
-         Contains copyright, attribution, and image credits
-         Assessment requirement: Image references must be visible
-         ============================================= -->
+    <!-- footer -->
     <footer id="founder" class="footer">
 		<!-- Secret Founder Note + CTA -->
 		<details class="secret-reveal">
@@ -529,7 +525,7 @@
             <p class="footer__logo">the wave</p>
             <p class="footer__copy">made with ❤️ by Shamaila Hussain · HEP504 Web Development · Abertay University</p>
             
-            <!-- Image Credits (Task 3 requirement) - uses details/summary for CSS-only collapsible -->
+            <!-- image credits - collapsible so it doesn't clutter the footer -->
             <details class="footer__credits">
                 <summary class="footer__credits-toggle">Image credits (Unsplash)</summary>
                 <ul class="footer__credits-list">
@@ -581,7 +577,7 @@
     <!-- ===== SECURITY (Articles 1-3) ===== -->
     
     <!-- Article 1: ChatGPT Suicide Lullaby -->
-    <article id="article-1" class="modal" role="dialog" aria-labelledby="article-1-title" aria-modal="true">
+    <article id="article-1" class="modal" role="dialog" aria-labelledby="article-1-title" >
         <a href="#!" class="modal__backdrop" aria-label="Close article"></a>
         <div class="modal__container">
             <a href="#!" class="modal__close" aria-label="Close">&times;</a>
@@ -599,7 +595,7 @@
     </article>
 
     <!-- Article 2: 50 Million Chats Leaked -->
-    <article id="article-2" class="modal" role="dialog" aria-labelledby="article-2-title" aria-modal="true">
+    <article id="article-2" class="modal" role="dialog" aria-labelledby="article-2-title" >
         <a href="#!" class="modal__backdrop" aria-label="Close article"></a>
         <div class="modal__container">
             <a href="#!" class="modal__close" aria-label="Close">&times;</a>
@@ -617,7 +613,7 @@
     </article>
 
     <!-- Article 3: US Cyber Chief -->
-    <article id="article-3" class="modal" role="dialog" aria-labelledby="article-3-title" aria-modal="true">
+    <article id="article-3" class="modal" role="dialog" aria-labelledby="article-3-title" >
         <a href="#!" class="modal__backdrop" aria-label="Close article"></a>
         <div class="modal__container">
             <a href="#!" class="modal__close" aria-label="Close">&times;</a>
@@ -637,7 +633,7 @@
     <!-- ===== RELATIONSHIPS (Articles 4-6) ===== -->
     
     <!-- Article 4: AI Social Network -->
-    <article id="article-4" class="modal" role="dialog" aria-labelledby="article-4-title" aria-modal="true">
+    <article id="article-4" class="modal" role="dialog" aria-labelledby="article-4-title" >
         <a href="#!" class="modal__backdrop" aria-label="Close article"></a>
         <div class="modal__container">
             <a href="#!" class="modal__close" aria-label="Close">&times;</a>
@@ -655,7 +651,7 @@
     </article>
 
     <!-- Article 5: AI Gaming Friends -->
-    <article id="article-5" class="modal" role="dialog" aria-labelledby="article-5-title" aria-modal="true">
+    <article id="article-5" class="modal" role="dialog" aria-labelledby="article-5-title" >
         <a href="#!" class="modal__backdrop" aria-label="Close article"></a>
         <div class="modal__container">
             <a href="#!" class="modal__close" aria-label="Close">&times;</a>
@@ -673,7 +669,7 @@
     </article>
 
     <!-- Article 6: AI Coding Burnout -->
-    <article id="article-6" class="modal" role="dialog" aria-labelledby="article-6-title" aria-modal="true">
+    <article id="article-6" class="modal" role="dialog" aria-labelledby="article-6-title" >
         <a href="#!" class="modal__backdrop" aria-label="Close article"></a>
         <div class="modal__container">
             <a href="#!" class="modal__close" aria-label="Close">&times;</a>
@@ -693,7 +689,7 @@
     <!-- ===== CAREERS (Articles 7-9) ===== -->
     
     <!-- Article 7: Developers Say AI Works -->
-    <article id="article-7" class="modal" role="dialog" aria-labelledby="article-7-title" aria-modal="true">
+    <article id="article-7" class="modal" role="dialog" aria-labelledby="article-7-title" >
         <a href="#!" class="modal__backdrop" aria-label="Close article"></a>
         <div class="modal__container">
             <a href="#!" class="modal__close" aria-label="Close">&times;</a>
@@ -711,7 +707,7 @@
     </article>
 
     <!-- Article 8: Pinterest Layoffs -->
-    <article id="article-8" class="modal" role="dialog" aria-labelledby="article-8-title" aria-modal="true">
+    <article id="article-8" class="modal" role="dialog" aria-labelledby="article-8-title" >
         <a href="#!" class="modal__backdrop" aria-label="Close article"></a>
         <div class="modal__container">
             <a href="#!" class="modal__close" aria-label="Close">&times;</a>
@@ -729,7 +725,7 @@
     </article>
 
     <!-- Article 9: Game Devs vs AI -->
-    <article id="article-9" class="modal" role="dialog" aria-labelledby="article-9-title" aria-modal="true">
+    <article id="article-9" class="modal" role="dialog" aria-labelledby="article-9-title" >
         <a href="#!" class="modal__backdrop" aria-label="Close article"></a>
         <div class="modal__container">
             <a href="#!" class="modal__close" aria-label="Close">&times;</a>
@@ -749,7 +745,7 @@
     <!-- ===== TRUST (Articles 10-12) ===== -->
     
     <!-- Article 10: cURL Bug Bounties -->
-    <article id="article-10" class="modal" role="dialog" aria-labelledby="article-10-title" aria-modal="true">
+    <article id="article-10" class="modal" role="dialog" aria-labelledby="article-10-title" >
         <a href="#!" class="modal__backdrop" aria-label="Close article"></a>
         <div class="modal__container">
             <a href="#!" class="modal__close" aria-label="Close">&times;</a>
@@ -767,7 +763,7 @@
     </article>
 
     <!-- Article 11: YouTube AI Slop -->
-    <article id="article-11" class="modal" role="dialog" aria-labelledby="article-11-title" aria-modal="true">
+    <article id="article-11" class="modal" role="dialog" aria-labelledby="article-11-title" >
         <a href="#!" class="modal__backdrop" aria-label="Close article"></a>
         <div class="modal__container">
             <a href="#!" class="modal__close" aria-label="Close">&times;</a>
@@ -785,7 +781,7 @@
     </article>
 
     <!-- Article 12: AI Science Slop -->
-    <article id="article-12" class="modal" role="dialog" aria-labelledby="article-12-title" aria-modal="true">
+    <article id="article-12" class="modal" role="dialog" aria-labelledby="article-12-title" >
         <a href="#!" class="modal__backdrop" aria-label="Close article"></a>
         <div class="modal__container">
             <a href="#!" class="modal__close" aria-label="Close">&times;</a>
@@ -805,7 +801,7 @@
     <!-- ===== EDUCATION (Articles 13-15) ===== -->
     
     <!-- Article 13: Claude Code Going Viral -->
-    <article id="article-13" class="modal" role="dialog" aria-labelledby="article-13-title" aria-modal="true">
+    <article id="article-13" class="modal" role="dialog" aria-labelledby="article-13-title" >
         <a href="#!" class="modal__backdrop" aria-label="Close article"></a>
         <div class="modal__container">
             <a href="#!" class="modal__close" aria-label="Close">&times;</a>
@@ -823,7 +819,7 @@
     </article>
 
     <!-- Article 14: Gen Z Loneliness and AI -->
-    <article id="article-14" class="modal" role="dialog" aria-labelledby="article-14-title" aria-modal="true">
+    <article id="article-14" class="modal" role="dialog" aria-labelledby="article-14-title" >
         <a href="#!" class="modal__backdrop" aria-label="Close article"></a>
         <div class="modal__container">
             <a href="#!" class="modal__close" aria-label="Close">&times;</a>
@@ -841,7 +837,7 @@
     </article>
 
     <!-- Article 15: AI Toy Kids Chats -->
-    <article id="article-15" class="modal" role="dialog" aria-labelledby="article-15-title" aria-modal="true">
+    <article id="article-15" class="modal" role="dialog" aria-labelledby="article-15-title" >
         <a href="#!" class="modal__backdrop" aria-label="Close article"></a>
         <div class="modal__container">
             <a href="#!" class="modal__close" aria-label="Close">&times;</a>
@@ -861,7 +857,7 @@
     <!-- ===== WEIRD (Articles 16-18) ===== -->
     
     <!-- Article 16: Anti-ICE AI Videos -->
-    <article id="article-16" class="modal" role="dialog" aria-labelledby="article-16-title" aria-modal="true">
+    <article id="article-16" class="modal" role="dialog" aria-labelledby="article-16-title" >
         <a href="#!" class="modal__backdrop" aria-label="Close article"></a>
         <div class="modal__container">
             <a href="#!" class="modal__close" aria-label="Close">&times;</a>
@@ -879,7 +875,7 @@
     </article>
 
     <!-- Article 17: China Winning AI Race -->
-    <article id="article-17" class="modal" role="dialog" aria-labelledby="article-17-title" aria-modal="true">
+    <article id="article-17" class="modal" role="dialog" aria-labelledby="article-17-title" >
         <a href="#!" class="modal__backdrop" aria-label="Close article"></a>
         <div class="modal__container">
             <a href="#!" class="modal__close" aria-label="Close">&times;</a>
@@ -897,7 +893,7 @@
     </article>
 
     <!-- Article 18: Moltbot Taking Over -->
-    <article id="article-18" class="modal" role="dialog" aria-labelledby="article-18-title" aria-modal="true">
+    <article id="article-18" class="modal" role="dialog" aria-labelledby="article-18-title" >
         <a href="#!" class="modal__backdrop" aria-label="Close article"></a>
         <div class="modal__container">
             <a href="#!" class="modal__close" aria-label="Close">&times;</a>
@@ -917,7 +913,7 @@
     <!-- ===== MONEY (Articles 19-21) ===== -->
     
     <!-- Article 19: OpenAI $100B Fundraise -->
-    <article id="article-19" class="modal" role="dialog" aria-labelledby="article-19-title" aria-modal="true">
+    <article id="article-19" class="modal" role="dialog" aria-labelledby="article-19-title" >
         <a href="#!" class="modal__backdrop" aria-label="Close article"></a>
         <div class="modal__container">
             <a href="#!" class="modal__close" aria-label="Close">&times;</a>
@@ -935,7 +931,7 @@
     </article>
 
     <!-- Article 20: Amazon Google vs Nvidia -->
-    <article id="article-20" class="modal" role="dialog" aria-labelledby="article-20-title" aria-modal="true">
+    <article id="article-20" class="modal" role="dialog" aria-labelledby="article-20-title" >
         <a href="#!" class="modal__backdrop" aria-label="Close article"></a>
         <div class="modal__container">
             <a href="#!" class="modal__close" aria-label="Close">&times;</a>
@@ -953,7 +949,7 @@
     </article>
 
     <!-- Article 21: Data Centers Gas Boom -->
-    <article id="article-21" class="modal" role="dialog" aria-labelledby="article-21-title" aria-modal="true">
+    <article id="article-21" class="modal" role="dialog" aria-labelledby="article-21-title" >
         <a href="#!" class="modal__backdrop" aria-label="Close article"></a>
         <div class="modal__container">
             <a href="#!" class="modal__close" aria-label="Close">&times;</a>

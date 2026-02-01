@@ -1,7 +1,4 @@
-/* ===========================================
-   PRINT STYLES
-   Optimized for printing
-   =========================================== */
+/* print - hide nav/decorations, readable text */
 
 @media print {
 	.site-header,

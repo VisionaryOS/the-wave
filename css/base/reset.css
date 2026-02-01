@@ -1,7 +1,4 @@
-/* ===========================================
-   CSS RESET
-   Modern CSS reset for consistent cross-browser styling
-   =========================================== */
+/* reset - browsers have weird defaults */
 
 *,
 *::before,
