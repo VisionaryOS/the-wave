@@ -114,12 +114,6 @@
 	}
 }
 
-.fab__icon {
-	font-size: var(--text-lg);
-	line-height: 1;
-	transform: translateY(1px);
-}
-
 .fab__label {
 	letter-spacing: 0.01em;
 }
