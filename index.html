@@ -8,10 +8,10 @@
     
     <title>the wave - Catch the Future Before It Breaks</title>
     
-    <!-- Nunito font -->
+    <!-- Nunito (UI) + Source Serif (reading) fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Nunito:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Nunito:wght@400;500;600;700;800;900&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
     
     <link rel="stylesheet" href="css/styles.css">
 </head>
@@ -37,7 +37,7 @@
     </header>
 
     <!-- ============================================
-         HERO SECTION
+         HERO SECTION (with story cards)
          ============================================ -->
     <section class="hero">
         <div class="hero__stars" aria-hidden="true">
@@ -50,7 +50,7 @@
         <div class="hero__content">
             <div class="hero__badge">
                 <span class="hero__badge-new">New</span>
-                <span>Issue #047 - February 2026</span>
+                <span>Fresh satisfying reads weekly</span>
             </div>
             
             <h1 class="hero__title">
@@ -58,18 +58,135 @@
             </h1>
             
             <p class="hero__subtitle">
-                Your AI companion that transforms complex machine learning news 
-                into compelling, digestible stories.
+                AI news that actually makes sense. Three stories, every week.
             </p>
-
-            <div class="hero__cta">
-                <a href="#stories" class="btn btn--primary btn--lg">Read This Week's Issue</a>
-                <a href="#subscribe" class="btn btn--outline btn--lg">Get the Newsletter</a>
-            </div>
         </div>
 
-        <div class="hero__wave" aria-hidden="true"></div>
+        <!-- Story Cards in Hero -->
+        <div class="hero__stories">
+            <div class="hero__stories-track">
+                <!-- Story 1 -->
+                <a href="#article-1" class="story-card story-card--hero">
+                    <div class="story-card__bg" style="background: linear-gradient(135deg, #0095FF 0%, #00C6FF 100%);"></div>
+                    <div class="story-card__overlay"></div>
+                    <div class="story-card__content">
+                        <span class="story-card__tag">Policy</span>
+                        <h3 class="story-card__title">Europe drew a line. Big Tech tripped over it.</h3>
+                        <span class="story-card__btn">Read story</span>
+                    </div>
+                </a>
+
+                <!-- Story 2 -->
+                <a href="#article-2" class="story-card story-card--hero">
+                    <div class="story-card__bg" style="background: linear-gradient(135deg, #AD6DFF 0%, #FF6DFF 100%);"></div>
+                    <div class="story-card__overlay"></div>
+                    <div class="story-card__content">
+                        <span class="story-card__tag">Healthcare</span>
+                        <h3 class="story-card__title">An AI discovered antibiotics that actually work.</h3>
+                        <span class="story-card__btn">Read story</span>
+                    </div>
+                </a>
+
+                <!-- Story 3 -->
+                <a href="#article-3" class="story-card story-card--hero">
+                    <div class="story-card__bg" style="background: linear-gradient(135deg, #FF7300 0%, #FFB800 100%);"></div>
+                    <div class="story-card__overlay"></div>
+                    <div class="story-card__content">
+                        <span class="story-card__tag">Open Source</span>
+                        <h3 class="story-card__title">The best AI model is now free. That changes everything.</h3>
+                        <span class="story-card__btn">Read story</span>
+                    </div>
+                </a>
+            </div>
+        </div>
     </section>
+
+    <!-- ============================================
+         ARTICLE MODALS (CSS-only with :target)
+         ============================================ -->
+    
+    <!-- Article 1: EU AI Act -->
+    <article id="article-1" class="article-modal">
+        <a href="#!" class="article-modal__backdrop" aria-label="Close"></a>
+        <div class="article-modal__container">
+            <a href="#!" class="article-modal__close" aria-label="Close article">&times;</a>
+            <header class="article-modal__header">
+                <span class="article-modal__tag">Policy</span>
+                <time class="article-modal__date" datetime="2026-01-28">January 28, 2026</time>
+            </header>
+            <h1 class="article-modal__title">Europe drew a line. Big Tech tripped over it.</h1>
+            <div class="article-modal__content">
+                <p class="article-modal__lead">The EU AI Act just became enforceable. And the tech giants who thought they could lobby their way out? They're scrambling.</p>
+                
+                <h2>What happened</h2>
+                <p>After three years of negotiations, amendments, and intense lobbying, the European Union's AI Act is now law. It's the world's first comprehensive legal framework for artificial intelligence, and it has teeth.</p>
+                <p>The legislation creates a risk-based classification system. Low-risk AI (like spam filters) faces minimal oversight. High-risk systems (hiring algorithms, credit scoring, medical diagnostics) must meet strict transparency and accuracy requirements. And some applications—like social scoring and real-time facial recognition in public spaces—are banned outright.</p>
+                
+                <h2>Why it matters</h2>
+                <p>This isn't just about Europe. Any company that wants to sell AI products to 450 million European consumers must comply. That includes OpenAI, Google, Meta, and Microsoft. The "Brussels Effect" means these rules will likely become the global default.</p>
+                <p>Companies now have 6-24 months to comply, depending on the risk category. The penalties for violations? Up to 7% of global annual revenue. For a company like Microsoft, that could mean $15 billion in fines.</p>
+                
+                <h2>The bottom line</h2>
+                <p>The era of "move fast and break things" in AI is over—at least in Europe. Whether this protects citizens or stifles innovation depends on who you ask. But one thing is certain: the rules of the game just changed.</p>
+            </div>
+        </div>
+    </article>
+
+    <!-- Article 2: AI Antibiotics -->
+    <article id="article-2" class="article-modal">
+        <a href="#!" class="article-modal__backdrop" aria-label="Close"></a>
+        <div class="article-modal__container">
+            <a href="#!" class="article-modal__close" aria-label="Close article">&times;</a>
+            <header class="article-modal__header">
+                <span class="article-modal__tag article-modal__tag--purple">Healthcare</span>
+                <time class="article-modal__date" datetime="2026-01-26">January 26, 2026</time>
+            </header>
+            <h1 class="article-modal__title">An AI discovered antibiotics that actually work.</h1>
+            <div class="article-modal__content">
+                <p class="article-modal__lead">MIT researchers just announced a breakthrough that could save millions of lives. Their AI found a new class of antibiotics—and it only took 48 hours.</p>
+                
+                <h2>The crisis we're facing</h2>
+                <p>Antibiotic resistance kills 1.27 million people every year. By 2050, that number could reach 10 million—more than cancer. The last truly new class of antibiotics was discovered in 1987. We've been losing this war for decades.</p>
+                <p>Traditional drug discovery takes 10-15 years and costs over $1 billion. Most candidates fail. The economics don't work, so pharmaceutical companies stopped trying.</p>
+                
+                <h2>How AI changed the game</h2>
+                <p>The MIT team trained a deep learning model on 12 million chemical compounds. But here's the clever part: they made the AI explain its reasoning. They could see exactly which molecular structures it flagged as promising, and why.</p>
+                <p>The model identified 283 candidates in 48 hours. Lab testing confirmed that 15 showed strong antibiotic properties. Two of them killed MRSA—the "superbug" that resists almost everything we throw at it.</p>
+                
+                <h2>What comes next</h2>
+                <p>Clinical trials will take years. Regulatory approval will take longer. But for the first time in decades, we have genuinely new weapons against bacterial infection. And we have a method to find more.</p>
+                <p>This is what AI can do when we point it at the right problems.</p>
+            </div>
+        </div>
+    </article>
+
+    <!-- Article 3: Open Source AI -->
+    <article id="article-3" class="article-modal">
+        <a href="#!" class="article-modal__backdrop" aria-label="Close"></a>
+        <div class="article-modal__container">
+            <a href="#!" class="article-modal__close" aria-label="Close article">&times;</a>
+            <header class="article-modal__header">
+                <span class="article-modal__tag article-modal__tag--orange">Open Source</span>
+                <time class="article-modal__date" datetime="2026-01-24">January 24, 2026</time>
+            </header>
+            <h1 class="article-modal__title">The best AI model is now free. That changes everything.</h1>
+            <div class="article-modal__content">
+                <p class="article-modal__lead">DeepSeek just released R1—a model that matches GPT-4's capabilities—completely open source. The AI landscape will never be the same.</p>
+                
+                <h2>What DeepSeek built</h2>
+                <p>R1 is a 70-billion parameter model that performs on par with GPT-4 across standard benchmarks. Coding, reasoning, math, creative writing—it handles all of it. And unlike GPT-4, you can download it, modify it, and run it on your own hardware.</p>
+                <p>The training cost? Roughly $5.5 million. OpenAI reportedly spent over $100 million training GPT-4. DeepSeek achieved comparable results at 5% of the cost.</p>
+                
+                <h2>Why this matters</h2>
+                <p>For years, frontier AI has been locked behind API paywalls controlled by a handful of companies. Want to build with GPT-4? You pay OpenAI per token, follow their rules, and hope they don't change the terms.</p>
+                <p>R1 breaks that model. Startups can now build AI products without dependency on Big Tech. Researchers can study how these systems actually work. Countries worried about AI sovereignty can run world-class models on their own infrastructure.</p>
+                
+                <h2>The bigger picture</h2>
+                <p>OpenAI's moat just got a lot smaller. Their argument has always been that frontier AI requires massive capital and proprietary techniques. DeepSeek proved that's not quite true.</p>
+                <p>The AI revolution is about to get a lot more competitive—and a lot more interesting.</p>
+            </div>
+        </div>
+    </article>
 
     <!-- ============================================
          MAIN CONTENT
@@ -177,85 +294,6 @@
             </div>
         </section>
 
-        <!-- This Week's Stories - Swipeable Carousel -->
-        <section id="stories" class="section section--alt">
-            <header class="section__header">
-                <h2 class="section__title">This Week's Stories</h2>
-                <p class="section__subtitle">
-                    Three stories that matter, explained without the jargon
-                </p>
-            </header>
-
-            <div class="stories-carousel">
-                <div class="stories-carousel__track">
-                    <!-- Story 1 -->
-                    <article class="story-card">
-                        <div class="story-card__bg" style="background: linear-gradient(135deg, #0095FF 0%, #00C6FF 100%);"></div>
-                        <div class="story-card__overlay"></div>
-                        <div class="story-card__content">
-                            <span class="story-card__tag">Policy</span>
-                            <h3 class="story-card__title">Europe drew a line. Big Tech tripped over it.</h3>
-                            <a href="https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai" class="story-card__btn" target="_blank" rel="noopener">
-                                Read story
-                            </a>
-                        </div>
-                    </article>
-
-                    <!-- Story 2 -->
-                    <article class="story-card">
-                        <div class="story-card__bg" style="background: linear-gradient(135deg, #AD6DFF 0%, #FF6DFF 100%);"></div>
-                        <div class="story-card__overlay"></div>
-                        <div class="story-card__content">
-                            <span class="story-card__tag">Healthcare</span>
-                            <h3 class="story-card__title">An AI discovered antibiotics that actually work.</h3>
-                            <a href="https://www.nature.com/natmedicine/" class="story-card__btn" target="_blank" rel="noopener">
-                                Read story
-                            </a>
-                        </div>
-                    </article>
-
-                    <!-- Story 3 -->
-                    <article class="story-card">
-                        <div class="story-card__bg" style="background: linear-gradient(135deg, #FF7300 0%, #FFB800 100%);"></div>
-                        <div class="story-card__overlay"></div>
-                        <div class="story-card__content">
-                            <span class="story-card__tag">Open Source</span>
-                            <h3 class="story-card__title">The best AI model is now free. That changes everything.</h3>
-                            <a href="https://huggingface.co/" class="story-card__btn" target="_blank" rel="noopener">
-                                Read story
-                            </a>
-                        </div>
-                    </article>
-
-                    <!-- Story 4 -->
-                    <article class="story-card">
-                        <div class="story-card__bg" style="background: linear-gradient(135deg, #00CE44 0%, #7DD3FC 100%);"></div>
-                        <div class="story-card__overlay"></div>
-                        <div class="story-card__content">
-                            <span class="story-card__tag">Research</span>
-                            <h3 class="story-card__title">DeepMind just solved protein folding. Again.</h3>
-                            <a href="https://deepmind.google/" class="story-card__btn" target="_blank" rel="noopener">
-                                Read story
-                            </a>
-                        </div>
-                    </article>
-
-                    <!-- Story 5 -->
-                    <article class="story-card">
-                        <div class="story-card__bg" style="background: linear-gradient(135deg, #4772FF 0%, #AD6DFF 100%);"></div>
-                        <div class="story-card__overlay"></div>
-                        <div class="story-card__content">
-                            <span class="story-card__tag">Industry</span>
-                            <h3 class="story-card__title">Apple's on-device AI is changing mobile forever.</h3>
-                            <a href="https://machinelearning.apple.com/" class="story-card__btn" target="_blank" rel="noopener">
-                                Read story
-                            </a>
-                        </div>
-                    </article>
-                </div>
-            </div>
-        </section>
-
         <!-- Subscribe -->
         <section id="subscribe" class="subscribe">
             <div class="subscribe__container">
@@ -289,44 +327,10 @@
     <!-- ============================================
          FOOTER
          ============================================ -->
-    <footer id="about" class="footer">
-        <div class="footer__container">
-            <div class="footer__brand">
-                <p class="footer__logo">the wave</p>
-                <p class="footer__tagline">Catch the future before it breaks.</p>
-            </div>
-
-            <div class="footer__col">
-                <h3 class="footer__heading">Navigate</h3>
-                <ul class="footer__list">
-                    <li><a href="#top">Home</a></li>
-                    <li><a href="#stories">Stories</a></li>
-                    <li><a href="#topics">Topics</a></li>
-                </ul>
-            </div>
-
-            <div class="footer__col">
-                <h3 class="footer__heading">Sources</h3>
-                <ul class="footer__list">
-                    <li><a href="https://openai.com/research" target="_blank" rel="noopener">OpenAI</a></li>
-                    <li><a href="https://www.nature.com/" target="_blank" rel="noopener">Nature</a></li>
-                    <li><a href="https://huggingface.co/" target="_blank" rel="noopener">Hugging Face</a></li>
-                    <li><a href="https://arxiv.org/" target="_blank" rel="noopener">arXiv</a></li>
-                </ul>
-            </div>
-
-            <div class="footer__col">
-                <h3 class="footer__heading">Legal</h3>
-                <ul class="footer__list">
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#subscribe">Subscribe</a></li>
-                </ul>
-            </div>
-
-            <div class="footer__bottom">
-                <p>&copy; 2026 the wave. All rights reserved.</p>
-                <p>HEP504 Web Development - Abertay University</p>
-            </div>
+    <footer class="footer">
+        <div class="footer__simple">
+            <p class="footer__logo">the wave</p>
+            <p class="footer__copy">&copy; 2026 the wave &middot; HEP504 Web Development &middot; Abertay University</p>
         </div>
     </footer>
 
