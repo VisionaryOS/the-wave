@@ -15,19 +15,21 @@
 
 	/* text - dark enough for contrast, muted for secondary info */
 	--color-text: rgb(38, 38, 38);
+	--color-text-light: #404040;
 	--color-text-muted: rgb(140, 146, 157);
 	--color-text-subtle: rgb(88, 105, 127);
 
 	/* hero gradient - blue to cyan to white, gives that "sky" feel */
-	--color-hero-top: rgb(71, 114, 255);
-	--color-hero-mid: rgb(0, 172, 255);
-	--color-hero-bottom: rgb(255, 255, 255);
+	--gradient-hero-top: rgb(71, 114, 255);
+	--gradient-hero-mid: rgb(0, 172, 255);
+	--gradient-hero-bottom: rgb(255, 255, 255);
 
 	/* fonts - nunito for UI, source serif for reading */
 	--font-primary: "Nunito", system-ui, sans-serif;
 	--font-serif: "Source Serif 4", Georgia, serif;
 
 	/* type scale - roughly 1.125 ratio, nothing too jumpy */
+	--text-2xs: 0.65rem;
 	--text-xs: 0.75rem;
 	--text-sm: 0.875rem;
 	--text-base: 1rem;
@@ -49,7 +51,7 @@
 	--tracking-tight: -0.125rem;
 
 	/* line heights */
-	--leading-none: 0.9;
+	--leading-dense: 0.9;
 	--leading-tight: 1.1;
 	--leading-relaxed: 1.6;
 
@@ -66,32 +68,32 @@
 	--space-20: 5rem;
 	--space-24: 6rem;
 
-	/* border radius - sm for inputs, lg+ for cards and sections */
+	/* border radius */
 	--radius-sm: 0.25rem;
-	--radius-xl: 1.5rem;
-	--radius-2xl: 1.75rem;
-	--radius-full: 9999px;
+	--radius: 1.5rem;
+	--radius-lg: 1.75rem;
+	--radius-pill: 9999px;
 
 	/* layout constants */
 	--nav-height: 3.4375rem;
 	--gutter: 1.5rem;
 
-	/* transparency - 20% steps, white for glass effects, black for shadows */
-	--alpha-white-10: rgba(255, 255, 255, 0.1);
-	--alpha-white-30: rgba(255, 255, 255, 0.3);
-	--alpha-white-50: rgba(255, 255, 255, 0.5);
-	--alpha-white-70: rgba(255, 255, 255, 0.7);
-	--alpha-white-90: rgba(255, 255, 255, 0.9);
+	/* transparency - white for glass effects, black for shadows */
+	--white-10: rgba(255, 255, 255, 0.1);
+	--white-30: rgba(255, 255, 255, 0.3);
+	--white-50: rgba(255, 255, 255, 0.5);
+	--white-70: rgba(255, 255, 255, 0.7);
+	--white-90: rgba(255, 255, 255, 0.9);
 
-	--alpha-black-10: rgba(0, 0, 0, 0.1);
-	--alpha-black-30: rgba(0, 0, 0, 0.3);
-	--alpha-black-50: rgba(0, 0, 0, 0.5);
-	--alpha-black-70: rgba(0, 0, 0, 0.7);
-	--alpha-black-90: rgba(0, 0, 0, 0.9);
+	--black-10: rgba(0, 0, 0, 0.1);
+	--black-30: rgba(0, 0, 0, 0.3);
+	--black-50: rgba(0, 0, 0, 0.5);
+	--black-70: rgba(0, 0, 0, 0.7);
+	--black-90: rgba(0, 0, 0, 0.9);
 
 	/* blur for glassmorphism */
-	--blur-sm: 8px;
-	--blur-md: 12px;
+	--blur: 8px;
+	--blur-strong: 12px;
 
 	/* easing - ease-out for most things, spring for playful interactions */
 	--ease-out: cubic-bezier(0.16, 1, 0.3, 1);

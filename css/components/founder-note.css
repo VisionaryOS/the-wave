@@ -29,7 +29,7 @@
 
 .founder-note__text {
 	font-size: var(--text-xl);
-	color: var(--alpha-white-90);
+	color: var(--white-90);
 	line-height: var(--leading-relaxed);
 }
 
@@ -80,14 +80,14 @@
 
 .founder-note__role {
 	font-size: var(--text-base);
-	color: var(--alpha-white-70);
+	color: var(--white-70);
 }
 
 /* vote cta area */
 .founder-note__cta {
 	margin-top: var(--space-8);
 	padding-top: var(--space-6);
-	border-top: 1px solid var(--alpha-white-30);
+	border-top: 1px solid var(--white-30);
 }
 
 .founder-note__cta-text {
@@ -118,19 +118,19 @@
 	font-weight: var(--weight-black);
 	letter-spacing: var(--tracking-tight);
 	padding: var(--space-4) var(--space-8);
-	border-radius: var(--radius-full);
+	border-radius: var(--radius-pill);
 	color: var(--color-white);
 	text-decoration: none;
-	background: var(--alpha-white-10);
-	backdrop-filter: blur(var(--blur-sm));
-	-webkit-backdrop-filter: blur(var(--blur-sm));
-	border: 1px solid var(--alpha-white-30);
+	background: var(--white-10);
+	backdrop-filter: blur(var(--blur));
+	-webkit-backdrop-filter: blur(var(--blur));
+	border: 1px solid var(--white-30);
 	transition: all var(--duration-normal) var(--ease-out);
 }
 
 .secret-reveal__trigger:hover .secret-reveal__hint {
 	transform: scale(1.05);
-	background: var(--alpha-white-30);
+	background: var(--white-30);
 }
 
 /* hide trigger once opened */

@@ -80,9 +80,9 @@
 
 @keyframes anim-scroll-glass {
 	to {
-		background: var(--alpha-white-10);
-		backdrop-filter: blur(var(--blur-sm));
-		-webkit-backdrop-filter: blur(var(--blur-sm));
+		background: var(--white-10);
+		backdrop-filter: blur(var(--blur));
+		-webkit-backdrop-filter: blur(var(--blur));
 	}
 }
 
@@ -97,7 +97,7 @@
 	100% {
 		max-width: 28rem;
 		background: var(--color-white);
-		box-shadow: var(--alpha-black-10) 0px 5px 20px -5px;
+		box-shadow: var(--black-10) 0px 5px 20px -5px;
 		padding: 0.625rem 1.5rem;
 	}
 }

@@ -9,8 +9,8 @@
 	font-weight: var(--weight-semibold);
 	background: var(--color-white);
 	color: var(--color-blue);
-	border-radius: var(--radius-full);
-	box-shadow: 0 2px 8px var(--alpha-black-10);
+	border-radius: var(--radius-pill);
+	box-shadow: 0 2px 8px var(--black-10);
 }
 
 /* red "live" pill inside the badge */
@@ -23,7 +23,7 @@
 	font-weight: var(--weight-black);
 	background: var(--color-red);
 	color: var(--color-white);
-	border-radius: var(--radius-full);
+	border-radius: var(--radius-pill);
 }
 
 /* pulsing dot */

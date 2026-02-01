@@ -23,7 +23,7 @@
 	font-weight: var(--weight-bold);
 	color: var(--color-text-muted);
 	background: var(--color-surface);
-	border-radius: var(--radius-xl);
+	border-radius: var(--radius);
 	border: 2px solid transparent;
 	cursor: pointer;
 	user-select: none;
@@ -38,7 +38,7 @@
 .tabs__tab:hover {
 	color: var(--color-text);
 	transform: translateY(-4px) scale(1.02);
-	box-shadow: 0 8px 24px var(--alpha-black-10);
+	box-shadow: 0 8px 24px var(--black-10);
 }
 
 /* active states - each topic gets its brand color */
@@ -149,7 +149,7 @@
 
 /* topic box styling when inside panels */
 .tabs__panel .topic-box {
-	border-radius: var(--radius-xl);
+	border-radius: var(--radius);
 	padding: var(--space-8) var(--space-12) var(--space-12);
 }
 

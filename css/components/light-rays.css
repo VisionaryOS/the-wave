@@ -12,14 +12,14 @@
 	top: -20%;
 	height: 140%;
 	background: linear-gradient(180deg,
-		var(--alpha-white-30) 0%,
-		var(--alpha-white-10) 20%,
-		var(--alpha-white-10) 50%,
+		var(--white-30) 0%,
+		var(--white-10) 20%,
+		var(--white-10) 50%,
 		transparent 100%
 	);
 	transform-origin: top center;
 	transform: rotate(var(--angle, 0deg));
-	filter: blur(var(--blur-md));
+	filter: blur(var(--blur-strong));
 	animation: anim-pulse-ray var(--ray-duration, 5s) ease-in-out infinite var(--ray-delay, 0s);
 }
 

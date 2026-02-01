@@ -9,7 +9,7 @@
 	font-weight: var(--weight-semibold);
 	background: color-mix(in srgb, var(--tag-color) 14%, transparent);
 	color: var(--tag-color);
-	border-radius: var(--radius-full);
+	border-radius: var(--radius-pill);
 }
 
 /* color variants */
@@ -23,17 +23,17 @@
 /* glass variant - for use on dark/image backgrounds */
 .tag--glass {
 	padding: var(--space-1) var(--space-2);
-	font-size: 0.65rem;
+	font-size: var(--text-2xs);
 	font-weight: var(--weight-semibold);
 	letter-spacing: 0.04em;
 	text-transform: uppercase;
-	background: var(--alpha-white-10);
-	backdrop-filter: blur(var(--blur-sm));
-	-webkit-backdrop-filter: blur(var(--blur-sm));
-	color: var(--alpha-white-90);
-	border: 1px solid var(--alpha-white-10);
+	background: var(--white-10);
+	backdrop-filter: blur(var(--blur));
+	-webkit-backdrop-filter: blur(var(--blur));
+	color: var(--white-90);
+	border: 1px solid var(--white-10);
 	border-radius: var(--radius-sm);
-	text-shadow: 0 1px 3px var(--alpha-black-50);
+	text-shadow: 0 1px 3px var(--black-50);
 	transition: 
 		background var(--duration-normal) ease,
 		border-color var(--duration-normal) ease,
@@ -42,7 +42,7 @@
 
 /* lifts slightly when parent card is hovered */
 .story-card:hover .tag--glass {
-	background: var(--alpha-white-30);
-	border-color: var(--alpha-white-30);
+	background: var(--white-30);
+	border-color: var(--white-30);
 	transform: translateY(-1px);
 }

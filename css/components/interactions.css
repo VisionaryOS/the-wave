@@ -22,7 +22,7 @@
 	padding: var(--space-3) var(--space-6);
 	font-size: var(--text-base);
 	font-weight: var(--weight-bold);
-	border-radius: var(--radius-full);
+	border-radius: var(--radius-pill);
 	cursor: pointer;
 	user-select: none;
 }
@@ -31,28 +31,28 @@
 	background: transparent;
 	color: var(--color-white);
 	border: 2px solid var(--color-white);
-	--btn-hover-bg: var(--alpha-white-10);
+	--btn-hover-bg: var(--white-10);
 	--btn-hover-color: var(--color-white);
 	--btn-hover-border-color: var(--color-white);
-	--btn-hover-shadow: 0 8px 24px var(--alpha-white-30);
+	--btn-hover-shadow: 0 8px 24px var(--white-30);
 }
 
 .btn--no {
 	background: transparent;
 	color: var(--color-white);
-	border: 2px solid var(--alpha-white-50);
-	--btn-hover-bg: var(--alpha-white-10);
+	border: 2px solid var(--white-50);
+	--btn-hover-bg: var(--white-10);
 	--btn-hover-color: var(--color-white);
 	--btn-hover-border-color: var(--color-white);
 }
 
 /* checked states */
 #vote-yes:checked + .btn--yes {
-	box-shadow: 0 8px 24px var(--alpha-white-30);
+	box-shadow: 0 8px 24px var(--white-30);
 }
 
 #vote-no:checked + .btn--no {
-	background: var(--alpha-white-10);
+	background: var(--white-10);
 	color: var(--color-white);
 	border-color: var(--color-white);
 }
@@ -63,7 +63,7 @@
 	width: 100%;
 	margin-top: var(--space-6);
 	font-size: var(--text-lg);
-	color: var(--alpha-white-90);
+	color: var(--white-90);
 	animation: anim-reveal-up 0.4s var(--ease-out);
 }
 
@@ -86,7 +86,7 @@
 	font-size: var(--text-sm);
 	color: var(--color-white);
 	background: var(--color-cyan);
-	border-radius: var(--radius-full);
+	border-radius: var(--radius-pill);
 	text-decoration: none;
 	opacity: 0;
 	pointer-events: none;
@@ -102,7 +102,7 @@
 
 .fab:hover {
 	transform: translateY(-2px);
-	background: var(--color-hero-top);
+	background: var(--gradient-hero-top);
 }
 
 .fab__label {

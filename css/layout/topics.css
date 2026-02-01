@@ -10,7 +10,7 @@
 	background: linear-gradient(180deg,
 		var(--color-white) 0%,
 		var(--color-white) 70%,
-		var(--color-hero-bottom) 100%
+		var(--gradient-hero-bottom) 100%
 	);
 }
 

@@ -9,9 +9,9 @@
 	padding-top: calc(var(--nav-height) + var(--space-8));
 	text-align: center;
 	background: linear-gradient(180deg,
-		var(--color-hero-top) 0%,
-		var(--color-hero-mid) 45%,
-		var(--color-hero-bottom) 100%
+		var(--gradient-hero-top) 0%,
+		var(--gradient-hero-mid) 45%,
+		var(--gradient-hero-bottom) 100%
 	);
 	overflow: clip;
 }
@@ -41,7 +41,7 @@
 	font-family: var(--font-primary);
 	font-size: clamp(2.5rem, 8vw, 4.375rem);
 	font-weight: var(--weight-black);
-	line-height: var(--leading-none);
+	line-height: var(--leading-dense);
 	letter-spacing: var(--tracking-tight);
 	color: var(--color-white);
 }

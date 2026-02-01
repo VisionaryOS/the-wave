@@ -3,7 +3,7 @@
 .topic-box {
 	position: relative;
 	padding: var(--space-6) var(--space-8);
-	border-radius: var(--radius-2xl);
+	border-radius: var(--radius-lg);
 	color: var(--color-white);
 	overflow: hidden;
 }

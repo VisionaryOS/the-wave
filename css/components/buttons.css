@@ -13,7 +13,7 @@
 	gap: var(--space-2);
 	font-family: var(--font-primary);
 	font-weight: var(--weight-bold);
-	border-radius: var(--radius-full);
+	border-radius: var(--radius-pill);
 	cursor: pointer;
 	transition: 
 		transform var(--duration-fast) var(--ease-out),
@@ -37,7 +37,7 @@
 	font-size: var(--text-sm);
 	background: var(--color-text);
 	color: var(--color-white);
-	--btn-hover-bg: #404040;
+	--btn-hover-bg: var(--color-text-light);
 	--btn-hover-color: var(--color-white);
 }
 
