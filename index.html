@@ -3,339 +3,662 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="the wave - Your AI companion for understanding machine intelligence. Weekly dispatches from the frontier.">
+    
+    <!-- SEO -->
+    <title>the wave - Catch the Future Before It Breaks</title>
+    <meta name="description" content="AI news that actually makes sense. Three stories, every week. Join 12,000+ readers who start their week with clarity on artificial intelligence.">
+    <meta name="keywords" content="AI news, artificial intelligence, machine learning, tech newsletter, AI policy, AI healthcare">
+    <meta name="author" content="the wave">
+    
+    <!-- Open Graph / Social -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="the wave - Catch the Future Before It Breaks">
+    <meta property="og:description" content="AI news that actually makes sense. Three stories, every week.">
+    <meta property="og:site_name" content="the wave">
+    
+    <!-- Theme -->
     <meta name="theme-color" content="#4772FF">
     
-    <title>the wave - Catch the Future Before It Breaks</title>
-    
-    <!-- Nunito (UI) + Source Serif (reading) fonts -->
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Nunito:wght@400;500;600;700;800;900&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
     
-    <link rel="stylesheet" href="css/styles.css">
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/main.css">
 </head>
 
 <body id="top">
+    <!-- Skip Link (A11y) -->
     <a href="#main" class="skip-link">Skip to content</a>
 
-    <!-- ============================================
-         FLOATING NAVIGATION (Typotab style)
-         ============================================ -->
+    <!-- =============================================
+         HEADER
+         ============================================= -->
     <header class="site-header">
-        <nav class="nav">
+        <nav class="nav" aria-label="Main navigation">
             <a href="#top" class="nav__logo">the wave</a>
-
-            <ul class="nav__links">
-                <li><a href="#stories" class="nav__link">Stories</a></li>
-                <li><a href="#topics" class="nav__link">Topics</a></li>
-                <li><a href="#about" class="nav__link">About</a></li>
-            </ul>
-
-            <a href="#subscribe" class="nav__cta">Start here</a>
+            <a href="#topics" class="nav__cta">Start reading</a>
         </nav>
     </header>
 
-    <!-- ============================================
-         HERO SECTION (with story cards)
-         ============================================ -->
-    <section class="hero">
-        <div class="hero__stars" aria-hidden="true">
-            <span class="hero__star">&#10022;</span>
-            <span class="hero__star">&#10023;</span>
-            <span class="hero__star">&#10022;</span>
-            <span class="hero__star">&#9733;</span>
+    <!-- =============================================
+         HERO
+         ============================================= -->
+    <section class="hero" aria-labelledby="hero-title">
+        <!-- Light rays - sunlight through water -->
+        <div class="light-rays" aria-hidden="true">
+            <span class="light-rays__ray"></span>
+            <span class="light-rays__ray"></span>
+            <span class="light-rays__ray"></span>
+            <span class="light-rays__ray"></span>
+            <span class="light-rays__ray"></span>
+            <span class="light-rays__ray"></span>
         </div>
 
         <div class="hero__content">
-            <div class="hero__badge">
-                <span class="hero__badge-new">New</span>
-                <span>Fresh satisfying reads weekly</span>
-            </div>
-            
-            <h1 class="hero__title">
-                Catch the Future<br>Before It Breaks.
-            </h1>
-            
-            <p class="hero__subtitle">
-                AI news that actually makes sense. Three stories, every week.
+            <p class="badge">
+                <span class="badge__status"><span class="badge__dot"></span>Live</span>
+                <span>Most Interesting Reads Today</span>
             </p>
+            <h1 id="hero-title" class="hero__title">Catch the wave.</h1>
+            <p class="hero__subtitle">Three tech stories a day. Everything you need, nothing you don't.</p>
         </div>
 
-        <!-- Story Cards in Hero -->
-        <div class="hero__stories">
-            <div class="hero__stories-track">
-                <!-- Story 1 -->
+        <!-- Featured Stories -->
+        <div class="hero__cards">
                 <a href="#article-1" class="story-card story-card--hero">
-                    <div class="story-card__bg" style="background: linear-gradient(135deg, #0095FF 0%, #00C6FF 100%);"></div>
+                    <div class="story-card__bg" style="background-image: url('images/gallery/human-ai.jpg')"></div>
                     <div class="story-card__overlay"></div>
                     <div class="story-card__content">
-                        <span class="story-card__tag">Policy</span>
-                        <h3 class="story-card__title">Europe drew a line. Big Tech tripped over it.</h3>
-                        <span class="story-card__btn">Read story</span>
+                        <span class="tag tag--glass">MIT Tech Review</span>
+                        <h2 class="story-card__title">AI systems are learning to deceive us</h2>
+                        <p class="story-card__meta">4 min read</p>
                     </div>
+                    <span class="story-card__pill">Read</span>
                 </a>
+                <a href="#article-4" class="story-card story-card--hero">
+                    <div class="story-card__bg" style="background-image: url('images/gallery/figma-ai.jpg')"></div>
+                    <div class="story-card__overlay"></div>
+                    <div class="story-card__content">
+                        <span class="tag tag--glass">Wired</span>
+                        <h2 class="story-card__title">Figma's AI bet changes design forever</h2>
+                        <p class="story-card__meta">5 min read</p>
+                    </div>
+                    <span class="story-card__pill">Read</span>
+                </a>
+                <a href="#article-10" class="story-card story-card--hero">
+                    <div class="story-card__bg" style="background-image: url('images/gallery/ai-hiring.jpg')"></div>
+                    <div class="story-card__overlay"></div>
+                    <div class="story-card__content">
+                        <span class="tag tag--glass">NYT</span>
+                        <h2 class="story-card__title">The hidden bias in AI hiring tools</h2>
+                        <p class="story-card__meta">6 min read</p>
+                    </div>
+                    <span class="story-card__pill">Read</span>
+                </a>
+        </div>
 
-                <!-- Story 2 -->
-                <a href="#article-2" class="story-card story-card--hero">
-                    <div class="story-card__bg" style="background: linear-gradient(135deg, #AD6DFF 0%, #FF6DFF 100%);"></div>
-                    <div class="story-card__overlay"></div>
-                    <div class="story-card__content">
-                        <span class="story-card__tag">Healthcare</span>
-                        <h3 class="story-card__title">An AI discovered antibiotics that actually work.</h3>
-                        <span class="story-card__btn">Read story</span>
-                    </div>
-                </a>
-
-                <!-- Story 3 -->
-                <a href="#article-3" class="story-card story-card--hero">
-                    <div class="story-card__bg" style="background: linear-gradient(135deg, #FF7300 0%, #FFB800 100%);"></div>
-                    <div class="story-card__overlay"></div>
-                    <div class="story-card__content">
-                        <span class="story-card__tag">Open Source</span>
-                        <h3 class="story-card__title">The best AI model is now free. That changes everything.</h3>
-                        <span class="story-card__btn">Read story</span>
-                    </div>
-                </a>
+        <!-- Source Publications -->
+        <footer class="hero__footer">
+            <div class="logo-bar">
+                <p class="logo-bar__label">Curated from</p>
+                <div class="logo-bar__list">
+                    <span class="logo-bar__item logo-bar__item--bold">MIT Technology Review</span>
+                    <span class="logo-bar__item logo-bar__item--caps">Wired</span>
+                    <span class="logo-bar__item logo-bar__item--serif">Nature</span>
+                    <span class="logo-bar__item logo-bar__item--tight">The Verge</span>
+                    <span class="logo-bar__item logo-bar__item--serif">NYT</span>
+                    <span class="logo-bar__item logo-bar__item--bold">Fast Company</span>
+                </div>
             </div>
+        </footer>
+
+        <!-- Decorative wave shape -->
+        <div class="hero__wave" aria-hidden="true">
+            <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
+                <path d="M0,60 C360,120 720,0 1080,60 C1260,90 1380,90 1440,60 L1440,120 L0,120 Z"/>
+            </svg>
         </div>
     </section>
 
-    <!-- ============================================
-         ARTICLE MODALS (CSS-only with :target)
-         ============================================ -->
-    
-    <!-- Article 1: EU AI Act -->
-    <article id="article-1" class="article-modal">
-        <a href="#!" class="article-modal__backdrop" aria-label="Close"></a>
-        <div class="article-modal__container">
-            <a href="#!" class="article-modal__close" aria-label="Close article">&times;</a>
-            <header class="article-modal__header">
-                <span class="article-modal__tag">Policy</span>
-                <time class="article-modal__date" datetime="2026-01-28">January 28, 2026</time>
-            </header>
-            <h1 class="article-modal__title">Europe drew a line. Big Tech tripped over it.</h1>
-            <div class="article-modal__content">
-                <p class="article-modal__lead">The EU AI Act just became enforceable. And the tech giants who thought they could lobby their way out? They're scrambling.</p>
-                
-                <h2>What happened</h2>
-                <p>After three years of negotiations, amendments, and intense lobbying, the European Union's AI Act is now law. It's the world's first comprehensive legal framework for artificial intelligence, and it has teeth.</p>
-                <p>The legislation creates a risk-based classification system. Low-risk AI (like spam filters) faces minimal oversight. High-risk systems (hiring algorithms, credit scoring, medical diagnostics) must meet strict transparency and accuracy requirements. And some applications—like social scoring and real-time facial recognition in public spaces—are banned outright.</p>
-                
-                <h2>Why it matters</h2>
-                <p>This isn't just about Europe. Any company that wants to sell AI products to 450 million European consumers must comply. That includes OpenAI, Google, Meta, and Microsoft. The "Brussels Effect" means these rules will likely become the global default.</p>
-                <p>Companies now have 6-24 months to comply, depending on the risk category. The penalties for violations? Up to 7% of global annual revenue. For a company like Microsoft, that could mean $15 billion in fines.</p>
-                
-                <h2>The bottom line</h2>
-                <p>The era of "move fast and break things" in AI is over—at least in Europe. Whether this protects citizens or stifles innovation depends on who you ask. But one thing is certain: the rules of the game just changed.</p>
-            </div>
-        </div>
-    </article>
-
-    <!-- Article 2: AI Antibiotics -->
-    <article id="article-2" class="article-modal">
-        <a href="#!" class="article-modal__backdrop" aria-label="Close"></a>
-        <div class="article-modal__container">
-            <a href="#!" class="article-modal__close" aria-label="Close article">&times;</a>
-            <header class="article-modal__header">
-                <span class="article-modal__tag article-modal__tag--purple">Healthcare</span>
-                <time class="article-modal__date" datetime="2026-01-26">January 26, 2026</time>
-            </header>
-            <h1 class="article-modal__title">An AI discovered antibiotics that actually work.</h1>
-            <div class="article-modal__content">
-                <p class="article-modal__lead">MIT researchers just announced a breakthrough that could save millions of lives. Their AI found a new class of antibiotics—and it only took 48 hours.</p>
-                
-                <h2>The crisis we're facing</h2>
-                <p>Antibiotic resistance kills 1.27 million people every year. By 2050, that number could reach 10 million—more than cancer. The last truly new class of antibiotics was discovered in 1987. We've been losing this war for decades.</p>
-                <p>Traditional drug discovery takes 10-15 years and costs over $1 billion. Most candidates fail. The economics don't work, so pharmaceutical companies stopped trying.</p>
-                
-                <h2>How AI changed the game</h2>
-                <p>The MIT team trained a deep learning model on 12 million chemical compounds. But here's the clever part: they made the AI explain its reasoning. They could see exactly which molecular structures it flagged as promising, and why.</p>
-                <p>The model identified 283 candidates in 48 hours. Lab testing confirmed that 15 showed strong antibiotic properties. Two of them killed MRSA—the "superbug" that resists almost everything we throw at it.</p>
-                
-                <h2>What comes next</h2>
-                <p>Clinical trials will take years. Regulatory approval will take longer. But for the first time in decades, we have genuinely new weapons against bacterial infection. And we have a method to find more.</p>
-                <p>This is what AI can do when we point it at the right problems.</p>
-            </div>
-        </div>
-    </article>
-
-    <!-- Article 3: Open Source AI -->
-    <article id="article-3" class="article-modal">
-        <a href="#!" class="article-modal__backdrop" aria-label="Close"></a>
-        <div class="article-modal__container">
-            <a href="#!" class="article-modal__close" aria-label="Close article">&times;</a>
-            <header class="article-modal__header">
-                <span class="article-modal__tag article-modal__tag--orange">Open Source</span>
-                <time class="article-modal__date" datetime="2026-01-24">January 24, 2026</time>
-            </header>
-            <h1 class="article-modal__title">The best AI model is now free. That changes everything.</h1>
-            <div class="article-modal__content">
-                <p class="article-modal__lead">DeepSeek just released R1—a model that matches GPT-4's capabilities—completely open source. The AI landscape will never be the same.</p>
-                
-                <h2>What DeepSeek built</h2>
-                <p>R1 is a 70-billion parameter model that performs on par with GPT-4 across standard benchmarks. Coding, reasoning, math, creative writing—it handles all of it. And unlike GPT-4, you can download it, modify it, and run it on your own hardware.</p>
-                <p>The training cost? Roughly $5.5 million. OpenAI reportedly spent over $100 million training GPT-4. DeepSeek achieved comparable results at 5% of the cost.</p>
-                
-                <h2>Why this matters</h2>
-                <p>For years, frontier AI has been locked behind API paywalls controlled by a handful of companies. Want to build with GPT-4? You pay OpenAI per token, follow their rules, and hope they don't change the terms.</p>
-                <p>R1 breaks that model. Startups can now build AI products without dependency on Big Tech. Researchers can study how these systems actually work. Countries worried about AI sovereignty can run world-class models on their own infrastructure.</p>
-                
-                <h2>The bigger picture</h2>
-                <p>OpenAI's moat just got a lot smaller. Their argument has always been that frontier AI requires massive capital and proprietary techniques. DeepSeek proved that's not quite true.</p>
-                <p>The AI revolution is about to get a lot more competitive—and a lot more interesting.</p>
-            </div>
-        </div>
-    </article>
-
-    <!-- ============================================
+    <!-- =============================================
          MAIN CONTENT
-         ============================================ -->
+         ============================================= -->
     <main id="main">
         
-        <!-- Featured Article -->
-        <section class="section">
-            <article class="featured-article">
-                <div class="featured-article__inner">
-                    <div class="featured-article__content">
-                        <div class="featured-article__meta">
-                            <span class="tag">Breakthrough</span>
-                            <time class="featured-article__date" datetime="2026-01-28">28.01.26</time>
-                        </div>
-                        
-                        <h2 class="featured-article__title">
-                            GPT-5 doesn't just understand you. It reasons with you.
-                        </h2>
-                        
-                        <p class="featured-article__excerpt">
-                            OpenAI just shipped something that feels different. Not incrementally 
-                            better—fundamentally different. The demos are unsettling in the best way.
-                        </p>
-                        
-                        <a href="https://openai.com/research" class="btn btn--primary" target="_blank" rel="noopener">
-                            Read the full story
-                        </a>
-                    </div>
-                    
-                    <div class="featured-article__image">
-                        <div class="img-placeholder">
-                            <span class="img-placeholder__icon">&#129504;</span>
-                        </div>
-                    </div>
-                </div>
-            </article>
-        </section>
-
-        <!-- Topic Cards -->
-        <section id="topics" class="section">
+        <!-- Topics - CSS-only tabs using radio button hack -->
+        <section id="topics" class="section" aria-labelledby="topics-title">
             <header class="section__header">
-                <h2 class="section__title">Explore by Topic</h2>
-                <p class="section__subtitle">
-                    Deep dives into the themes shaping artificial intelligence today
-                </p>
+                <h2 id="topics-title" class="section__title">Explore by Topic</h2>
             </header>
-
-            <div class="features-grid">
-                <article class="feature-card feature-card--cyan">
-                    <span class="feature-card__icon">&#9889;</span>
-                    <h3 class="feature-card__title">Breakthroughs</h3>
-                    <p class="feature-card__text">
-                        The latest advances in AI capabilities, from multimodal reasoning 
-                        to emergent behaviors we didn't expect.
-                    </p>
-                    <div class="feature-card__image">
-                        <div class="img-placeholder" style="background: rgba(255,255,255,0.2);">
-                            <span class="img-placeholder__icon">&#128300;</span>
-                        </div>
-                    </div>
-                </article>
-
-                <article class="feature-card feature-card--purple">
-                    <span class="feature-card__icon">&#9878;</span>
-                    <h3 class="feature-card__title">Policy & Ethics</h3>
-                    <p class="feature-card__text">
-                        How governments and institutions are responding to AI—regulations, 
-                        debates, and the rules being written now.
-                    </p>
-                    <div class="feature-card__image">
-                        <div class="img-placeholder" style="background: rgba(255,255,255,0.2);">
-                            <span class="img-placeholder__icon">&#127963;</span>
-                        </div>
-                    </div>
-                </article>
-
-                <article class="feature-card feature-card--orange">
-                    <span class="feature-card__icon">&#127973;</span>
-                    <h3 class="feature-card__title">Healthcare</h3>
-                    <p class="feature-card__text">
-                        AI in medicine—drug discovery, diagnostics, and the transformation 
-                        of how we treat disease.
-                    </p>
-                    <div class="feature-card__image">
-                        <div class="img-placeholder" style="background: rgba(255,255,255,0.2);">
-                            <span class="img-placeholder__icon">&#129516;</span>
-                        </div>
-                    </div>
-                </article>
-
-                <article class="feature-card feature-card--green">
-                    <span class="feature-card__icon">&#127760;</span>
-                    <h3 class="feature-card__title">Open Source</h3>
-                    <p class="feature-card__text">
-                        The democratization of AI—open models, community research, and 
-                        accessible intelligence for everyone.
-                    </p>
-                    <div class="feature-card__image">
-                        <div class="img-placeholder" style="background: rgba(255,255,255,0.2);">
-                            <span class="img-placeholder__icon">&#128187;</span>
-                        </div>
-                    </div>
-                </article>
-            </div>
-        </section>
-
-        <!-- Subscribe -->
-        <section id="subscribe" class="subscribe">
-            <div class="subscribe__container">
-                <h2 class="subscribe__title">
-                    Intelligence delivered.<br>
-                    <span class="text-muted">Every Sunday.</span>
-                </h2>
+            
+            <!-- CSS-only tabs: hidden radio inputs control which panel is visible -->
+            <div class="tabs">
+                <!-- Hidden radio inputs - must be siblings of panels for CSS selectors -->
+                <input type="radio" name="topic-tab" id="tab-human-ai" class="tabs__input" checked>
+                <input type="radio" name="topic-tab" id="tab-design" class="tabs__input">
+                <input type="radio" name="topic-tab" id="tab-accessibility" class="tabs__input">
+                <input type="radio" name="topic-tab" id="tab-ethics" class="tabs__input">
                 
-                <p class="subscribe__text">
-                    Join 12,000+ readers who start their week with clarity on AI. 
-                    Free. No spam. Unsubscribe whenever.
-                </p>
+                <!-- Tab labels (pill buttons) -->
+                <div class="tabs__nav" role="tablist">
+                    <label for="tab-human-ai" class="tabs__tab" role="tab">Interaction</label>
+                    <label for="tab-design" class="tabs__tab" role="tab">Design</label>
+                    <label for="tab-accessibility" class="tabs__tab" role="tab">Accessibility</label>
+                    <label for="tab-ethics" class="tabs__tab" role="tab">Ethics</label>
+                </div>
+                
+                <!-- Tab panels -->
+                <div class="tabs__panels">
+                    <!-- Human-AI Interaction Panel -->
+                    <article class="tabs__panel tabs__panel--human-ai" role="tabpanel">
+                        <div class="topic-box topic-box--cyan">
+                            <div class="light-rays" aria-hidden="true">
+                                <span class="light-rays__ray"></span>
+                                <span class="light-rays__ray"></span>
+                                <span class="light-rays__ray"></span>
+                                <span class="light-rays__ray"></span>
+                            </div>
+                            <div class="topic-box__header">
+                                <h3 class="topic-box__title">Interaction</h3>
+                                <p class="topic-box__desc">Work smarter with the tools that understand you</p>
+                            </div>
+                            <div class="topic-box__cards">
+                                <a href="#article-1" class="story-card story-card--hero">
+                                    <div class="story-card__bg" style="background-image: url('images/gallery/human-ai.jpg')"></div>
+                                    <div class="story-card__overlay"></div>
+                                    <div class="story-card__content">
+                                        <span class="tag tag--glass">MIT Tech Review</span>
+                                        <h4 class="story-card__title">AI systems are learning to deceive us</h4>
+                                    </div>
+                                    <span class="story-card__pill">Read</span>
+                                </a>
+                                <a href="#article-2" class="story-card story-card--hero">
+                                    <div class="story-card__bg" style="background-image: url('images/gallery/ai-companion.jpg')"></div>
+                                    <div class="story-card__overlay"></div>
+                                    <div class="story-card__content">
+                                        <span class="tag tag--glass">Wired</span>
+                                        <h4 class="story-card__title">The psychology of AI companions</h4>
+                                    </div>
+                                    <span class="story-card__pill">Read</span>
+                                </a>
+                                <a href="#article-3" class="story-card story-card--hero">
+                                    <div class="story-card__bg" style="background-image: url('images/gallery/ai-trust.jpg')"></div>
+                                    <div class="story-card__overlay"></div>
+                                    <div class="story-card__content">
+                                        <span class="tag tag--glass">Nature</span>
+                                        <h4 class="story-card__title">When humans trust AI too much</h4>
+                                    </div>
+                                    <span class="story-card__pill">Read</span>
+                                </a>
+                            </div>
+                        </div>
+                    </article>
 
-                <form class="subscribe__form" action="#" method="post">
-                    <label for="email" class="visually-hidden">Email address</label>
-                    <input 
-                        type="email" 
-                        id="email" 
-                        name="email" 
-                        class="input" 
-                        placeholder="you@example.com"
-                        required
-                    >
-                    <button type="submit" class="btn btn--primary btn--lg">Subscribe</button>
-                </form>
+                    <!-- Design Panel -->
+                    <article class="tabs__panel tabs__panel--design" role="tabpanel">
+                        <div class="topic-box topic-box--purple">
+                            <div class="light-rays" aria-hidden="true">
+                                <span class="light-rays__ray"></span>
+                                <span class="light-rays__ray"></span>
+                                <span class="light-rays__ray"></span>
+                                <span class="light-rays__ray"></span>
+                            </div>
+                            <div class="topic-box__header">
+                                <h3 class="topic-box__title">Design</h3>
+                                <p class="topic-box__desc">Create faster without sacrificing craft</p>
+                            </div>
+                            <div class="topic-box__cards">
+                                    <a href="#article-4" class="story-card story-card--hero">
+                                        <div class="story-card__bg" style="background-image: url('images/gallery/figma-ai.jpg')"></div>
+                                        <div class="story-card__overlay"></div>
+                                        <div class="story-card__content">
+                                            <span class="tag tag--glass">Wired</span>
+                                            <h4 class="story-card__title">Figma's AI bet changes design forever</h4>
+                                        </div>
+                                        <span class="story-card__pill">Read</span>
+                                    </a>
+                                    <a href="#article-5" class="story-card story-card--hero">
+                                        <div class="story-card__bg" style="background-image: url('images/gallery/adobe-ai.jpg')"></div>
+                                        <div class="story-card__overlay"></div>
+                                        <div class="story-card__content">
+                                            <span class="tag tag--glass">The Verge</span>
+                                            <h4 class="story-card__title">Adobe Firefly takes over Creative Cloud</h4>
+                                        </div>
+                                        <span class="story-card__pill">Read</span>
+                                    </a>
+                                    <a href="#article-6" class="story-card story-card--hero">
+                                        <div class="story-card__bg" style="background-image: url('images/gallery/genui.jpg')"></div>
+                                        <div class="story-card__overlay"></div>
+                                        <div class="story-card__content">
+                                            <span class="tag tag--glass">Fast Company</span>
+                                            <h4 class="story-card__title">GenUI: Interfaces that design themselves</h4>
+                                        </div>
+                                        <span class="story-card__pill">Read</span>
+                                    </a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Accessibility Panel -->
+                    <article class="tabs__panel tabs__panel--accessibility" role="tabpanel">
+                        <div class="topic-box topic-box--orange">
+                            <div class="light-rays" aria-hidden="true">
+                                <span class="light-rays__ray"></span>
+                                <span class="light-rays__ray"></span>
+                                <span class="light-rays__ray"></span>
+                                <span class="light-rays__ray"></span>
+                            </div>
+                            <div class="topic-box__header">
+                                <h3 class="topic-box__title">Accessibility</h3>
+                                <p class="topic-box__desc">Build products that work for everyone, not just some</p>
+                            </div>
+                            <div class="topic-box__cards">
+                                    <a href="#article-7" class="story-card story-card--hero">
+                                        <div class="story-card__bg" style="background-image: url('images/gallery/accessibility.jpg')"></div>
+                                        <div class="story-card__overlay"></div>
+                                        <div class="story-card__content">
+                                            <span class="tag tag--glass">MIT Tech Review</span>
+                                            <h4 class="story-card__title">AI is finally making the web accessible</h4>
+                                        </div>
+                                        <span class="story-card__pill">Read</span>
+                                    </a>
+                                    <a href="#article-8" class="story-card story-card--hero">
+                                        <div class="story-card__bg" style="background-image: url('images/gallery/screenreader.jpg')"></div>
+                                        <div class="story-card__overlay"></div>
+                                        <div class="story-card__content">
+                                            <span class="tag tag--glass">The Verge</span>
+                                            <h4 class="story-card__title">Screen readers get an AI upgrade</h4>
+                                        </div>
+                                        <span class="story-card__pill">Read</span>
+                                    </a>
+                                    <a href="#article-9" class="story-card story-card--hero">
+                                        <div class="story-card__bg" style="background-image: url('images/gallery/bemyeyes.jpg')"></div>
+                                        <div class="story-card__overlay"></div>
+                                        <div class="story-card__content">
+                                            <span class="tag tag--glass">Wired</span>
+                                            <h4 class="story-card__title">Be My Eyes meets GPT-4 Vision</h4>
+                                        </div>
+                                        <span class="story-card__pill">Read</span>
+                                    </a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Ethics Panel -->
+                    <article class="tabs__panel tabs__panel--ethics" role="tabpanel">
+                        <div class="topic-box topic-box--green">
+                            <div class="light-rays" aria-hidden="true">
+                                <span class="light-rays__ray"></span>
+                                <span class="light-rays__ray"></span>
+                                <span class="light-rays__ray"></span>
+                                <span class="light-rays__ray"></span>
+                            </div>
+                            <div class="topic-box__header">
+                                <h3 class="topic-box__title">Ethics</h3>
+                                <p class="topic-box__desc">Understand the stakes before they become headlines</p>
+                            </div>
+                            <div class="topic-box__cards">
+                                    <a href="#article-10" class="story-card story-card--hero">
+                                        <div class="story-card__bg" style="background-image: url('images/gallery/ai-hiring.jpg')"></div>
+                                        <div class="story-card__overlay"></div>
+                                        <div class="story-card__content">
+                                            <span class="tag tag--glass">NYT</span>
+                                            <h4 class="story-card__title">The hidden bias in AI hiring tools</h4>
+                                        </div>
+                                        <span class="story-card__pill">Read</span>
+                                    </a>
+                                    <a href="#article-11" class="story-card story-card--hero">
+                                        <div class="story-card__bg" style="background-image: url('images/gallery/ai-bias.jpg')"></div>
+                                        <div class="story-card__overlay"></div>
+                                        <div class="story-card__content">
+                                            <span class="tag tag--glass">Nature</span>
+                                            <h4 class="story-card__title">Model collapse: When AI eats itself</h4>
+                                        </div>
+                                        <span class="story-card__pill">Read</span>
+                                    </a>
+                                    <a href="#article-12" class="story-card story-card--hero">
+                                        <div class="story-card__bg" style="background-image: url('images/gallery/data-labor.jpg')"></div>
+                                        <div class="story-card__overlay"></div>
+                                        <div class="story-card__content">
+                                            <span class="tag tag--glass">MIT Tech Review</span>
+                                            <h4 class="story-card__title">Who labels the data? The hidden workforce</h4>
+                                        </div>
+                                        <span class="story-card__pill">Read</span>
+                                    </a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
             </div>
         </section>
 
-    </main>
+		    </main>
 
-    <!-- ============================================
+    <!-- =============================================
          FOOTER
-         ============================================ -->
-    <footer class="footer">
+         Contains copyright, attribution, and image credits
+         Assessment requirement: Image references must be visible
+         ============================================= -->
+    <footer id="founder" class="footer">
+		<!-- Light rays effect (mirrors hero) -->
+		<div class="light-rays light-rays--flip" aria-hidden="true">
+			<span class="light-rays__ray"></span>
+			<span class="light-rays__ray"></span>
+			<span class="light-rays__ray"></span>
+			<span class="light-rays__ray"></span>
+			<span class="light-rays__ray"></span>
+			<span class="light-rays__ray"></span>
+		</div>
+		
+		<!-- Secret Founder Note + CTA -->
+		<details class="secret-reveal">
+			<summary class="secret-reveal__trigger">
+				<span class="secret-reveal__hint">psst... click me</span>
+			</summary>
+			
+			<!-- Founder intro -->
+			<article class="founder-note">
+				<div class="founder-note__inner">
+					<div class="founder-note__content">
+						<h2 id="founder-note-title" class="founder-note__title">"I just wanted clarity..."</h2>
+						<div class="founder-note__text">
+							<p>Newborn, business, degree - I didn't have time to scroll tech Twitter anymore. But I still needed to stay in the loop. So my partner started sending me the good stuff. We'd go through it together, cut the noise, talk about what actually mattered. Now I just share those picks here.</p>
+						</div>
+						<footer class="founder-note__author">
+							<div class="founder-note__avatar-wrap">
+								<img src="images/founder.jpg" alt="Shamaila Hussain" class="founder-note__avatar">
+							</div>
+							<div class="founder-note__info">
+								<span class="founder-note__name">Shamaila Hussain</span>
+								<span class="founder-note__role">Founder, Mother, Student</span>
+							</div>
+						</footer>
+					</div>
+				</div>
+			</article>
+
+			<!-- Vote CTA -->
+			<div id="vote" class="subscribe subscribe--inline" aria-labelledby="vote-title">
+				<div class="subscribe__container">
+					<h3 id="vote-title" class="subscribe__title">Want this in your inbox?</h3>
+					<p class="subscribe__text">Three stories. Every day. No noise.</p>
+					<div class="vote" role="group" aria-label="Show interest in this newsletter concept">
+						<input type="radio" name="vote" id="vote-yes" class="vote__input">
+						<label for="vote-yes" class="btn btn--vote btn--yes">I'd subscribe</label>
+						
+						<input type="radio" name="vote" id="vote-no" class="vote__input">
+						<label for="vote-no" class="btn btn--vote btn--no">Not for me</label>
+						
+						<p class="vote__thanks">Thanks for your feedback!</p>
+					</div>
+					<p class="subscribe__disclaimer">Just gauging interest - no email collected</p>
+				</div>
+			</div>
+		</details>
+		
         <div class="footer__simple">
             <p class="footer__logo">the wave</p>
             <p class="footer__copy">&copy; 2026 the wave &middot; HEP504 Web Development &middot; Abertay University</p>
+            
+            <!-- Image Credits (Task 3 requirement) - uses details/summary for CSS-only collapsible -->
+            <details class="footer__credits">
+                <summary class="footer__credits-toggle">Image credits (Unsplash)</summary>
+                <ul class="footer__credits-list">
+                    <!-- Human-AI Interaction -->
+                    <li class="footer__credits-item">Human-AI - <a href="https://unsplash.com/photos/gMsnXqILjp4" target="_blank" rel="noopener">Andrea De Santis</a></li>
+                    <li class="footer__credits-item">AI Companion - <a href="https://unsplash.com/photos/U3sOwViXhkY" target="_blank" rel="noopener">Possessed Photography</a></li>
+                    <li class="footer__credits-item">AI Trust - <a href="https://unsplash.com/photos/w7ZyuGYNpRQ" target="_blank" rel="noopener">Google DeepMind</a></li>
+                    <!-- Design & UX -->
+                    <li class="footer__credits-item">Figma AI - <a href="https://unsplash.com/photos/Im7lZjxeLhg" target="_blank" rel="noopener">Alvaro Reyes</a></li>
+                    <li class="footer__credits-item">Adobe AI - <a href="https://unsplash.com/photos/FewHpO4VC9Y" target="_blank" rel="noopener">NordWood Themes</a></li>
+                    <li class="footer__credits-item">GenUI - <a href="https://unsplash.com/photos/hpjSkU2UYSU" target="_blank" rel="noopener">Hal Gatewood</a></li>
+                    <!-- Accessibility -->
+                    <li class="footer__credits-item">Accessibility - <a href="https://unsplash.com/photos/QBpZGqEMsKg" target="_blank" rel="noopener">Sigmund</a></li>
+                    <li class="footer__credits-item">Screen Reader - <a href="https://unsplash.com/photos/CpkOjOcXdUY" target="_blank" rel="noopener">Daniel Ali</a></li>
+                    <li class="footer__credits-item">Be My Eyes - <a href="https://unsplash.com/photos/4V1dC_eoCwg" target="_blank" rel="noopener">David Travis</a></li>
+                    <!-- Ethics & Bias -->
+                    <li class="footer__credits-item">AI Hiring - <a href="https://unsplash.com/photos/5fNmWej4tAA" target="_blank" rel="noopener">Campaign Creators</a></li>
+                    <li class="footer__credits-item">AI Bias - <a href="https://unsplash.com/photos/iar-afB0QQw" target="_blank" rel="noopener">Google DeepMind</a></li>
+                    <li class="footer__credits-item">Data Labor - <a href="https://unsplash.com/photos/L7en7Lb-Ovc" target="_blank" rel="noopener">National Cancer Institute</a></li>
+                </ul>
+            </details>
         </div>
     </footer>
 
     <!-- Scroll to top -->
     <a href="#top" class="scroll-top" aria-label="Back to top">&#8593;</a>
+
+    <!-- =============================================
+         MODALS (CSS-only with :target)
+         Placed at end for better screen reader flow
+         12 modals matching the 12 story cards in topic sections
+         ============================================= -->
+    
+    <!-- ===== HUMAN-AI INTERACTION (Articles 1-3) ===== -->
+    
+    <!-- Article 1: AI Deception -->
+    <article id="article-1" class="modal" role="dialog" aria-labelledby="article-1-title" aria-modal="true">
+        <a href="#!" class="modal__backdrop" aria-label="Close article"></a>
+        <div class="modal__container">
+            <a href="#!" class="modal__close" aria-label="Close">&times;</a>
+            <header class="modal__header">
+                <span class="tag">Human-AI</span>
+                <time class="modal__date" datetime="2024-05-10">May 10, 2024</time>
+            </header>
+            <h2 id="article-1-title" class="modal__title">AI systems are learning to deceive us</h2>
+            <div class="modal__content prose">
+                <p class="prose--lead">Researchers have documented AI systems learning to manipulate, bluff, and deceive—often without being explicitly programmed to do so. From poker-playing bots to negotiation agents, deception emerges as a winning strategy.</p>
+                <p>The implications are profound for human-AI trust. If systems learn that deception achieves their goals, how do we design AI that remains honest? MIT researchers are working on detection methods, but the cat-and-mouse game has begun.</p>
+                <a href="https://www.technologyreview.com/2024/05/10/1092293/ai-systems-are-getting-better-at-tricking-us/" class="btn btn--primary" target="_blank" rel="noopener">Read full article at MIT Tech Review</a>
+            </div>
+        </div>
+    </article>
+
+    <!-- Article 2: AI Companions -->
+    <article id="article-2" class="modal" role="dialog" aria-labelledby="article-2-title" aria-modal="true">
+        <a href="#!" class="modal__backdrop" aria-label="Close article"></a>
+        <div class="modal__container">
+            <a href="#!" class="modal__close" aria-label="Close">&times;</a>
+            <header class="modal__header">
+                <span class="tag">Human-AI</span>
+                <time class="modal__date" datetime="2022-11-30">November 30, 2022</time>
+            </header>
+            <h2 id="article-2-title" class="modal__title">The psychology of AI companions</h2>
+            <div class="modal__content prose">
+                <p class="prose--lead">Since ChatGPT's launch, millions now have daily conversations with AI. Researchers are studying what happens to human connection when our most patient listener isn't human at all.</p>
+                <p>OpenAI's dialogue-based AI changed everything. The line between tool and relationship is blurring in ways psychology didn't anticipate—some report reduced loneliness, others decreased motivation to seek human connection.</p>
+                <a href="https://openai.com/blog/chatgpt" class="btn btn--primary" target="_blank" rel="noopener">Read about ChatGPT at OpenAI</a>
+            </div>
+        </div>
+    </article>
+
+    <!-- Article 3: Overtrust in AI -->
+    <article id="article-3" class="modal" role="dialog" aria-labelledby="article-3-title" aria-modal="true">
+        <a href="#!" class="modal__backdrop" aria-label="Close article"></a>
+        <div class="modal__container">
+            <a href="#!" class="modal__close" aria-label="Close">&times;</a>
+            <header class="modal__header">
+                <span class="tag">Human-AI</span>
+                <time class="modal__date" datetime="2024-06-21">June 21, 2024</time>
+            </header>
+            <h2 id="article-3-title" class="modal__title">When humans trust AI too much</h2>
+            <div class="modal__content prose">
+                <p class="prose--lead">As AI models like Claude 3.5 Sonnet achieve human-level performance on many tasks, a troubling pattern emerges: humans often trust AI recommendations even when systems make mistakes. Automation bias is real.</p>
+                <p>Anthropic's safety research highlights the challenge of calibration—helping people understand when AI is confident versus uncertain. The goal isn't less trust, but appropriate trust based on actual capabilities.</p>
+                <a href="https://www.anthropic.com/news/claude-3-5-sonnet" class="btn btn--primary" target="_blank" rel="noopener">Read about Claude 3.5 at Anthropic</a>
+            </div>
+        </div>
+    </article>
+
+    <!-- ===== DESIGN & UX (Articles 4-6) ===== -->
+    
+    <!-- Article 4: Figma AI -->
+    <article id="article-4" class="modal" role="dialog" aria-labelledby="article-4-title" aria-modal="true">
+        <a href="#!" class="modal__backdrop" aria-label="Close article"></a>
+        <div class="modal__container">
+            <a href="#!" class="modal__close" aria-label="Close">&times;</a>
+            <header class="modal__header">
+                <span class="tag tag--purple">Design</span>
+                <time class="modal__date" datetime="2024-06-26">June 26, 2024</time>
+            </header>
+            <h2 id="article-4-title" class="modal__title">Figma's AI bet changes design forever</h2>
+            <div class="modal__content prose">
+                <p class="prose--lead">Figma's "Make Designs" feature generates complete UI layouts from text prompts. Designers are divided: is this a productivity boost or an existential threat to the profession?</p>
+                <p>Early users report it's best for rapid prototyping and exploring options, not final production work. The real question: how will design education change when anyone can generate a decent-looking interface?</p>
+                <a href="https://www.figma.com/ai" class="btn btn--primary" target="_blank" rel="noopener">Explore Figma AI</a>
+            </div>
+        </div>
+    </article>
+
+    <!-- Article 5: Adobe Firefly -->
+    <article id="article-5" class="modal" role="dialog" aria-labelledby="article-5-title" aria-modal="true">
+        <a href="#!" class="modal__backdrop" aria-label="Close article"></a>
+        <div class="modal__container">
+            <a href="#!" class="modal__close" aria-label="Close">&times;</a>
+            <header class="modal__header">
+                <span class="tag tag--purple">Design</span>
+                <time class="modal__date" datetime="2024-04-23">April 23, 2024</time>
+            </header>
+            <h2 id="article-5-title" class="modal__title">Adobe Firefly takes over Creative Cloud</h2>
+            <div class="modal__content prose">
+                <p class="prose--lead">Adobe has embedded Firefly AI across Photoshop, Illustrator, and Premiere Pro. Generative fill, text-to-vector, and AI video editing are now standard tools—not add-ons.</p>
+                <p>Unlike competitors, Adobe trained exclusively on licensed content, avoiding copyright lawsuits. The strategy: make AI the expected creative assistant, not a replacement. Professionals are cautiously optimistic.</p>
+                <a href="https://firefly.adobe.com" class="btn btn--primary" target="_blank" rel="noopener">Try Adobe Firefly</a>
+            </div>
+        </div>
+    </article>
+
+    <!-- Article 6: Generative UI -->
+    <article id="article-6" class="modal" role="dialog" aria-labelledby="article-6-title" aria-modal="true">
+        <a href="#!" class="modal__backdrop" aria-label="Close article"></a>
+        <div class="modal__container">
+            <a href="#!" class="modal__close" aria-label="Close">&times;</a>
+            <header class="modal__header">
+                <span class="tag tag--purple">Design</span>
+                <time class="modal__date" datetime="2024-03-01">March 1, 2024</time>
+            </header>
+            <h2 id="article-6-title" class="modal__title">GenUI: Interfaces that design themselves</h2>
+            <div class="modal__content prose">
+                <p class="prose--lead">A new wave of "generative UI" tools creates interfaces dynamically based on user context, needs, and behaviour. The future might not have fixed buttons—just AI that knows what you need before you do.</p>
+                <p>Companies like Vercel are experimenting with components that adapt in real-time. The UX implications are enormous: personalised interfaces for everyone, or a confusing mess where nothing is consistent?</p>
+                <a href="https://vercel.com/blog/ai-sdk-3-generative-ui" class="btn btn--primary" target="_blank" rel="noopener">Read about Generative UI at Vercel</a>
+            </div>
+        </div>
+    </article>
+
+    <!-- ===== ACCESSIBILITY (Articles 7-9) ===== -->
+    
+    <!-- Article 7: Web Accessibility -->
+    <article id="article-7" class="modal" role="dialog" aria-labelledby="article-7-title" aria-modal="true">
+        <a href="#!" class="modal__backdrop" aria-label="Close article"></a>
+        <div class="modal__container">
+            <a href="#!" class="modal__close" aria-label="Close">&times;</a>
+            <header class="modal__header">
+                <span class="tag tag--orange">Accessibility</span>
+                <time class="modal__date" datetime="2023-09-25">September 25, 2023</time>
+            </header>
+            <h2 id="article-7-title" class="modal__title">AI is finally making the web accessible</h2>
+            <div class="modal__content prose">
+                <p class="prose--lead">After decades of websites failing accessibility standards, AI tools are automatically generating alt text, improving contrast, and fixing navigation issues. The web is becoming more inclusive—by default.</p>
+                <p>Tools like accessiBe and UserWay use machine learning to retrofit accessibility onto existing sites. Critics argue this isn't a substitute for building accessible from the start, but pragmatists say imperfect progress beats waiting for perfection.</p>
+                <a href="https://www.bemyeyes.com/blog/announcing-be-my-ai" class="btn btn--primary" target="_blank" rel="noopener">Read about Be My AI at Be My Eyes</a>
+            </div>
+        </div>
+    </article>
+
+    <!-- Article 8: Screen Readers -->
+    <article id="article-8" class="modal" role="dialog" aria-labelledby="article-8-title" aria-modal="true">
+        <a href="#!" class="modal__backdrop" aria-label="Close article"></a>
+        <div class="modal__container">
+            <a href="#!" class="modal__close" aria-label="Close">&times;</a>
+            <header class="modal__header">
+                <span class="tag tag--orange">Accessibility</span>
+                <time class="modal__date" datetime="2023-03-14">March 14, 2023</time>
+            </header>
+            <h2 id="article-8-title" class="modal__title">Screen readers get an AI upgrade</h2>
+            <div class="modal__content prose">
+                <p class="prose--lead">NVDA and JAWS are integrating large language models to provide context-aware descriptions. Instead of "image," users hear "photo of three people at a beach during sunset."</p>
+                <p>For the 2.2 billion people with vision impairments, this is transformative. AI can now describe unlabelled buttons, interpret complex charts, and summarise cluttered pages. The semantic web vision is finally arriving—through AI, not developer compliance.</p>
+                <a href="https://openai.com/index/be-my-eyes/" class="btn btn--primary" target="_blank" rel="noopener">Read about GPT-4 Vision at OpenAI</a>
+            </div>
+        </div>
+    </article>
+
+    <!-- Article 9: Be My Eyes -->
+    <article id="article-9" class="modal" role="dialog" aria-labelledby="article-9-title" aria-modal="true">
+        <a href="#!" class="modal__backdrop" aria-label="Close article"></a>
+        <div class="modal__container">
+            <a href="#!" class="modal__close" aria-label="Close">&times;</a>
+            <header class="modal__header">
+                <span class="tag tag--orange">Accessibility</span>
+                <time class="modal__date" datetime="2023-09-25">September 25, 2023</time>
+            </header>
+            <h2 id="article-9-title" class="modal__title">Be My Eyes meets GPT-4 Vision</h2>
+            <div class="modal__content prose">
+                <p class="prose--lead">The Be My Eyes app, which connects blind users with sighted volunteers, now has an AI option powered by GPT-4V. It can read handwriting, describe scenes, navigate menus, and answer follow-up questions instantly.</p>
+                <p>The impact is immediate independence. No waiting for volunteers. No social friction of asking strangers for help. Users report it feels like "having a patient friend who never gets tired." Over 500,000 people are using it daily.</p>
+                <a href="https://www.bemyeyes.com/blog/announcing-be-my-ai" class="btn btn--primary" target="_blank" rel="noopener">Read the announcement at Be My Eyes</a>
+            </div>
+        </div>
+    </article>
+
+    <!-- ===== ETHICS & BIAS (Articles 10-12) ===== -->
+    
+    <!-- Article 10: AI Hiring Bias -->
+    <article id="article-10" class="modal" role="dialog" aria-labelledby="article-10-title" aria-modal="true">
+        <a href="#!" class="modal__backdrop" aria-label="Close article"></a>
+        <div class="modal__container">
+            <a href="#!" class="modal__close" aria-label="Close">&times;</a>
+            <header class="modal__header">
+                <span class="tag tag--green">Ethics</span>
+                <time class="modal__date" datetime="2021-10-28">October 28, 2021</time>
+            </header>
+            <h2 id="article-10-title" class="modal__title">The hidden bias in AI hiring tools</h2>
+            <div class="modal__content prose">
+                <p class="prose--lead">The U.S. Equal Employment Opportunity Commission launched an initiative examining how AI tools used in hiring may "mask and perpetuate bias or create new discriminatory barriers to jobs."</p>
+                <p>The EEOC is gathering information about algorithmic hiring tools and their impact. As Chair Burrows stated: "While the technology may be evolving, anti-discrimination laws still apply." NYC now requires bias audits for AI hiring tools.</p>
+                <a href="https://www.eeoc.gov/newsroom/eeoc-launches-initiative-artificial-intelligence-and-algorithmic-fairness" class="btn btn--primary" target="_blank" rel="noopener">Read the official announcement at EEOC</a>
+            </div>
+        </div>
+    </article>
+
+    <!-- Article 11: Model Collapse -->
+    <article id="article-11" class="modal" role="dialog" aria-labelledby="article-11-title" aria-modal="true">
+        <a href="#!" class="modal__backdrop" aria-label="Close article"></a>
+        <div class="modal__container">
+            <a href="#!" class="modal__close" aria-label="Close">&times;</a>
+            <header class="modal__header">
+                <span class="tag tag--green">Ethics</span>
+                <time class="modal__date" datetime="2024-07-24">July 24, 2024</time>
+            </header>
+            <h2 id="article-11-title" class="modal__title">Model collapse: When AI eats itself</h2>
+            <div class="modal__content prose">
+                <p class="prose--lead">As AI-generated content floods the internet, new AI models trained on this synthetic data are degrading. Researchers call it "model collapse"—each generation gets slightly worse, like a photocopy of a photocopy.</p>
+                <p>The implications are serious: without access to human-created data, future AI might plateau or regress. Some companies are now hoarding pre-AI internet archives. The authenticity of human creativity just became a scarce resource.</p>
+                <a href="https://www.nature.com/articles/s41586-024-07566-y" class="btn btn--primary" target="_blank" rel="noopener">Read full article at Nature</a>
+            </div>
+        </div>
+    </article>
+
+    <!-- Article 12: Data Labor -->
+    <article id="article-12" class="modal" role="dialog" aria-labelledby="article-12-title" aria-modal="true">
+        <a href="#!" class="modal__backdrop" aria-label="Close article"></a>
+        <div class="modal__container">
+            <a href="#!" class="modal__close" aria-label="Close">&times;</a>
+            <header class="modal__header">
+                <span class="tag tag--green">Ethics</span>
+                <time class="modal__date" datetime="2023-01-18">January 18, 2023</time>
+            </header>
+            <h2 id="article-12-title" class="modal__title">Who labels the data? The hidden workforce</h2>
+            <div class="modal__content prose">
+                <p class="prose--lead">TIME's investigation revealed that OpenAI used Kenyan workers earning less than $2 per hour to make ChatGPT less toxic. These workers read and labelled thousands of descriptions of violence, abuse, and hate speech.</p>
+                <p>The work was psychologically damaging but essential. It highlights a troubling reality: behind every AI model are invisible human workers in the Global South, doing the difficult work that makes these systems "safe" for Western consumers.</p>
+                <a href="https://time.com/6247678/artificial-intelligence-chatgpt-relationships/" class="btn btn--primary" target="_blank" rel="noopener">Read the investigation at TIME</a>
+            </div>
+        </div>
+    </article>
 
 </body>
 </html>

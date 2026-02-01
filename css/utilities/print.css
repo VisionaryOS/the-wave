@@ -1,0 +1,42 @@
+/* ===========================================
+   PRINT STYLES
+   Optimized for printing
+   =========================================== */
+
+@media print {
+	.site-header,
+	.hero__decoration,
+	.scroll-top,
+	.subscribe {
+		display: none;
+	}
+
+	.hero {
+		min-height: auto;
+		background: var(--color-white);
+		color: var(--color-text);
+	}
+
+	.hero__title {
+		color: var(--color-text);
+	}
+
+	.hero__subtitle {
+		color: var(--color-text-muted);
+	}
+
+	body {
+		font-size: 12pt;
+		line-height: 1.5;
+	}
+
+	a {
+		text-decoration: underline;
+	}
+
+	a[href^="http"]::after {
+		content: " (" attr(href) ")";
+		font-size: 0.8em;
+		color: var(--color-text-muted);
+	}
+}

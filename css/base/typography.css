@@ -1,0 +1,50 @@
+/* ===========================================
+   TYPOGRAPHY
+   Base text styles and heading hierarchy
+   =========================================== */
+
+/* Heading base styles */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: var(--font-primary);
+	font-weight: var(--weight-black);
+	color: var(--color-text);
+}
+
+/* Text utility classes */
+.text-muted {
+	color: var(--color-text-muted);
+}
+
+.text-subtle {
+	color: var(--color-text-subtle);
+}
+
+/* Prose content styling (for article body) */
+.prose {
+	font-family: var(--font-serif);
+	font-size: var(--text-xl);
+	line-height: var(--leading-loose);
+	color: var(--color-text);
+}
+
+.prose p {
+	margin-bottom: 1.5em;
+}
+
+.prose h2,
+.prose h3 {
+	font-family: var(--font-primary);
+	font-size: var(--text-xl);
+	font-weight: var(--weight-bold);
+	margin: 2em 0 0.75em;
+}
+
+.prose--lead {
+	font-size: var(--text-xl);
+	color: var(--color-text-subtle);
+}

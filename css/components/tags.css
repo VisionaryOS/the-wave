@@ -1,0 +1,63 @@
+/* ===========================================
+   TAGS
+   Label/badge component styles
+   =========================================== */
+
+.tag {
+	display: inline-flex;
+	align-items: center;
+	gap: var(--space-2);
+	padding: var(--space-1) var(--space-3);
+	font-size: var(--text-xs);
+	font-weight: var(--weight-semibold);
+	border-radius: var(--radius-full);
+	background: rgba(0, 149, 255, 0.14);
+	color: var(--color-cyan);
+}
+
+/* Color variants */
+.tag--purple {
+	background: rgba(173, 109, 255, 0.14);
+	color: var(--color-purple);
+}
+
+.tag--orange {
+	background: rgba(255, 115, 0, 0.14);
+	color: var(--color-orange);
+}
+
+.tag--green {
+	background: rgba(0, 206, 68, 0.14);
+	color: var(--color-green);
+}
+
+/* Sleek minimal variant for dark backgrounds (story cards) */
+.tag--glass {
+	/* Minimal pill shape - less padding, more refined */
+	padding: var(--space-1) var(--space-2);
+	font-size: 0.65rem;
+	font-weight: var(--weight-semibold);
+	letter-spacing: 0.04em;
+	text-transform: uppercase;
+	/* Subtle frosted look - not a big bubble */
+	background: rgba(255, 255, 255, 0.12);
+	backdrop-filter: blur(8px);
+	color: rgba(255, 255, 255, 0.95);
+	/* Thin subtle border instead of thick glass */
+	border: 1px solid rgba(255, 255, 255, 0.15);
+	border-radius: var(--radius-sm);
+	/* Clean text rendering */
+	text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+	/* Smooth hover transition */
+	transition: 
+		background 0.3s ease,
+		border-color 0.3s ease,
+		transform 0.2s ease;
+}
+
+/* Subtle hover effect on the tag */
+.story-card:hover .tag--glass {
+	background: rgba(255, 255, 255, 0.2);
+	border-color: rgba(255, 255, 255, 0.3);
+	transform: translateY(-1px);
+}

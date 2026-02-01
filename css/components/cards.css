@@ -1,0 +1,446 @@
+/* ===========================================
+   CARDS
+   Card component styles (feature cards, story cards)
+   =========================================== */
+
+/* --- Image Placeholder --- */
+.img-placeholder {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	height: 100%;
+	min-height: 200px;
+	background: linear-gradient(135deg, var(--color-surface) 0%, var(--color-surface-alt) 100%);
+	border-radius: var(--radius-lg);
+	overflow: hidden;
+}
+
+.img-placeholder__icon {
+	font-size: var(--icon-lg);
+	opacity: 0.5;
+}
+
+/* Light variant for colored backgrounds */
+.img-placeholder--light {
+	background: rgba(255, 255, 255, 0.2);
+}
+
+/* --- Feature Cards (colored topic cards) --- */
+.feature-card {
+	display: flex;
+	flex-direction: column;
+	padding: var(--space-10);
+	border-radius: var(--radius-xl);
+	min-height: 350px;
+	transition: transform var(--duration-fast) var(--ease-out);
+}
+
+.feature-card:hover {
+	transform: translateY(-4px);
+}
+
+/* Feature card color variants */
+.feature-card--light {
+	background: var(--color-surface);
+}
+
+.feature-card--cyan {
+	background: var(--color-cyan);
+	color: var(--color-white);
+}
+
+.feature-card--purple {
+	background: var(--color-purple);
+	color: var(--color-white);
+}
+
+.feature-card--orange {
+	background: var(--color-orange);
+	color: var(--color-white);
+}
+
+.feature-card--green {
+	background: var(--color-green);
+	color: var(--color-white);
+}
+
+.feature-card__icon {
+	font-size: var(--icon-md);
+	margin-bottom: var(--space-4);
+}
+
+.feature-card__title {
+	font-size: var(--text-4xl);
+	font-weight: var(--weight-black);
+	line-height: var(--leading-snug);
+	letter-spacing: var(--tracking-heading);
+	margin-bottom: var(--space-2);
+}
+
+.feature-card__text {
+	font-size: var(--text-lg);
+	font-weight: var(--weight-normal);
+	line-height: var(--leading-normal);
+	opacity: 0.9;
+}
+
+.feature-card__image {
+	flex: 1;
+	display: flex;
+	align-items: flex-end;
+	justify-content: center;
+	margin-top: var(--space-6);
+}
+
+.feature-card__image .img-placeholder {
+	border-radius: var(--radius-lg);
+	max-height: 200px;
+	width: 100%;
+	object-fit: cover;
+}
+
+/* --- Story Cards (gradient overlay cards) --- */
+.story-card {
+	flex: 0 0 300px;
+	scroll-snap-align: start;
+	position: relative;
+	height: 450px;
+	border-radius: var(--radius-xl);
+	/* Allow island to extend below into border area */
+	overflow: visible;
+	cursor: pointer;
+	text-decoration: none;
+	display: block;
+	border: 5px solid rgba(255, 255, 255, 0.6);
+	box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+	/* Bouncy spring - uses global token */
+	transition: 
+		transform 0.5s var(--ease-spring-bouncy),
+		box-shadow var(--duration-slow) ease-out,
+		border-color var(--duration-normal) ease;
+}
+
+.story-card:hover {
+	/* Playful lift with subtle scale */
+	transform: translateY(-14px) scale(1.03);
+	box-shadow: 
+		0 24px 48px rgba(0, 0, 0, 0.18),
+		0 8px 16px rgba(0, 0, 0, 0.1);
+	border-color: rgba(255, 255, 255, 0.95);
+}
+
+.story-card__bg {
+	position: absolute;
+	inset: 0;
+	background-size: cover;
+	background-position: center;
+	/* Clip to rounded corners since card has overflow:visible */
+	border-radius: calc(var(--radius-xl) - 5px);
+}
+
+/* ===========================================
+   IMAGE GALLERY
+   Story cards as image gallery with hover effects
+   Images sourced from Unsplash (copyright-free)
+   =========================================== */
+
+/* Story card image variants - real images */
+/* Paths are relative to THIS CSS file (css/components/), so ../../ goes to project root */
+.story-card__bg--policy {
+	background: url('../../images/gallery/policy-eu-ai.jpg') center/cover no-repeat;
+	background-color: #1a1a2e; /* Fallback */
+}
+
+.story-card__bg--healthcare {
+	background: url('../../images/gallery/healthcare-ai.jpg') center/cover no-repeat;
+	background-color: #1a1a2e; /* Fallback */
+}
+
+.story-card__bg--opensource {
+	background: url('../../images/gallery/opensource-code.jpg') center/cover no-repeat;
+	background-color: #1a1a2e; /* Fallback */
+}
+
+.story-card__bg--robotics {
+	background: url('../../images/gallery/robotics.jpg') center/cover no-repeat;
+	background-color: #1a1a2e; /* Fallback */
+}
+
+.story-card__bg--research {
+	background: url('../../images/gallery/research.jpg') center/cover no-repeat;
+	background-color: #1a1a2e; /* Fallback */
+}
+
+.story-card__bg--climate {
+	background: url('../../images/gallery/climate.jpg') center/cover no-repeat;
+	background-color: #1a1a2e; /* Fallback */
+}
+
+.story-card__overlay {
+	position: absolute;
+	inset: 0;
+	/* Clip to rounded corners since card has overflow:visible */
+	border-radius: calc(var(--radius-xl) - 5px);
+	background: linear-gradient(
+		180deg,
+		rgba(0, 0, 0, 0.1) 0%,
+		rgba(0, 0, 0, 0.2) 30%,
+		rgba(0, 0, 0, 0.6) 60%,
+		rgba(0, 0, 0, 0.95) 100%
+	);
+}
+
+.story-card__content {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	padding: var(--space-6);
+	color: var(--color-white);
+	text-align: center;
+	transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Content lifts up on hover to reveal pill */
+.story-card:hover .story-card__content {
+	transform: translateY(-44px);
+}
+
+/* Uses .tag.tag--glass from tags.css */
+.story-card__content .tag {
+	margin-bottom: var(--space-3);
+}
+
+.story-card__title {
+	font-size: var(--text-xl);
+	font-weight: var(--weight-bold);
+	line-height: 1.3;
+	color: #fff;
+	text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+.story-card__meta {
+	margin-top: var(--space-2);
+	font-size: var(--text-sm);
+	color: rgba(255, 255, 255, 0.7);
+	font-weight: var(--weight-normal);
+}
+
+/* --- Read More Pill (progressive disclosure) ---
+   Slides up from bottom when content lifts on hover
+   =========================================== */
+.story-card__pill {
+	/* Position at bottom center */
+	position: absolute;
+	bottom: var(--space-6);
+	left: 50%;
+	
+	/* Initial state: hidden below */
+	transform: translateX(-50%) translateY(20px);
+	opacity: 0;
+	
+	/* Slim pill styling */
+	padding: var(--space-2) var(--space-5);
+	white-space: nowrap;
+	
+	/* Clean white pill */
+	background: rgba(255, 255, 255, 0.95);
+	
+	color: var(--color-text);
+	font-size: var(--text-sm);
+	font-weight: var(--weight-semibold);
+	
+	/* Fully rounded pill */
+	border-radius: var(--radius-full);
+	
+	/* Subtle shadow */
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+	
+	/* Smooth slide up animation */
+	transition: 
+		transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+		opacity 0.25s ease;
+	
+	/* Above overlay but below content */
+	z-index: 5;
+	user-select: none;
+}
+
+/* Pill slides up on card hover */
+.story-card:hover .story-card__pill {
+	transform: translateX(-50%) translateY(0);
+	opacity: 1;
+}
+
+/* Pill direct hover - brighten */
+.story-card__pill:hover {
+	background: rgba(255, 255, 255, 1);
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Hero variant - used in hero section */
+.story-card--hero {
+	flex: 0 0 300px;
+	width: 300px;
+	min-width: 300px;
+	height: 380px;
+	scroll-snap-align: start;
+}
+
+/* --- Founder Note ---
+   Simple, personal intro from the founder
+   No decorative elements - just honest text
+   =========================================== */
+.founder-note {
+	max-width: 42rem;
+	margin: 0 auto;
+	padding: var(--space-8) var(--gutter) 0;
+	text-align: center;
+}
+
+.founder-note__inner {
+	padding: var(--space-4) 0;
+}
+
+.founder-note__content {
+	display: flex;
+	flex-direction: column;
+}
+
+.founder-note__title {
+	font-size: var(--text-4xl);
+	font-weight: var(--weight-bold);
+	line-height: var(--leading-snug);
+	margin-bottom: var(--space-6);
+	text-align: center;
+	color: var(--color-white);
+}
+
+.founder-note__text {
+	font-size: var(--text-xl);
+	color: rgba(255, 255, 255, 0.85);
+	line-height: var(--leading-relaxed);
+}
+
+.founder-note__text p {
+	margin-bottom: var(--space-4);
+}
+
+.founder-note__text p:last-child {
+	margin-bottom: var(--space-6);
+}
+
+.founder-note__author {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: var(--space-4);
+}
+
+.founder-note__avatar-wrap {
+	width: 4rem;
+	height: 4rem;
+	border-radius: 50%;
+	overflow: hidden;
+	flex-shrink: 0;
+}
+
+.founder-note__avatar {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	object-position: 55% 35%;
+	scale: 1.5;
+}
+
+.founder-note__info {
+	display: flex;
+	flex-direction: column;
+	gap: 0.125rem;
+	text-align: left;
+}
+
+.founder-note__name {
+	font-size: var(--text-lg);
+	font-weight: var(--weight-bold);
+	color: var(--color-white);
+}
+
+.founder-note__role {
+	font-size: var(--text-base);
+	color: rgba(255, 255, 255, 0.7);
+}
+
+/* --- Secret Reveal ---
+   Playful collapsible that reveals founder intro
+   CSS-only using <details> and <summary>
+   Now lives in footer gradient
+   =========================================== */
+.secret-reveal {
+	position: relative;
+	z-index: 1;
+	text-align: center;
+	margin-bottom: var(--space-12);
+}
+
+.secret-reveal__trigger {
+	display: inline-block;
+	cursor: pointer;
+	list-style: none; /* Remove default arrow */
+}
+
+.secret-reveal__trigger::-webkit-details-marker {
+	display: none; /* Remove arrow in Safari/Chrome */
+}
+
+.secret-reveal__hint {
+	display: inline-block;
+	font-family: var(--font-primary);
+	font-size: clamp(1.5rem, 4vw, var(--text-4xl));
+	font-weight: var(--weight-black);
+	letter-spacing: var(--tracking-tight);
+	color: var(--color-text-muted);
+	padding: var(--space-4) var(--space-8);
+	border-radius: var(--radius-full);
+	background: var(--color-surface);
+	transition: all var(--duration-normal) var(--ease-out);
+}
+
+.secret-reveal__trigger:hover .secret-reveal__hint {
+	color: var(--color-text);
+	transform: scale(1.05);
+}
+
+/* When open, hide the trigger text */
+.secret-reveal[open] .secret-reveal__trigger {
+	display: none;
+}
+
+/* Animate the content reveal */
+.secret-reveal[open] .founder-note {
+	animation: secret-fade-in 0.5s var(--ease-out) forwards;
+}
+
+@keyframes secret-fade-in {
+	from {
+		opacity: 0;
+		transform: translateY(20px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+	.story-card {
+		flex: 0 0 85vw;
+	}
+
+	.story-card--hero {
+		flex: 0 0 280px;
+		height: 340px;
+	}
+}

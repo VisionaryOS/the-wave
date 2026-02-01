@@ -1,0 +1,215 @@
+/* ===========================================
+   SUBSCRIBE / VOTE SECTION
+   Vote CTA with blue gradient card
+   =========================================== */
+
+.subscribe {
+	text-align: center;
+	padding: var(--space-8) var(--gutter);
+	background: var(--color-white);
+}
+
+/* Inline variant - inside secret reveal, no outer padding */
+.subscribe--inline {
+	padding: 0;
+	margin-top: var(--space-12);
+	background: transparent;
+}
+
+/* Reuses topic-box sizing for visual consistency */
+.subscribe__container {
+	position: relative;
+	max-width: 760px;
+	margin: 0 auto;
+	padding: var(--space-16) var(--space-8) var(--space-10);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	background: transparent;
+	border: 3px dashed rgba(255, 255, 255, 0.5);
+	border-radius: var(--radius-2xl);
+}
+
+.subscribe__title {
+	position: relative;
+	z-index: 1;
+	font-size: clamp(2rem, 5vw, var(--text-5xl));
+	font-weight: var(--weight-black);
+	line-height: var(--leading-tight);
+	letter-spacing: var(--tracking-tight);
+	margin-bottom: var(--space-4);
+	color: var(--color-white);
+}
+
+.subscribe__text {
+	position: relative;
+	z-index: 1;
+	font-size: var(--text-lg);
+	color: rgba(255, 255, 255, 0.85);
+	margin-bottom: var(--space-8);
+}
+
+.subscribe__text--large {
+	font-size: var(--text-xl);
+	line-height: var(--leading-relaxed);
+}
+
+.subscribe__disclaimer {
+	position: relative;
+	z-index: 1;
+	font-size: var(--text-xs);
+	color: rgba(255, 255, 255, 0.6);
+	margin-top: var(--space-6);
+}
+
+/* ===========================================
+   VOTE BUTTONS
+   CSS-only interactive vote with feedback
+   Uses radio button hack for state management
+   =========================================== */
+
+.vote {
+	position: relative;
+	z-index: 1;
+	display: flex;
+	gap: var(--space-4);
+	justify-content: center;
+	flex-wrap: wrap;
+}
+
+/* Hide radio inputs visually but keep accessible */
+.vote__input {
+	position: absolute;
+	opacity: 0;
+	width: 0;
+	height: 0;
+	pointer-events: none;
+}
+
+/* Style labels as buttons */
+.btn--vote {
+	min-width: 9rem;
+	padding: var(--space-4) var(--space-8);
+	font-size: var(--text-lg);
+	font-weight: var(--weight-bold);
+	border-radius: var(--radius-full);
+	transition: all var(--duration-fast) var(--ease-out);
+	cursor: pointer;
+	user-select: none;
+}
+
+.btn--yes {
+	background: transparent;
+	color: var(--color-white);
+	border: 2px solid var(--color-white);
+}
+
+.btn--yes:hover {
+	background: rgba(255, 255, 255, 0.1);
+	transform: translateY(-2px);
+	box-shadow: 0 8px 24px rgba(255, 255, 255, 0.2);
+}
+
+.btn--no {
+	background: transparent;
+	color: var(--color-white);
+	border: 2px solid rgba(255, 255, 255, 0.5);
+}
+
+.btn--no:hover {
+	background: rgba(255, 255, 255, 0.1);
+	color: var(--color-white);
+	border-color: var(--color-white);
+	transform: translateY(-2px);
+}
+
+/* Selected states - button stays "pressed" */
+#vote-yes:checked + .btn--yes {
+	box-shadow: 0 8px 24px rgba(255, 255, 255, 0.3);
+}
+
+#vote-no:checked + .btn--no {
+	background: rgba(255, 255, 255, 0.1);
+	color: var(--color-white);
+	border-color: var(--color-white);
+}
+
+/* Thank you message - hidden by default */
+.vote__thanks {
+	display: none;
+	width: 100%;
+	margin-top: var(--space-6);
+	font-size: var(--text-lg);
+	color: rgba(255, 255, 255, 0.85);
+	animation: fadeInUp 0.4s var(--ease-out);
+}
+
+/* Show thanks when any vote is selected */
+.vote:has(.vote__input:checked) .vote__thanks {
+	display: block;
+}
+
+@keyframes fadeInUp {
+	from {
+		opacity: 0;
+		transform: translateY(10px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+/* ===========================================
+   SCROLL TO TOP BUTTON
+   Uses CSS scroll-driven animations to show/hide based on scroll position.
+   
+   WHY THIS APPROACH:
+   - Pure CSS solution (no JavaScript required for assessment)
+   - Uses modern animation-timeline: scroll() to animate opacity
+   - Button stays hidden in hero viewport, appears after user scrolls
+   - Progressive enhancement: older browsers show button always (acceptable fallback)
+   - animation-range controls exactly when the fade-in occurs (10vh-20vh scroll)
+   =========================================== */
+
+.scroll-top {
+	position: fixed;
+	bottom: var(--space-6);
+	right: var(--space-6);
+	width: 3rem;
+	height: 3rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: var(--color-white);
+	border: 1px solid #e5e5e5;
+	border-radius: var(--radius-full);
+	font-size: var(--text-lg);
+	color: var(--color-text);
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+	z-index: var(--z-sticky);
+	
+	/* Scroll-driven animation: fade in after scrolling past hero */
+	opacity: 0;
+	pointer-events: none;
+	animation: scroll-top-reveal linear forwards;
+	animation-timeline: scroll();
+	animation-range: 10vh 20vh;
+}
+
+/* Keyframes for scroll-driven reveal */
+@keyframes scroll-top-reveal {
+	to {
+		opacity: 1;
+		pointer-events: auto;
+	}
+}
+
+.scroll-top:hover {
+	background: var(--color-cyan);
+	color: var(--color-white);
+	border-color: var(--color-cyan);
+	transform: translateY(-4px);
+	transition: all var(--duration-fast) var(--ease-out);
+}

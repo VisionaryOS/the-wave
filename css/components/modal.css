@@ -1,0 +1,158 @@
+/* ===========================================
+   MODAL
+   Article modal component (CSS-only with :target)
+   =========================================== */
+
+.modal {
+	position: fixed;
+	inset: 0;
+	z-index: var(--z-modal);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: var(--space-6);
+
+	/* Hidden by default - use visibility only, not opacity */
+	visibility: hidden;
+	pointer-events: none;
+}
+
+/* Show when targeted */
+.modal:target {
+	visibility: visible;
+	pointer-events: auto;
+}
+
+.modal:target .modal__container {
+	transform: translateY(0) scale(1);
+	opacity: 1;
+}
+
+/* Backdrop - clickable to close
+   No transition - blur and dark overlay appear instantly
+   will-change hints browser to pre-render the blur effect */
+.modal__backdrop {
+	position: absolute;
+	inset: 0;
+	background: rgba(0, 0, 0, 0.6);
+	backdrop-filter: blur(8px);
+	-webkit-backdrop-filter: blur(8px);
+	cursor: pointer;
+	will-change: backdrop-filter;
+	transform: translateZ(0); /* Force GPU layer */
+}
+
+/* Container */
+.modal__container {
+	position: relative;
+	width: 100%;
+	max-width: 45rem;
+	max-height: 90vh;
+	background: var(--color-white);
+	border-radius: var(--radius-2xl);
+	overflow-y: auto;
+	overscroll-behavior: contain;
+	scrollbar-width: none;
+	-ms-overflow-style: none;
+
+	/* Animation */
+	transform: translateY(20px) scale(0.98);
+	opacity: 0;
+	transition: transform var(--duration-slow) var(--ease-out), opacity var(--duration-normal)
+		var(--ease-out);
+}
+
+.modal__container::-webkit-scrollbar {
+	display: none;
+}
+
+/* Close button */
+.modal__close {
+	position: absolute;
+	top: var(--space-4);
+	right: var(--space-4);
+	width: 2.75rem;
+	height: 2.75rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: var(--color-surface);
+	border-radius: 50%;
+	font-size: var(--text-2xl);
+	line-height: 1;
+	color: var(--color-text-muted);
+	transition: all var(--duration-fast) var(--ease-out);
+	z-index: 10;
+}
+
+.modal__close:hover {
+	background: var(--color-text);
+	color: var(--color-white);
+}
+
+/* Header */
+.modal__header {
+	display: flex;
+	align-items: center;
+	gap: var(--space-3);
+	padding: var(--space-12) var(--space-20) 0;
+}
+
+.modal__date {
+	font-size: var(--text-sm);
+	color: var(--color-text-muted);
+}
+
+/* Title */
+.modal__title {
+	padding: var(--space-4) var(--space-20);
+	font-family: var(--font-primary);
+	font-size: clamp(2rem, 5vw, 2.75rem);
+	font-weight: var(--weight-black);
+	line-height: var(--leading-tight);
+	letter-spacing: -0.09375rem;
+	color: var(--color-text);
+}
+
+/* Content */
+.modal__content {
+	padding: var(--space-6) var(--space-20) var(--space-16);
+}
+
+/* --- Mobile adjustments --- */
+@media (max-width: 640px) {
+	.modal {
+		padding: 0;
+		align-items: flex-end;
+	}
+
+	.modal__container {
+		max-height: 95vh;
+		max-width: 100%;
+		border-radius: var(--radius-xl) var(--radius-xl) 0 0;
+	}
+
+	.modal__header {
+		padding: var(--space-8) var(--space-6) 0;
+	}
+
+	.modal__title {
+		padding: var(--space-4) var(--space-6);
+		font-size: var(--text-3xl);
+	}
+
+	.modal__content {
+		padding: var(--space-4) var(--space-6) var(--space-12);
+	}
+
+	.modal__content.prose {
+		font-size: var(--text-lg);
+	}
+
+	.modal__close {
+		top: var(--space-3);
+		right: var(--space-3);
+		width: 2.5rem;
+		height: 2.5rem;
+	}
+}

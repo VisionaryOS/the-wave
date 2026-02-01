@@ -1,0 +1,47 @@
+/* ===========================================
+   LOGO BAR
+   Row of publication/brand wordmarks
+   =========================================== */
+
+.logo-bar {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: var(--space-3);
+	padding: var(--space-6) var(--gutter);
+}
+
+.logo-bar__label {
+	font-size: var(--text-sm);
+	font-weight: var(--weight-semibold);
+	text-transform: uppercase;
+	letter-spacing: 0.1em;
+	color: inherit;
+}
+
+.logo-bar__list {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: var(--space-4) var(--space-16);
+}
+
+.logo-bar__item {
+	font-size: var(--text-2xl);
+	font-weight: var(--weight-bold);
+	color: inherit;
+	transition: opacity var(--duration-fast) ease;
+}
+
+.logo-bar__item:hover { opacity: 0.6; }
+
+/* Brand typography variants */
+.logo-bar__item--bold   { font-weight: var(--weight-black); letter-spacing: -0.02em; }
+.logo-bar__item--caps   { font-weight: var(--weight-black); text-transform: uppercase; letter-spacing: 0.15em; }
+.logo-bar__item--serif  { font-family: var(--font-serif); font-style: italic; }
+.logo-bar__item--tight  { font-weight: var(--weight-extrabold); letter-spacing: -0.03em; }
+
+@media (max-width: 600px) {
+	.logo-bar__list { gap: var(--space-3) var(--space-6); }
+	.logo-bar__item { font-size: var(--text-base); }
+}

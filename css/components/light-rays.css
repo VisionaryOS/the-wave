@@ -1,0 +1,53 @@
+/* ===========================================
+   LIGHT RAYS
+   Animated underwater sun ray effect
+   =========================================== */
+
+.light-rays {
+	position: absolute;
+	inset: 0;
+	overflow: hidden;
+	pointer-events: none;
+}
+
+.light-rays__ray {
+	position: absolute;
+	top: -20%;
+	height: 140%;
+	background: linear-gradient(180deg,
+		rgba(71, 114, 255, 0.15) 0%,
+		rgba(71, 114, 255, 0.08) 20%,
+		rgba(71, 114, 255, 0.03) 50%,
+		transparent 100%
+	);
+	transform-origin: top center;
+	transform: rotate(var(--angle, 0deg));
+	animation: light-rays-pulse var(--duration, 5s) ease-in-out infinite var(--delay, 0s);
+	filter: blur(40px);
+}
+
+/* Ray positions: pushed to edges, away from center text */
+.light-rays__ray:nth-child(1) { --angle: -20deg; --duration: 4s;   --delay: 0s;    left: -10%; width: 280px; }
+.light-rays__ray:nth-child(2) { --angle: -12deg; --duration: 5s;   --delay: -1s;   left: 5%;   width: 320px; }
+.light-rays__ray:nth-child(3) { --angle: 12deg;  --duration: 4.5s; --delay: -2.5s; right: 5%;  width: 300px; }
+.light-rays__ray:nth-child(4) { --angle: 20deg;  --duration: 5.5s; --delay: -0.5s; right: -10%;width: 280px; }
+.light-rays__ray:nth-child(5) { --angle: -8deg;  --duration: 4s;   --delay: -3s;   left: -5%;  width: 250px; }
+.light-rays__ray:nth-child(6) { --angle: 8deg;   --duration: 6s;   --delay: -1.5s; right: 0%;  width: 250px; }
+
+@keyframes light-rays-pulse {
+	0%, 100% { opacity: 0.1; transform: rotate(var(--angle, 0deg)) scaleX(0.5); }
+	50%      { opacity: 0.85; transform: rotate(var(--angle, 0deg)) scaleX(1.5); }
+}
+
+/* Flipped version for footer - rays come from bottom */
+.light-rays--flip .light-rays__ray {
+	top: auto;
+	bottom: -20%;
+	transform-origin: bottom center;
+	background: linear-gradient(0deg,
+		rgba(255, 255, 255, 0.5) 0%,
+		rgba(255, 255, 255, 0.3) 20%,
+		rgba(255, 255, 255, 0.1) 50%,
+		transparent 100%
+	);
+}

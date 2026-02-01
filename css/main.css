@@ -1,0 +1,41 @@
+/* ===========================================
+   THE WAVE - Main Stylesheet
+   ===========================================
+   
+   Layered CSS architecture (ITCSS-inspired)
+   Cascade layers control specificity order
+   
+   =========================================== */
+
+/* Define layer order: lowest → highest specificity */
+@layer base, layout, components, pages, utilities;
+
+/* --- Base: tokens, reset, typography --- */
+@import url("base/tokens.css") layer(base);
+@import url("base/reset.css") layer(base);
+@import url("base/typography.css") layer(base);
+
+/* --- Layout: page structure --- */
+@import url("layout/header.css") layer(layout);
+@import url("layout/sections.css") layer(layout);
+@import url("layout/footer.css") layer(layout);
+
+/* --- Components: reusable UI --- */
+@import url("components/buttons.css") layer(components);
+@import url("components/badge.css") layer(components);
+@import url("components/tags.css") layer(components);
+@import url("components/inputs.css") layer(components);
+@import url("components/cards.css") layer(components);
+@import url("components/modal.css") layer(components);
+@import url("components/tabs.css") layer(components);
+@import url("components/logo-bar.css") layer(components);
+@import url("components/light-rays.css") layer(components);
+@import url("components/gallery.css") layer(components);
+
+/* --- Pages: page-specific styles --- */
+@import url("pages/hero.css") layer(pages);
+@import url("pages/subscribe.css") layer(pages);
+
+/* --- Utilities: overrides, a11y, print --- */
+@import url("utilities/accessibility.css") layer(utilities);
+@import url("utilities/print.css") layer(utilities);
