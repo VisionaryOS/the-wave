@@ -363,43 +363,93 @@ select {
 }
 
 /* ============================================
-   5. NAVIGATION (Floating Pill - Typotab style)
+   5. NAVIGATION (Transparent → Floating Pill)
    ============================================ */
 
-/* Fixed wrapper that spans full width */
+/* Fixed header - full width, transparent initially */
 .site-header {
 	position: fixed;
 	top: 0;
 	left: 0;
 	right: 0;
 	z-index: var(--z-sticky);
-	display: flex;
-	justify-content: center;
-	padding: 0 var(--gutter);
-	pointer-events: none;
+	padding: var(--s-4) var(--gutter);
+	transition: all 0.3s var(--ease);
+
+	/* Scroll-driven animation for modern browsers */
+	animation: nav-transform linear both;
+	animation-timeline: scroll();
+	animation-range: 0 300px;
 }
 
-/* The floating nav pill */
+@keyframes nav-transform {
+	0% {
+		background: transparent;
+		padding: var(--s-4) var(--gutter);
+	}
+	100% {
+		background: transparent;
+		padding: var(--s-2) var(--gutter);
+	}
+}
+
+/* The nav container */
 .nav {
 	display: flex;
 	align-items: center;
-	justify-content: center;
-	gap: 60px;
-	padding: 10px 14px 10px 16px;
-	background: white;
-	/* Only bottom corners rounded - attached to top */
-	border-radius: 0 0 var(--r-lg) var(--r-lg);
-	box-shadow: rgba(0, 0, 0, 0.2) 0px 5px 9px -4px;
-	pointer-events: auto;
+	justify-content: space-between;
+	max-width: var(--max-w);
+	margin: 0 auto;
+	padding: 10px 20px;
+	transition: all 0.3s var(--ease);
+
+	/* Start transparent */
+	background: transparent;
+	border-radius: var(--r-pill);
+	box-shadow: none;
+
+	/* Scroll-driven animation */
+	animation: nav-pill linear both;
+	animation-timeline: scroll();
+	animation-range: 0 300px;
 }
 
-/* Logo */
+@keyframes nav-pill {
+	0% {
+		background: transparent;
+		box-shadow: none;
+		border-radius: var(--r-pill);
+	}
+	100% {
+		background: white;
+		box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 20px -5px;
+		border-radius: var(--r-pill);
+	}
+}
+
+/* Logo - white on hero, dark when scrolled */
 .nav__logo {
 	font-family: var(--f-primary);
 	font-size: var(--t-lg);
 	font-weight: var(--w-black);
-	color: var(--c-text);
 	letter-spacing: -0.5px;
+	transition: color 0.3s var(--ease);
+
+	/* Start white */
+	color: white;
+
+	animation: logo-color linear both;
+	animation-timeline: scroll();
+	animation-range: 0 300px;
+}
+
+@keyframes logo-color {
+	0% {
+		color: white;
+	}
+	100% {
+		color: var(--c-text);
+	}
 }
 
 /* Nav links container */
@@ -409,32 +459,96 @@ select {
 	gap: var(--s-8);
 }
 
-/* Nav links - 14px, readable */
+/* Nav links - white on hero, dark when scrolled */
 .nav__link {
 	font-family: var(--f-primary);
 	font-size: var(--t-sm);
 	font-weight: var(--w-medium);
-	color: var(--c-text);
-	transition: opacity var(--duration);
+	transition: color 0.3s var(--ease), opacity var(--duration);
+
+	/* Start white */
+	color: white;
+
+	animation: link-color linear both;
+	animation-timeline: scroll();
+	animation-range: 0 300px;
+}
+
+@keyframes link-color {
+	0% {
+		color: white;
+	}
+	100% {
+		color: var(--c-text);
+	}
 }
 
 .nav__link:hover {
 	opacity: 0.6;
 }
 
-/* Nav CTA button - cyan like Typotab */
+/* Nav CTA button - outline on hero, filled when scrolled */
 .nav__cta {
-	padding: 8px 14px;
-	font-size: var(--t-xs);
+	padding: 8px 16px;
+	font-size: var(--t-sm);
 	font-weight: var(--w-semibold);
-	background: var(--c-cyan);
-	color: white;
 	border-radius: var(--r-pill);
-	transition: all var(--duration) var(--ease);
+	transition: all 0.3s var(--ease);
+
+	/* Start as white outline */
+	background: transparent;
+	color: white;
+	border: 1.5px solid rgba(255, 255, 255, 0.8);
+
+	animation: cta-style linear both;
+	animation-timeline: scroll();
+	animation-range: 0 300px;
+}
+
+@keyframes cta-style {
+	0% {
+		background: transparent;
+		color: white;
+		border-color: rgba(255, 255, 255, 0.8);
+	}
+	100% {
+		background: var(--c-cyan);
+		color: white;
+		border-color: var(--c-cyan);
+	}
 }
 
 .nav__cta:hover {
 	opacity: 0.9;
+	transform: translateY(-1px);
+}
+
+/* Fallback for browsers without scroll-timeline support */
+@supports not (animation-timeline: scroll()) {
+	.site-header {
+		background: transparent;
+	}
+
+	.nav {
+		background: rgba(255, 255, 255, 0.95);
+		box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px -2px;
+		backdrop-filter: blur(10px);
+		-webkit-backdrop-filter: blur(10px);
+	}
+
+	.nav__logo {
+		color: var(--c-text);
+	}
+
+	.nav__link {
+		color: var(--c-text);
+	}
+
+	.nav__cta {
+		background: var(--c-cyan);
+		color: white;
+		border-color: var(--c-cyan);
+	}
 }
 
 @media (max-width: 768px) {
@@ -443,7 +557,7 @@ select {
 	}
 
 	.nav {
-		gap: var(--s-6);
+		padding: 10px 16px;
 	}
 }
 
