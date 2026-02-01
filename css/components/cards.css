@@ -79,7 +79,7 @@
 	font-weight: var(--weight-black);
 	line-height: 1.3;
 	color: var(--color-white);
-	text-shadow: 0 2px 8px var(--black-50);
+	text-shadow: 0 2px 8px var(--black-30);
 }
 
 /* "Read" pill - hidden until hover */

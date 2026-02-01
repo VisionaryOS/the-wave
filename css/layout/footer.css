@@ -39,7 +39,7 @@
 /* copyright line */
 .footer__copy {
 	font-size: var(--text-sm);
-	color: var(--white-70);
+	color: var(--white-90);
 	margin-bottom: var(--space-8);
 }
 

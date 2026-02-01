@@ -33,7 +33,7 @@
 	color: var(--white-90);
 	border: 1px solid var(--white-10);
 	border-radius: var(--radius-sm);
-	text-shadow: 0 1px 3px var(--black-50);
+	text-shadow: 0 1px 3px var(--black-30);
 	transition: 
 		background var(--duration-normal) ease,
 		border-color var(--duration-normal) ease,
