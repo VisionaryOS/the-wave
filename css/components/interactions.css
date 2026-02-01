@@ -32,7 +32,7 @@
 	--btn-hover-bg: var(--alpha-white-10);
 	--btn-hover-color: var(--color-white);
 	--btn-hover-border-color: var(--color-white);
-	--btn-hover-shadow: 0 8px 24px var(--alpha-white-20);
+	--btn-hover-shadow: 0 8px 24px var(--alpha-white-30);
 }
 
 .btn--no {
@@ -59,7 +59,7 @@
 	width: 100%;
 	margin-top: var(--space-6);
 	font-size: var(--text-lg);
-	color: var(--alpha-white-85);
+	color: var(--alpha-white-90);
 	animation: anim-reveal-up 0.4s var(--ease-out);
 }
 

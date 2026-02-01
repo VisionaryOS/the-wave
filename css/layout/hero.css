@@ -71,6 +71,7 @@
 	transform: scale(0.9);
 }
 
+
 @media (max-height: 800px) {
 	.hero {
 		padding-top: calc(var(--nav-height) + var(--space-16));

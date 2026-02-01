@@ -48,19 +48,15 @@
 
 .footer__credits {
 	padding-top: var(--space-6);
-	border-top: 1px solid var(--alpha-white-20);
+	border-top: 1px solid var(--alpha-white-30);
 }
 
 .footer__credits-toggle {
 	font-size: var(--text-xs);
 	font-weight: var(--weight-medium);
-	color: var(--alpha-white-60);
+	color: var(--alpha-white-50);
 	cursor: pointer;
 	list-style: none;
-}
-
-.footer__credits-toggle::-webkit-details-marker {
-	display: none;
 }
 
 .footer__credits-toggle::after {
@@ -94,11 +90,11 @@
 }
 
 .footer__credits-links {
-	color: var(--alpha-white-60);
+	color: var(--alpha-white-50);
 }
 
 .footer__credits-links a {
-	color: var(--alpha-white-85);
+	color: var(--alpha-white-90);
 	text-decoration: none;
 	transition: color var(--duration-fast);
 }

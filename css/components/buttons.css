@@ -5,14 +5,16 @@
 	--btn-hover-bg: inherit;
 	--btn-hover-color: inherit;
 	--btn-hover-border-color: inherit;
-	
+
 	display: inline-flex;
 	align-items: center;
 	justify-content: center;
 	gap: var(--space-2);
+
 	font-family: var(--font-primary);
 	font-weight: var(--weight-bold);
 	border-radius: var(--radius-full);
+
 	transition: 
 		transform var(--duration-fast) var(--ease-out),
 		box-shadow var(--duration-fast) var(--ease-out),
@@ -22,6 +24,7 @@
 	cursor: pointer;
 }
 
+
 .btn:hover {
 	transform: translateY(var(--btn-hover-lift)) scale(var(--btn-hover-scale));
 	box-shadow: var(--btn-hover-shadow);
@@ -29,6 +32,7 @@
 	color: var(--btn-hover-color);
 	border-color: var(--btn-hover-border-color);
 }
+
 
 .btn--primary {
 	padding: var(--space-3) var(--space-6);
@@ -38,6 +42,7 @@
 	--btn-hover-bg: #404040;
 	--btn-hover-color: var(--color-white);
 }
+
 
 @media (max-width: 768px) {
 	.btn {

@@ -1,3 +1,10 @@
+/* entrance animations - elements appearing on page load */
+
+@keyframes anim-reveal-fade {
+	from { opacity: 0; }
+	to   { opacity: 1; }
+}
+
 @keyframes anim-reveal-up {
 	from {
 		opacity: 0;
@@ -7,11 +14,6 @@
 		opacity: 1;
 		transform: translateY(0);
 	}
-}
-
-@keyframes anim-reveal-fade {
-	from { opacity: 0; }
-	to   { opacity: 1; }
 }
 
 @keyframes anim-reveal-scale {
@@ -25,6 +27,7 @@
 	}
 }
 
+/* cards get both slide + scale for more punch */
 @keyframes anim-reveal-card {
 	from {
 		opacity: 0;
@@ -35,6 +38,8 @@
 		transform: translateY(0) scale(1);
 	}
 }
+
+/* looping effects - "live" badge and hero light rays */
 
 @keyframes anim-pulse-opacity {
 	0%, 100% { opacity: 1; }
@@ -52,18 +57,13 @@
 	}
 }
 
+/* scroll-driven header sequence - transforms as you scroll past hero
+   ordered by when they kick in (header > nav pill > colors > cta hide) */
+
 @keyframes anim-scroll-reveal {
 	to {
 		opacity: 1;
 		pointer-events: auto;
-	}
-}
-
-@keyframes anim-scroll-glass {
-	to {
-		background: var(--alpha-white-15);
-		backdrop-filter: blur(var(--blur-sm));
-		-webkit-backdrop-filter: blur(var(--blur-sm));
 	}
 }
 
@@ -78,6 +78,15 @@
 	}
 }
 
+@keyframes anim-scroll-glass {
+	to {
+		background: var(--alpha-white-10);
+		backdrop-filter: blur(var(--blur-sm));
+		-webkit-backdrop-filter: blur(var(--blur-sm));
+	}
+}
+
+/* nav becomes floating white pill */
 @keyframes anim-scroll-nav-pill {
 	0% {
 		max-width: 40rem;
@@ -88,11 +97,12 @@
 	100% {
 		max-width: 28rem;
 		background: var(--color-white);
-		box-shadow: var(--alpha-black-15) 0px 5px 20px -5px;
+		box-shadow: var(--alpha-black-10) 0px 5px 20px -5px;
 		padding: 0.625rem 1.5rem;
 	}
 }
 
+/* colors flip once nav is solid white */
 @keyframes anim-scroll-logo-color {
 	0%   { color: var(--color-white); }
 	100% { color: var(--color-cyan); }
@@ -109,6 +119,7 @@
 	}
 }
 
+/* final state - cta gone, just centered logo */
 @keyframes anim-scroll-cta-hide {
 	0% {
 		opacity: 1;

@@ -1,10 +1,10 @@
 :root {
+	/* base colors */
 	--color-white: #ffffff;
 	--color-background: #ffffff;
 	--color-surface: #f7f7f6;
-	--color-surface-alt: #f4f6fa;
-	--color-surface-hover: #efeef3;
 
+	/* brand palette - vibrant but not neon, works on white and dark backgrounds */
 	--color-cyan: rgb(0, 149, 255);
 	--color-blue: rgb(0, 117, 250);
 	--color-purple: rgb(173, 109, 255);
@@ -14,18 +14,21 @@
 	--color-pink: rgb(236, 72, 153);
 	--color-gold: rgb(234, 179, 8);
 
+	/* text - dark enough for contrast, muted for secondary info */
 	--color-text: rgb(38, 38, 38);
 	--color-text-muted: rgb(140, 146, 157);
 	--color-text-subtle: rgb(88, 105, 127);
 
+	/* hero gradient - blue to cyan to white, gives that "sky" feel */
 	--color-hero-top: rgb(71, 114, 255);
 	--color-hero-mid: rgb(0, 172, 255);
 	--color-hero-bottom: rgb(255, 255, 255);
 
+	/* fonts - nunito for UI, source serif for reading */
 	--font-primary: "Nunito", system-ui, sans-serif;
 	--font-serif: "Source Serif 4", Georgia, serif;
-	--font-mono: "JetBrains Mono", monospace;
 
+	/* type scale - roughly 1.125 ratio, nothing too jumpy */
 	--text-xs: 0.75rem;
 	--text-sm: 0.875rem;
 	--text-base: 1rem;
@@ -35,30 +38,26 @@
 	--text-3xl: 1.75rem;
 	--text-4xl: 2.5rem;
 	--text-5xl: 3.125rem;
-	--text-6xl: 4.375rem;
 
-	--icon-md: 2rem;
-	--icon-lg: 3rem;
-
+	/* weights */
 	--weight-normal: 400;
 	--weight-medium: 500;
 	--weight-semibold: 600;
 	--weight-bold: 700;
-	--weight-extrabold: 800;
 	--weight-black: 900;
 
+	/* negative tracking for big headlines */
 	--tracking-tighter: -0.175rem;
 	--tracking-tight: -0.125rem;
-	--tracking-normal: -0.045rem;
-	--tracking-heading: -0.1rem;
 
+	/* line heights */
 	--leading-none: 0.9;
 	--leading-tight: 1.1;
-	--leading-snug: 1.2;
 	--leading-normal: 1.5;
 	--leading-relaxed: 1.6;
 	--leading-loose: 1.75;
 
+	/* spacing scale - 4px base, gaps in the middle where we dont need them */
 	--space-1: 0.25rem;
 	--space-2: 0.5rem;
 	--space-3: 0.75rem;
@@ -66,66 +65,51 @@
 	--space-5: 1.25rem;
 	--space-6: 1.5rem;
 	--space-8: 2rem;
-	--space-10: 2.5rem;
 	--space-12: 3rem;
 	--space-16: 4rem;
 	--space-20: 5rem;
 	--space-24: 6rem;
-	--space-32: 8rem;
 
+	/* border radius - sm for inputs, lg+ for cards and sections */
 	--radius-sm: 0.25rem;
-	--radius-md: 0.75rem;
 	--radius-lg: 1.25rem;
 	--radius-xl: 1.5rem;
 	--radius-2xl: 1.75rem;
-	--radius-3xl: 2.5rem;
 	--radius-full: 9999px;
 
-	--max-width: 62.5rem;
-	--max-width-wide: 75rem;
+	/* layout constants */
 	--nav-height: 3.4375rem;
 	--gutter: 1.5rem;
-	--grid-gap: 1.5rem;
 
-	--alpha-white-5: rgba(255, 255, 255, 0.05);
+	/* transparency - 20% steps, white for glass effects, black for shadows */
 	--alpha-white-10: rgba(255, 255, 255, 0.1);
-	--alpha-white-12: rgba(255, 255, 255, 0.12);
-	--alpha-white-15: rgba(255, 255, 255, 0.15);
-	--alpha-white-20: rgba(255, 255, 255, 0.2);
-	--alpha-white-25: rgba(255, 255, 255, 0.25);
 	--alpha-white-30: rgba(255, 255, 255, 0.3);
 	--alpha-white-50: rgba(255, 255, 255, 0.5);
-	--alpha-white-60: rgba(255, 255, 255, 0.6);
 	--alpha-white-70: rgba(255, 255, 255, 0.7);
-	--alpha-white-85: rgba(255, 255, 255, 0.85);
-	--alpha-white-95: rgba(255, 255, 255, 0.95);
+	--alpha-white-90: rgba(255, 255, 255, 0.9);
 
-	--alpha-black-5: rgba(0, 0, 0, 0.05);
 	--alpha-black-10: rgba(0, 0, 0, 0.1);
-	--alpha-black-15: rgba(0, 0, 0, 0.15);
-	--alpha-black-18: rgba(0, 0, 0, 0.18);
-	--alpha-black-20: rgba(0, 0, 0, 0.2);
-	--alpha-black-40: rgba(0, 0, 0, 0.4);
+	--alpha-black-30: rgba(0, 0, 0, 0.3);
 	--alpha-black-50: rgba(0, 0, 0, 0.5);
-	--alpha-black-60: rgba(0, 0, 0, 0.6);
-	--alpha-black-95: rgba(0, 0, 0, 0.95);
+	--alpha-black-70: rgba(0, 0, 0, 0.7);
+	--alpha-black-90: rgba(0, 0, 0, 0.9);
 
-	--tag-alpha: 0.14;
-
+	/* blur for glassmorphism */
 	--blur-sm: 8px;
 	--blur-md: 12px;
 	--blur-lg: 20px;
 
+	/* easing - ease-out for most things, spring for playful interactions */
 	--ease-out: cubic-bezier(0.16, 1, 0.3, 1);
 	--ease-spring: cubic-bezier(0.175, 0.885, 0.32, 1.275);
 	--ease-spring-bouncy: cubic-bezier(0.175, 0.885, 0.32, 1.4);
 
+	/* durations - fast for hovers, normal for transitions, slow for big moves */
 	--duration-fast: 200ms;
 	--duration-normal: 300ms;
 	--duration-slow: 400ms;
 
-	--z-base: 1;
+	/* z-index - just two layers, sticky nav and modals */
 	--z-sticky: 100;
-	--z-overlay: 1000;
 	--z-modal: 9999;
 }

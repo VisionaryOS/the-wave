@@ -2,7 +2,7 @@
 	position: relative;
 	padding: var(--space-6) var(--space-8);
 	border-radius: var(--radius-2xl);
-	color: #fff;
+	color: var(--color-white);
 	overflow: hidden;
 }
 
@@ -18,12 +18,12 @@
 .topic-box__title {
 	font-size: var(--text-2xl);
 	font-weight: var(--weight-bold);
-	color: #fff;
+	color: var(--color-white);
 }
 
 .topic-box__desc {
 	font-size: var(--text-xl);
-	color: #fff;
+	color: var(--color-white);
 }
 
 .topic-box--cyan { background: var(--color-cyan); }

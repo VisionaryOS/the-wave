@@ -27,7 +27,7 @@
 
 .founder-note__text {
 	font-size: var(--text-xl);
-	color: var(--alpha-white-85);
+	color: var(--alpha-white-90);
 	line-height: var(--leading-relaxed);
 }
 
@@ -83,7 +83,7 @@
 .founder-note__cta {
 	margin-top: var(--space-8);
 	padding-top: var(--space-6);
-	border-top: 1px solid var(--alpha-white-20);
+	border-top: 1px solid var(--alpha-white-30);
 }
 
 .founder-note__cta-text {
@@ -106,10 +106,6 @@
 	list-style: none;
 }
 
-.secret-reveal__trigger::-webkit-details-marker {
-	display: none;
-}
-
 .secret-reveal__hint {
 	display: inline-block;
 	font-family: var(--font-primary);
@@ -120,7 +116,7 @@
 	border-radius: var(--radius-full);
 	color: var(--color-white);
 	text-decoration: none;
-	background: var(--alpha-white-15);
+	background: var(--alpha-white-10);
 	backdrop-filter: blur(var(--blur-sm));
 	-webkit-backdrop-filter: blur(var(--blur-sm));
 	border: 1px solid var(--alpha-white-30);
@@ -129,7 +125,7 @@
 
 .secret-reveal__trigger:hover .secret-reveal__hint {
 	transform: scale(1.05);
-	background: var(--alpha-white-25);
+	background: var(--alpha-white-30);
 }
 
 .secret-reveal[open] .secret-reveal__trigger {

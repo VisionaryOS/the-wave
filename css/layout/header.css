@@ -59,7 +59,7 @@
 	max-width: 200px;
 	--btn-hover-lift: -2px;
 	--btn-hover-scale: 1.03;
-	--btn-hover-shadow: 0 6px 20px var(--alpha-black-15);
+	--btn-hover-shadow: 0 6px 20px var(--alpha-black-10);
 	transition: 
 		transform var(--duration-slow) var(--ease-spring),
 		box-shadow var(--duration-normal) ease-out,
@@ -83,7 +83,7 @@
 	}
 
 	.nav {
-		background: var(--alpha-white-95);
+		background: var(--alpha-white-90);
 		box-shadow: var(--alpha-black-10) 0px 4px 12px -2px;
 		backdrop-filter: blur(var(--blur-md));
 		-webkit-backdrop-filter: blur(var(--blur-md));

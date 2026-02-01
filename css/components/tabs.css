@@ -50,12 +50,6 @@
 	border-color: var(--color-purple);
 }
 
-#tab-careers:checked ~ .tabs__nav label[for="tab-careers"] {
-	background: var(--color-orange);
-	color: var(--color-white);
-	border-color: var(--color-orange);
-}
-
 #tab-trust:checked ~ .tabs__nav label[for="tab-trust"] {
 	background: var(--color-green);
 	color: var(--color-white);
@@ -63,9 +57,9 @@
 }
 
 #tab-education:checked ~ .tabs__nav label[for="tab-education"] {
-	background: var(--color-blue);
+	background: var(--color-orange);
 	color: var(--color-white);
-	border-color: var(--color-blue);
+	border-color: var(--color-orange);
 }
 
 #tab-weird:checked ~ .tabs__nav label[for="tab-weird"] {
@@ -111,7 +105,6 @@
 
 #tab-security:checked ~ .tabs__panels .tabs__panel--security,
 #tab-relationships:checked ~ .tabs__panels .tabs__panel--relationships,
-#tab-careers:checked ~ .tabs__panels .tabs__panel--careers,
 #tab-trust:checked ~ .tabs__panels .tabs__panel--trust,
 #tab-education:checked ~ .tabs__panels .tabs__panel--education,
 #tab-weird:checked ~ .tabs__panels .tabs__panel--weird,
@@ -135,7 +128,6 @@
 
 #tab-security:checked ~ .tabs__panels .tabs__panel--security .story-card,
 #tab-relationships:checked ~ .tabs__panels .tabs__panel--relationships .story-card,
-#tab-careers:checked ~ .tabs__panels .tabs__panel--careers .story-card,
 #tab-trust:checked ~ .tabs__panels .tabs__panel--trust .story-card,
 #tab-education:checked ~ .tabs__panels .tabs__panel--education .story-card,
 #tab-weird:checked ~ .tabs__panels .tabs__panel--weird .story-card,

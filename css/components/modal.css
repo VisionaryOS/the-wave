@@ -24,7 +24,7 @@
 .modal__backdrop {
 	position: absolute;
 	inset: 0;
-	background: var(--alpha-black-60);
+	background: var(--alpha-black-70);
 	backdrop-filter: blur(var(--blur-sm));
 	-webkit-backdrop-filter: blur(var(--blur-sm));
 	cursor: pointer;
