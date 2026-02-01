@@ -88,18 +88,16 @@
 
 .modal__header {
 	display: flex;
+	flex-wrap: wrap;
 	align-items: center;
 	gap: var(--space-3);
 	padding: var(--space-12) var(--space-20) 0;
 }
 
-.modal__date {
-	font-size: var(--text-sm);
-	color: var(--color-text-muted);
-}
-
 .modal__title {
-	padding: var(--space-4) var(--space-20);
+	flex-basis: 100%;
+	order: -1;
+	padding: 0 0 var(--space-2);
 	font-family: var(--font-primary);
 	font-size: clamp(2rem, 5vw, 2.75rem);
 	font-weight: var(--weight-black);
@@ -108,29 +106,40 @@
 	color: var(--color-text);
 }
 
+.modal__date {
+	font-size: var(--text-sm);
+	color: var(--color-text-muted);
+}
+
 .modal__content {
 	padding: var(--space-6) var(--space-20) var(--space-8);
 }
 
-.modal__action {
-	position: sticky;
-	bottom: 0;
-	display: flex;
-	justify-content: center;
-	padding: var(--space-6) var(--space-20) var(--space-8);
-	background: linear-gradient(
-		to bottom,
-		transparent 0%,
-		var(--color-white) 30%,
-		var(--color-white) 100%
-	);
-	z-index: 5;
+.modal__content p {
+	margin-bottom: var(--space-4);
+	line-height: var(--leading-relaxed);
 }
 
-.modal__action .btn {
-	width: 100%;
+.modal__content p:last-child {
+	margin-bottom: 0;
+}
+
+.modal__lead {
+	font-size: var(--text-xl);
+	line-height: var(--leading-relaxed);
+	color: var(--color-text);
+	margin-bottom: var(--space-4);
+}
+
+.modal__action.btn {
+	position: sticky;
+	bottom: var(--space-8);
+	display: block;
+	width: calc(100% - var(--space-20) * 2);
 	max-width: 24rem;
+	margin-inline: auto;
 	text-align: center;
+	z-index: 5;
 }
 
 @media (max-width: 640px) {
@@ -150,20 +159,18 @@
 	}
 
 	.modal__title {
-		padding: var(--space-4) var(--space-6);
+		padding: 0 0 var(--space-2);
 		font-size: var(--text-3xl);
 	}
 
 	.modal__content {
 		padding: var(--space-4) var(--space-6) var(--space-4);
-	}
-
-	.modal__action {
-		padding: var(--space-4) var(--space-6) var(--space-8);
-	}
-
-	.modal__content.prose {
 		font-size: var(--text-lg);
+	}
+
+	.modal__action.btn {
+		width: calc(100% - var(--space-6) * 2);
+		bottom: var(--space-6);
 	}
 
 	.modal__close {
