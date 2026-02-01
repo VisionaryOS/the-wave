@@ -1,9 +1,12 @@
+/* css-only tabs using hidden radio inputs */
+
 .tabs__input {
 	position: absolute;
 	opacity: 0;
 	pointer-events: none;
 }
 
+/* tab buttons row */
 .tabs__nav {
 	display: flex;
 	flex-wrap: wrap;
@@ -38,6 +41,7 @@
 	box-shadow: 0 8px 24px var(--alpha-black-10);
 }
 
+/* active states - each topic gets its brand color */
 #tab-security:checked ~ .tabs__nav label[for="tab-security"] {
 	background: var(--color-cyan);
 	color: var(--color-white);
@@ -74,6 +78,7 @@
 	border-color: var(--color-gold);
 }
 
+/* panels container - stacked via grid */
 .tabs__panels {
 	display: grid;
 	max-width: 1150px;
@@ -82,6 +87,7 @@
 	padding: 0 var(--gutter);
 }
 
+/* panels - hidden by default, all in same grid cell */
 .tabs__panel {
 	grid-area: 1 / 1;
 	position: relative;
@@ -91,6 +97,7 @@
 	scroll-margin-top: 6rem;
 }
 
+/* cards inside panels start transformed for stagger animation */
 .tabs__panel .story-card {
 	opacity: 0;
 	transform: translateY(24px) scale(0.95);
@@ -99,10 +106,12 @@
 		transform 0.5s var(--ease-spring-bouncy);
 }
 
+/* staggered entrance - 80ms between cards */
 .tabs__panel .story-card:nth-child(1) { transition-delay: 0s; }
 .tabs__panel .story-card:nth-child(2) { transition-delay: 0.08s; }
 .tabs__panel .story-card:nth-child(3) { transition-delay: 0.16s; }
 
+/* show active panel */
 #tab-security:checked ~ .tabs__panels .tabs__panel--security,
 #tab-relationships:checked ~ .tabs__panels .tabs__panel--relationships,
 #tab-trust:checked ~ .tabs__panels .tabs__panel--trust,
@@ -114,6 +123,7 @@
 	pointer-events: auto;
 }
 
+/* also support :target for direct linking */
 .tabs__panel:target {
 	opacity: 1;
 	visibility: visible;
@@ -126,6 +136,7 @@
 	transform: translateY(0) scale(1);
 }
 
+/* animate cards when panel becomes active */
 #tab-security:checked ~ .tabs__panels .tabs__panel--security .story-card,
 #tab-relationships:checked ~ .tabs__panels .tabs__panel--relationships .story-card,
 #tab-trust:checked ~ .tabs__panels .tabs__panel--trust .story-card,
@@ -136,6 +147,7 @@
 	transform: translateY(0) scale(1);
 }
 
+/* topic box styling when inside panels */
 .tabs__panel .topic-box {
 	border-radius: var(--radius-xl);
 	padding: var(--space-8) var(--space-12) var(--space-12);
@@ -176,6 +188,7 @@
 	height: 380px;
 }
 
+/* responsive */
 @media (max-width: 1000px) {
 	.tabs__panel .topic-box__cards {
 		flex-wrap: wrap;

@@ -1,3 +1,4 @@
+/* hero - full viewport with gradient background */
 .hero {
 	position: relative;
 	display: flex;
@@ -15,6 +16,7 @@
 	overflow: clip;
 }
 
+/* subtle noise texture - adds depth without being distracting */
 .hero::before {
 	content: "";
 	position: absolute;
@@ -25,6 +27,7 @@
 	z-index: 0;
 }
 
+/* main headline area */
 .hero__content {
 	position: relative;
 	z-index: 1;
@@ -52,6 +55,7 @@
 	opacity: 0.9;
 }
 
+/* featured story cards row */
 .hero__cards {
 	position: relative;
 	z-index: 2;
@@ -63,6 +67,7 @@
 	padding: 0 var(--gutter);
 }
 
+/* source logos at bottom */
 .hero__footer {
 	position: relative;
 	z-index: 1;
@@ -71,7 +76,7 @@
 	transform: scale(0.9);
 }
 
-
+/* shorter viewports - tighten spacing so cards dont get cut off */
 @media (max-height: 800px) {
 	.hero {
 		padding-top: calc(var(--nav-height) + var(--space-16));

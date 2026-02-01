@@ -1,3 +1,5 @@
+/* decorative light rays - angled beams that pulse */
+
 .light-rays {
 	position: absolute;
 	inset: 0;
@@ -17,10 +19,11 @@
 	);
 	transform-origin: top center;
 	transform: rotate(var(--angle, 0deg));
-	animation: anim-pulse-ray var(--ray-duration, 5s) ease-in-out infinite var(--ray-delay, 0s);
 	filter: blur(var(--blur-lg));
+	animation: anim-pulse-ray var(--ray-duration, 5s) ease-in-out infinite var(--ray-delay, 0s);
 }
 
+/* each ray has different width, timing, position for organic feel */
 .light-rays__ray:nth-child(1) { --angle: -15deg; --ray-duration: 4s;   --ray-delay: 0s;    left: 5%;   width: 200px; }
 .light-rays__ray:nth-child(2) { --angle: -15deg; --ray-duration: 5s;   --ray-delay: -1s;   left: 20%;  width: 250px; }
 .light-rays__ray:nth-child(3) { --angle: -15deg; --ray-duration: 4.5s; --ray-delay: -2.5s; left: 40%;  width: 220px; }

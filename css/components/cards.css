@@ -1,27 +1,25 @@
-/* story cards - doubles as image gallery for Task 3
-   W3Schools gallery requirements: responsive grid, hover effects,
-   descriptions, click interaction - all covered here.
-   images credited in footer */
+/* story cards - the image gallery for Task 3
+   hover to see title slide up and "Read" pill appear */
 
 .story-card {
-	flex: 0 0 300px;
-	scroll-snap-align: start;
 	position: relative;
+	flex: 0 0 300px;
 	height: 450px;
-	border-radius: var(--radius-xl);
-	overflow: visible;
-	cursor: pointer;
-	text-decoration: none;
 	display: block;
+	text-decoration: none;
+	cursor: pointer;
+	overflow: visible;
 	border: 5px solid var(--alpha-white-50);
+	border-radius: var(--radius-xl);
 	box-shadow: 0 4px 20px var(--alpha-black-10);
+	scroll-snap-align: start;
 	transition: 
 		transform 0.5s var(--ease-spring-bouncy),
 		box-shadow var(--duration-slow) ease-out,
 		border-color var(--duration-normal) ease;
 }
 
-/* hover - 14px lift + 1.03 scale feels right, more looks janky */
+/* hover - 14px lift + slight scale */
 .story-card:hover {
 	transform: translateY(-14px) scale(1.03);
 	box-shadow: 
@@ -30,8 +28,7 @@
 	border-color: var(--alpha-white-90);
 }
 
-
-/* gallery image - background-image for sizing control */
+/* background image layer */
 .story-card__bg {
 	position: absolute;
 	inset: 0;
@@ -40,15 +37,13 @@
 	border-radius: calc(var(--radius-xl) - 5px);
 }
 
-
-/* gradient overlay - darker at bottom for text readability */
+/* gradient overlay for text readability */
 .story-card::after {
 	content: '';
 	position: absolute;
 	inset: 0;
 	border-radius: calc(var(--radius-xl) - 5px);
-	background: linear-gradient(
-		180deg,
+	background: linear-gradient(180deg,
 		var(--alpha-black-10) 0%,
 		var(--alpha-black-30) 30%,
 		var(--alpha-black-70) 60%,
@@ -58,8 +53,7 @@
 	z-index: 1;
 }
 
-
-/* caption - slides up on hover to reveal pill button */
+/* text content - slides up on hover */
 .story-card__content {
 	position: absolute;
 	bottom: 0;
@@ -68,8 +62,8 @@
 	padding: var(--space-6);
 	color: var(--color-white);
 	text-align: center;
-	transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
 	z-index: 2;
+	transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .story-card:hover .story-card__content {
@@ -88,36 +82,26 @@
 	text-shadow: 0 2px 8px var(--alpha-black-50);
 }
 
-
-/* "Read" pill - hidden by default, slides up on hover */
+/* "Read" pill - hidden until hover */
 .story-card__pill {
 	position: absolute;
 	bottom: var(--space-6);
 	left: 50%;
-	
-	/* starts hidden below its final position */
 	transform: translateX(-50%) translateY(20px);
 	opacity: 0;
-	
 	padding: var(--space-2) var(--space-5);
-	white-space: nowrap;
-	
-	background: var(--alpha-white-90);
-	
-	color: var(--color-text);
 	font-size: var(--text-sm);
 	font-weight: var(--weight-semibold);
-	
+	white-space: nowrap;
+	background: var(--alpha-white-90);
+	color: var(--color-text);
 	border-radius: var(--radius-full);
-	
 	box-shadow: 0 2px 8px var(--alpha-black-10);
-	
+	z-index: 5;
+	user-select: none;
 	transition: 
 		transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
 		opacity 0.25s ease;
-	
-	z-index: 5;
-	user-select: none;
 }
 
 .story-card:hover .story-card__pill {
@@ -130,6 +114,7 @@
 	box-shadow: 0 4px 12px var(--alpha-black-30);
 }
 
+/* hero variant - slightly smaller */
 .story-card--hero {
 	flex: 0 0 300px;
 	width: 300px;
@@ -138,6 +123,7 @@
 	scroll-snap-align: start;
 }
 
+/* mobile */
 @media (max-width: 768px) {
 	.story-card {
 		flex: 0 0 85vw;

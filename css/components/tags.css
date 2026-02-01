@@ -1,21 +1,18 @@
+/* tag - small category label */
 .tag {
 	--tag-color: var(--color-cyan);
-
 	display: inline-flex;
 	align-items: center;
 	gap: var(--space-2);
-
 	padding: var(--space-1) var(--space-3);
 	font-size: var(--text-xs);
 	font-weight: var(--weight-semibold);
-	border-radius: var(--radius-full);
-
 	background: color-mix(in srgb, var(--tag-color) 14%, transparent);
 	color: var(--tag-color);
+	border-radius: var(--radius-full);
 }
 
-
-/* color modifiers */
+/* color variants */
 .tag--purple { --tag-color: var(--color-purple); }
 .tag--orange { --tag-color: var(--color-orange); }
 .tag--green  { --tag-color: var(--color-green); }
@@ -23,8 +20,7 @@
 .tag--pink   { --tag-color: var(--color-pink); }
 .tag--gold   { --tag-color: var(--color-gold); }
 
-
-/* glass variant for dark backgrounds */
+/* glass variant - for use on dark/image backgrounds */
 .tag--glass {
 	padding: var(--space-1) var(--space-2);
 	font-size: 0.65rem;
@@ -44,6 +40,7 @@
 		transform var(--duration-fast) ease;
 }
 
+/* lifts slightly when parent card is hovered */
 .story-card:hover .tag--glass {
 	background: var(--alpha-white-30);
 	border-color: var(--alpha-white-30);

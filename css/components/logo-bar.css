@@ -1,3 +1,5 @@
+/* logo bar - shows source publications */
+
 .logo-bar {
 	display: flex;
 	flex-direction: column;
@@ -28,8 +30,11 @@
 	transition: opacity var(--duration-fast) ease;
 }
 
-.logo-bar__item:hover { opacity: 0.6; }
+.logo-bar__item:hover { 
+	opacity: 0.6; 
+}
 
+/* each publication has slightly different typography to match their brand */
 .logo-bar__item--ars { 
 	font-weight: var(--weight-bold); 
 	letter-spacing: -0.01em; 
@@ -62,6 +67,11 @@
 }
 
 @media (max-width: 600px) {
-	.logo-bar__list { gap: var(--space-3) var(--space-6); }
-	.logo-bar__item { font-size: var(--text-base); }
+	.logo-bar__list { 
+		gap: var(--space-3) var(--space-6); 
+	}
+	
+	.logo-bar__item { 
+		font-size: var(--text-base); 
+	}
 }

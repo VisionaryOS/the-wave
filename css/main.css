@@ -1,14 +1,18 @@
+/* cascade layers - utilities always win without !important */
 @layer base, layout, components, utilities;
 
+/* foundation - tokens first, then animations that use them, then typography */
 @import url("base/tokens.css") layer(base);
 @import url("base/animations.css") layer(base);
 @import url("base/typography.css") layer(base);
 
+/* page structure - top to bottom as you scroll */
 @import url("layout/header.css") layer(layout);
 @import url("layout/hero.css") layer(layout);
 @import url("layout/topics.css") layer(layout);
 @import url("layout/footer.css") layer(layout);
 
+/* ui components - ordered by complexity/dependency */
 @import url("components/buttons.css") layer(components);
 @import url("components/badge.css") layer(components);
 @import url("components/tags.css") layer(components);

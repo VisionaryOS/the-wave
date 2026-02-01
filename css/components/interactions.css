@@ -1,3 +1,5 @@
+/* vote buttons - yes/no for founder note */
+
 .vote {
 	position: relative;
 	z-index: 1;
@@ -44,6 +46,7 @@
 	--btn-hover-border-color: var(--color-white);
 }
 
+/* checked states */
 #vote-yes:checked + .btn--yes {
 	box-shadow: 0 8px 24px var(--alpha-white-30);
 }
@@ -54,6 +57,7 @@
 	border-color: var(--color-white);
 }
 
+/* thank you message - shows after voting */
 .vote__thanks {
 	display: none;
 	width: 100%;
@@ -67,12 +71,12 @@
 	display: block;
 }
 
+/* floating action button - scroll to top */
 .fab {
 	position: fixed;
 	bottom: var(--space-6);
 	right: var(--space-6);
 	z-index: var(--z-sticky);
-	
 	display: flex;
 	align-items: center;
 	gap: var(--space-2);
@@ -84,12 +88,11 @@
 	background: var(--color-cyan);
 	border-radius: var(--radius-full);
 	text-decoration: none;
-	
-	transition: transform var(--duration-fast) var(--ease-out),
-				background var(--duration-fast) var(--ease-out);
-	
 	opacity: 0;
 	pointer-events: none;
+	transition: 
+		transform var(--duration-fast) var(--ease-out),
+		background var(--duration-fast) var(--ease-out);
 	animation: 
 		anim-scroll-reveal linear forwards,
 		anim-scroll-glass linear forwards;
@@ -102,6 +105,11 @@
 	background: var(--color-hero-top);
 }
 
+.fab__label {
+	letter-spacing: 0.01em;
+}
+
+/* mobile - center the fab */
 @media (max-width: 768px) {
 	.fab {
 		right: auto;
@@ -112,8 +120,4 @@
 	.fab:hover {
 		transform: translateX(-50%) translateY(-2px);
 	}
-}
-
-.fab__label {
-	letter-spacing: 0.01em;
 }

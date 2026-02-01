@@ -1,7 +1,9 @@
+/* generic section styling */
 .section {
 	padding: var(--space-12) var(--gutter);
 }
 
+/* topics section - gradient fades to match footer */
 .section--topics {
 	padding-top: var(--space-4);
 	padding-bottom: 0;

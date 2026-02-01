@@ -1,3 +1,4 @@
+/* base button - uses css custom props for hover states so variants can override */
 .btn {
 	--btn-hover-lift: -2px;
 	--btn-hover-scale: 1;
@@ -10,20 +11,17 @@
 	align-items: center;
 	justify-content: center;
 	gap: var(--space-2);
-
 	font-family: var(--font-primary);
 	font-weight: var(--weight-bold);
 	border-radius: var(--radius-full);
-
+	cursor: pointer;
 	transition: 
 		transform var(--duration-fast) var(--ease-out),
 		box-shadow var(--duration-fast) var(--ease-out),
 		background var(--duration-fast) var(--ease-out),
 		color var(--duration-fast) var(--ease-out),
 		border-color var(--duration-fast) var(--ease-out);
-	cursor: pointer;
 }
-
 
 .btn:hover {
 	transform: translateY(var(--btn-hover-lift)) scale(var(--btn-hover-scale));
@@ -33,7 +31,7 @@
 	border-color: var(--btn-hover-border-color);
 }
 
-
+/* primary - dark bg, used for main ctas */
 .btn--primary {
 	padding: var(--space-3) var(--space-6);
 	font-size: var(--text-sm);
@@ -43,7 +41,7 @@
 	--btn-hover-color: var(--color-white);
 }
 
-
+/* mobile - 44px min touch target */
 @media (max-width: 768px) {
 	.btn {
 		min-height: 44px;

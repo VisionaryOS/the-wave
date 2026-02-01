@@ -1,3 +1,5 @@
+/* founder note - revealed via details/summary */
+
 .founder-note {
 	max-width: 42rem;
 	margin: 0 auto;
@@ -39,6 +41,7 @@
 	margin-bottom: var(--space-6);
 }
 
+/* author byline */
 .founder-note__author {
 	display: flex;
 	align-items: center;
@@ -80,6 +83,7 @@
 	color: var(--alpha-white-70);
 }
 
+/* vote cta area */
 .founder-note__cta {
 	margin-top: var(--space-8);
 	padding-top: var(--space-6);
@@ -93,6 +97,7 @@
 	margin-bottom: var(--space-4);
 }
 
+/* the "psst click me" reveal trigger */
 .secret-reveal {
 	position: relative;
 	z-index: 1;
@@ -128,6 +133,7 @@
 	background: var(--alpha-white-30);
 }
 
+/* hide trigger once opened */
 .secret-reveal[open] .secret-reveal__trigger {
 	display: none;
 }

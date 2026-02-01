@@ -1,3 +1,4 @@
+/* fixed header that shrinks as you scroll via scroll-driven animation */
 .site-header {
 	position: fixed;
 	top: 0;
@@ -11,17 +12,18 @@
 	animation-range: 0 300px;
 }
 
+/* nav pill - starts transparent, becomes white floating pill on scroll */
 .nav {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
+	max-width: 40rem;
 	margin: 0 auto;
 	padding: 0.625rem 1.5rem;
-	transition: all var(--duration-normal) var(--ease-out);
-	max-width: 40rem;
 	background: transparent;
 	border-radius: var(--radius-full);
 	box-shadow: none;
+	transition: all var(--duration-normal) var(--ease-out);
 	animation: 
 		anim-scroll-nav-pill linear both,
 		anim-scroll-nav-center linear both;
@@ -29,6 +31,7 @@
 	animation-range: 0 300px, 60vh 80vh;
 }
 
+/* logo - white on hero, cyan once scrolled */
 .nav__logo {
 	font-family: var(--font-primary);
 	font-size: var(--text-xl);
@@ -47,16 +50,17 @@
 	transform: scale(1.05);
 }
 
+/* cta button - fades out as you scroll past hero */
 .nav__cta {
 	padding: 0.625rem 1.25rem;
+	max-width: 200px;
 	font-size: var(--text-base);
 	font-weight: var(--weight-bold);
-	border-radius: var(--radius-full);
+	white-space: nowrap;
+	overflow: hidden;
 	background: var(--color-white);
 	color: var(--color-text);
-	overflow: hidden;
-	white-space: nowrap;
-	max-width: 200px;
+	border-radius: var(--radius-full);
 	--btn-hover-lift: -2px;
 	--btn-hover-scale: 1.03;
 	--btn-hover-shadow: 0 6px 20px var(--alpha-black-10);
@@ -77,6 +81,7 @@
 	box-shadow: var(--btn-hover-shadow);
 }
 
+/* fallback for browsers without scroll-driven animations */
 @supports not (animation-timeline: scroll()) {
 	.site-header {
 		background: transparent;
@@ -99,6 +104,7 @@
 	}
 }
 
+/* mobile - bigger touch targets */
 @media (max-width: 768px) {
 	.nav {
 		padding: 0.625rem 1rem;

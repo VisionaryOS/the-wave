@@ -1,3 +1,5 @@
+/* modal - css-only using :target */
+
 .modal {
 	position: fixed;
 	inset: 0;
@@ -6,11 +8,11 @@
 	align-items: center;
 	justify-content: center;
 	padding: var(--space-6);
-
 	visibility: hidden;
 	pointer-events: none;
 }
 
+/* show when url hash matches modal id */
 .modal:target {
 	visibility: visible;
 	pointer-events: auto;
@@ -21,6 +23,7 @@
 	opacity: 1;
 }
 
+/* dark blurred backdrop */
 .modal__backdrop {
 	position: absolute;
 	inset: 0;
@@ -32,6 +35,7 @@
 	transform: translateZ(0);
 }
 
+/* content container - slides up on open */
 .modal__container {
 	position: relative;
 	width: 100%;
@@ -43,17 +47,18 @@
 	overscroll-behavior: contain;
 	scrollbar-width: none;
 	-ms-overflow-style: none;
-
 	transform: translateY(20px) scale(0.98);
 	opacity: 0;
-	transition: transform var(--duration-slow) var(--ease-out), opacity var(--duration-normal)
-		var(--ease-out);
+	transition: 
+		transform var(--duration-slow) var(--ease-out), 
+		opacity var(--duration-normal) var(--ease-out);
 }
 
 .modal__container::-webkit-scrollbar {
 	display: none;
 }
 
+/* close button */
 .modal__close {
 	position: absolute;
 	top: var(--space-4);
@@ -69,11 +74,9 @@
 	line-height: 1;
 	color: var(--color-text-muted);
 	z-index: 10;
-	
 	--btn-hover-lift: 0;
 	--btn-hover-bg: var(--color-text);
 	--btn-hover-color: var(--color-white);
-	
 	transition: 
 		transform var(--duration-fast) var(--ease-out),
 		background var(--duration-fast) var(--ease-out),
@@ -86,6 +89,7 @@
 	color: var(--btn-hover-color);
 }
 
+/* header with title, tag, date */
 .modal__header {
 	display: flex;
 	flex-wrap: wrap;
@@ -111,6 +115,7 @@
 	color: var(--color-text-muted);
 }
 
+/* body text */
 .modal__content {
 	padding: 1.5rem 4rem 1.5rem 2rem;
 }
@@ -133,6 +138,7 @@
 	margin-bottom: var(--space-6);
 }
 
+/* sticky cta at bottom */
 .modal__action.btn {
 	position: sticky;
 	bottom: 1.5rem;
@@ -145,6 +151,7 @@
 	z-index: 5;
 }
 
+/* mobile - slides up from bottom like a sheet */
 @media (max-width: 640px) {
 	.modal {
 		padding: 0;
