@@ -62,7 +62,7 @@
 	display: none;
 	width: 100%;
 	margin-top: var(--space-6);
-	font-size: var(--text-lg);
+	font-size: var(--text-xl);
 	color: var(--white-90);
 	animation: anim-reveal-up 0.4s var(--ease-out);
 }
