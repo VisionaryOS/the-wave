@@ -1,567 +1,373 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- 
-    ==========================================================================
-    THE WAVE - AI & Machine Learning News
-    ==========================================================================
-    A premium tech news website built for HEP504 Web Development at Abertay University.
-    
-    Design Philosophy:
-    - SaaS meets editorial storytelling
-    - Premium without being stuffy
-    - Every pixel intentional
-    
-    Technical Approach:
-    - Semantic HTML5 for accessibility and SEO
-    - CSS Custom Properties for maintainable theming
-    - Mobile-first responsive design
-    - No JavaScript - pure CSS interactions
-    
-    Author: Adam
-    Date: February 2026
-    ========================================================================== 
-    -->
-    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="THE WAVE - Catch the future before it breaks. Your premium source for AI and Machine Learning news.">
-    <meta name="theme-color" content="#0A1628">
+    <meta name="description" content="THE WAVE - Where machine intelligence meets human stories.">
+    <meta name="theme-color" content="#09090b">
     
-    <title>THE WAVE | AI & Machine Learning News</title>
+    <title>THE WAVE</title>
     
     <!-- 
-    Typography Stack:
-    - Inter: Clean, modern body text with excellent readability
-    - Archivo Black: Bold, confident display headlines
-    - JetBrains Mono: Technical metadata and dates
+    Typography System:
+    - Syne: Editorial display face with personality
+    - Instrument Serif: Elegant contrast for article titles  
+    - Space Grotesk: Modern geometric for UI/body
+    - JetBrains Mono: Technical metadata
     -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
     
-    <!-- External Stylesheet -->
     <link rel="stylesheet" href="css/styles.css">
 </head>
 
 <body id="top">
-    <!-- 
-    ==========================================================================
-    SKIP LINK - Accessibility Feature
-    ==========================================================================
-    Allows keyboard users to bypass navigation and jump directly to main content.
-    Hidden visually but accessible to screen readers and keyboard navigation.
-    ========================================================================== 
-    -->
-    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <a href="#main" class="skip-link">Skip to content</a>
 
-    <!-- 
-    ==========================================================================
-    HEADER - Sticky Navigation
-    ==========================================================================
-    Glassmorphism effect using backdrop-filter for a premium, modern feel.
-    Stays fixed at top while scrolling for easy navigation access.
-    ========================================================================== 
-    -->
-    <header class="site-header" role="banner">
-        <nav class="navbar" aria-label="Primary navigation">
-            <div class="nav-container">
-                <!-- Logo/Brand -->
-                <a href="#top" class="nav-logo" aria-label="THE WAVE - Return to top">
-                    <span class="logo-text">THE WAVE</span>
-                    <span class="logo-wave" aria-hidden="true">〰</span>
-                </a>
+    <!-- ============================================
+         NAVIGATION
+         Minimal. No glass. Just confidence.
+         ============================================ -->
+    <header class="site-header">
+        <nav class="nav">
+            <a href="#top" class="nav__logo">
+                <span class="nav__logo-text">THE WAVE</span>
+            </a>
 
-                <!-- Navigation Links - Kept to 4 items to reduce cognitive load -->
-                <ul class="nav-links" role="list">
-                    <li><a href="#featured">Featured</a></li>
-                    <li><a href="#articles">Articles</a></li>
-                    <li><a href="#gallery">Gallery</a></li>
-                    <li><a href="#about">About</a></li>
-                </ul>
+            <ul class="nav__links">
+                <li><a href="#stories" class="nav__link">Stories</a></li>
+                <li><a href="#gallery" class="nav__link">Gallery</a></li>
+                <li><a href="#about" class="nav__link">About</a></li>
+            </ul>
 
-                <!-- Primary CTA -->
-                <a href="#subscribe" class="nav-cta">Subscribe</a>
-            </div>
+            <a href="#subscribe" class="btn btn--primary btn--sm">Subscribe</a>
         </nav>
     </header>
 
-    <!-- 
-    ==========================================================================
-    HERO SECTION
-    ==========================================================================
-    Full-height hero with deep ocean blue background.
-    Features the main value proposition and featured article preview.
-    The wave transition at the bottom creates visual flow to content.
-    ========================================================================== 
-    -->
-    <section class="hero" aria-labelledby="hero-headline">
-        <div class="hero-content">
-            <!-- Animated entrance for headline -->
-            <p class="hero-tagline">Catch the future before it breaks</p>
-            <h1 id="hero-headline" class="hero-headline">
-                Where AI meets
-                <span class="hero-highlight">tomorrow</span>
-            </h1>
-            <p class="hero-description">
-                Deep dives into artificial intelligence, machine learning breakthroughs, 
-                and the technology shaping our world. No hype. Just signal.
-            </p>
+    <!-- ============================================
+         HERO
+         Editorial confidence. Not corporate drone.
+         ============================================ -->
+    <section class="hero">
+        <div class="hero__container">
+            <p class="hero__eyebrow">Issue 047 — February 2026</p>
             
-            <!-- Featured article preview in hero -->
-            <div class="hero-featured">
-                <span class="hero-featured-label">Latest Story</span>
-                <a href="#featured" class="hero-featured-link">
-                    OpenAI's GPT-5 Redefines Multimodal Intelligence →
-                </a>
+            <h1 class="hero__title">
+                <span class="hero__title-line">The machines</span>
+                <span class="hero__title-line">are <em>learning.</em></span>
+                <span class="hero__title-line">Are you?</span>
+            </h1>
+            
+            <p class="hero__subtitle">
+                Weekly dispatches from the frontier of artificial intelligence. 
+                No hype. No doom. Just the signal.
+            </p>
+
+            <div class="hero__cta-group">
+                <a href="#featured" class="btn btn--primary">Read This Week's Issue</a>
+                <a href="#subscribe" class="btn btn--ghost">Get the Newsletter</a>
             </div>
         </div>
 
-        <!-- Decorative wave elements - Pure CSS shapes -->
-        <div class="hero-wave" aria-hidden="true">
-            <div class="wave-layer wave-layer-1"></div>
-            <div class="wave-layer wave-layer-2"></div>
-            <div class="wave-layer wave-layer-3"></div>
+        <div class="hero__scroll-hint" aria-hidden="true">
+            <span class="hero__scroll-text">Scroll</span>
+            <span class="hero__scroll-line"></span>
         </div>
     </section>
 
-    <!-- 
-    ==========================================================================
-    MAIN CONTENT
-    ==========================================================================
-    Contains all article sections and the image gallery.
-    Uses semantic <main> element for accessibility.
-    ========================================================================== 
-    -->
-    <main id="main-content">
+    <!-- ============================================
+         MAIN CONTENT
+         ============================================ -->
+    <main id="main">
         
-        <!-- 
-        ======================================================================
-        FEATURED ARTICLE - Full Width Editorial Style
-        ======================================================================
-        The hero article gets premium treatment with larger typography
-        and more generous white space for editorial impact.
-        ====================================================================== 
-        -->
-        <article id="featured" class="article article-featured">
-            <div class="article-container">
-                <header class="article-header">
-                    <span class="article-category">Breakthrough</span>
-                    <time datetime="2026-01-28" class="article-date">Jan 28, 2026</time>
-                </header>
-                
-                <h2 class="article-title article-title-featured">
-                    GPT-5 Arrives: Multimodal AI That Reasons Like Never Before
-                </h2>
-                
-                <!-- Article image placeholder - will be replaced with generated images -->
-                <figure class="article-figure article-figure-featured">
-                    <div class="article-image-placeholder" aria-label="AI neural network visualization">
-                        <span class="placeholder-icon">🧠</span>
-                        <span class="placeholder-text">AI Visualization</span>
+        <!-- Featured Story -->
+        <article id="featured" class="story story--featured">
+            <div class="story__container">
+                <header class="story__header">
+                    <div class="story__meta">
+                        <span class="tag">Breakthrough</span>
+                        <time datetime="2026-01-28" class="story__date">28.01.26</time>
                     </div>
-                    <figcaption class="article-figcaption">
-                        Conceptual visualization of multimodal AI processing
-                    </figcaption>
+                </header>
+
+                <h2 class="story__title story__title--xl">
+                    GPT-5 doesn't just understand you. <em>It reasons with you.</em>
+                </h2>
+
+                <figure class="story__figure story__figure--featured">
+                    <div class="img-placeholder img-placeholder--hero">
+                        <span class="img-placeholder__icon">◇</span>
+                    </div>
+                    <figcaption class="story__caption">Neural pathway visualization</figcaption>
                 </figure>
-                
-                <div class="article-content article-content-featured">
-                    <p class="article-lede">
-                        OpenAI has unveiled GPT-5, a groundbreaking multimodal AI system that seamlessly 
-                        integrates text, images, audio, and video understanding into a single coherent 
-                        reasoning framework. The announcement marks a significant leap forward in 
-                        artificial general intelligence research.
+
+                <div class="story__content prose">
+                    <p class="lede">
+                        OpenAI just shipped something that feels different. Not incrementally better—fundamentally different. 
+                        GPT-5 doesn't just predict the next word. It builds mental models.
                     </p>
                     <p>
-                        Unlike its predecessors, GPT-5 demonstrates what researchers call "compositional 
-                        reasoning" — the ability to break down complex problems into logical steps while 
-                        drawing insights from multiple data types simultaneously. In benchmark tests, the 
-                        system achieved human-expert performance on graduate-level physics problems while 
-                        explaining its reasoning process through both text and visual diagrams.
+                        The demos are unsettling in the best way. Feed it a physics problem and watch it sketch diagrams, 
+                        backtrack when it hits dead ends, and explain its reasoning like a patient tutor. 
+                        This isn't autocomplete with better training data. This is something new.
                     </p>
                     <p>
-                        Industry analysts predict this advancement will accelerate AI adoption in 
-                        scientific research, medical diagnosis, and creative industries. However, the 
-                        release has also intensified debates around AI safety and the pace of capability 
-                        development in the field.
+                        The implications ripple outward: scientific research accelerates, education transforms, 
+                        and the definition of "intelligence" gets hazier. The question isn't whether AI will change everything. 
+                        It's whether we're ready to change with it.
                     </p>
-                    
-                    <footer class="article-footer">
-                        <a href="https://openai.com/research" class="article-source" target="_blank" rel="noopener noreferrer">
-                            Source: OpenAI Research Blog
-                        </a>
-                        <a href="#article-2" class="article-readmore">Continue reading →</a>
-                    </footer>
                 </div>
+
+                <footer class="story__footer">
+                    <a href="https://openai.com/research" class="story__source" target="_blank" rel="noopener">
+                        Source: OpenAI Research
+                    </a>
+                </footer>
             </div>
         </article>
 
-        <!-- 
-        ======================================================================
-        ARTICLES SECTION - Alternating Layout Pattern
-        ======================================================================
-        Three articles in a zigzag pattern (image-text, text-image, image-text)
-        Creates visual rhythm and maintains reader engagement.
-        ====================================================================== 
-        -->
-        <section id="articles" class="articles-section" aria-labelledby="articles-heading">
-            <h2 id="articles-heading" class="section-heading">Latest Stories</h2>
-            
-            <!-- Article 2: Image Left, Content Right -->
-            <article id="article-2" class="article article-split">
-                <div class="article-container article-grid">
-                    <figure class="article-figure article-figure-left">
-                        <div class="article-image-placeholder" aria-label="EU Parliament building">
-                            <span class="placeholder-icon">🏛️</span>
-                            <span class="placeholder-text">EU AI Regulation</span>
-                        </div>
-                        <figcaption class="article-figcaption">
-                            European Parliament, Brussels
-                        </figcaption>
-                    </figure>
-                    
-                    <div class="article-content">
-                        <header class="article-header">
-                            <span class="article-category">Policy</span>
-                            <time datetime="2026-01-25" class="article-date">Jan 25, 2026</time>
-                        </header>
-                        
-                        <h3 class="article-title">
-                            The EU AI Act Takes Effect: What Changes for Tech Companies
-                        </h3>
-                        
-                        <p>
-                            After years of deliberation, the European Union's landmark AI Act has 
-                            entered its enforcement phase, creating the world's most comprehensive 
-                            regulatory framework for artificial intelligence. Companies deploying 
-                            AI systems in Europe now face strict transparency and accountability 
-                            requirements.
-                        </p>
-                        <p>
-                            The legislation introduces a risk-based classification system, with 
-                            "high-risk" applications in healthcare, law enforcement, and education 
-                            subject to mandatory auditing. Tech giants have scrambled to establish 
-                            compliance teams, while some smaller AI startups are reconsidering 
-                            their European market strategies entirely.
-                        </p>
-                        
-                        <footer class="article-footer">
-                            <a href="https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai" class="article-source" target="_blank" rel="noopener noreferrer">
-                                Source: European Commission Digital Strategy
-                            </a>
-                            <a href="#article-3" class="article-readmore">Read more →</a>
-                        </footer>
-                    </div>
-                </div>
-            </article>
+        <!-- Stories Grid -->
+        <section id="stories" class="stories-section">
+            <header class="section-header">
+                <h2 class="section-header__title">This Week</h2>
+                <p class="section-header__count">3 stories</p>
+            </header>
 
-            <!-- Article 3: Content Left, Image Right -->
-            <article id="article-3" class="article article-split article-reverse">
-                <div class="article-container article-grid">
-                    <figure class="article-figure article-figure-right">
-                        <div class="article-image-placeholder" aria-label="Molecular structure visualization">
-                            <span class="placeholder-icon">🧬</span>
-                            <span class="placeholder-text">Drug Discovery</span>
-                        </div>
-                        <figcaption class="article-figcaption">
-                            AI-predicted protein structure
-                        </figcaption>
-                    </figure>
-                    
-                    <div class="article-content">
-                        <header class="article-header">
-                            <span class="article-category">Healthcare</span>
-                            <time datetime="2026-01-22" class="article-date">Jan 22, 2026</time>
-                        </header>
-                        
-                        <h3 class="article-title">
-                            AI Discovers New Antibiotic Class in Record Time
-                        </h3>
-                        
-                        <p>
-                            Researchers at MIT and Harvard have announced the discovery of a novel 
-                            class of antibiotics, identified through an AI system that screened 
-                            over 12 million chemical compounds in just three weeks. The discovery 
-                            represents a potential breakthrough against drug-resistant bacteria.
-                        </p>
-                        <p>
-                            Traditional drug discovery processes typically span 10-15 years and 
-                            cost billions. The AI approach compressed initial screening to weeks, 
-                            with the most promising candidates already entering pre-clinical trials. 
-                            Medical experts call this a "paradigm shift" in pharmaceutical research 
-                            methodology.
-                        </p>
-                        
-                        <footer class="article-footer">
-                            <a href="https://www.nature.com/articles/medicine" class="article-source" target="_blank" rel="noopener noreferrer">
-                                Source: Nature Medicine
-                            </a>
-                            <a href="#article-4" class="article-readmore">Read more →</a>
-                        </footer>
-                    </div>
-                </div>
-            </article>
-
-            <!-- Article 4: Image Left, Content Right -->
-            <article id="article-4" class="article article-split">
-                <div class="article-container article-grid">
-                    <figure class="article-figure article-figure-left">
-                        <div class="article-image-placeholder" aria-label="Open source code on screen">
-                            <span class="placeholder-icon">💻</span>
-                            <span class="placeholder-text">Open Source AI</span>
-                        </div>
-                        <figcaption class="article-figcaption">
-                            Open source AI development community
-                        </figcaption>
-                    </figure>
-                    
-                    <div class="article-content">
-                        <header class="article-header">
-                            <span class="article-category">Community</span>
-                            <time datetime="2026-01-19" class="article-date">Jan 19, 2026</time>
-                        </header>
-                        
-                        <h3 class="article-title">
-                            The Open Source AI Revolution: Democratizing Intelligence
-                        </h3>
-                        
-                        <p>
-                            A coalition of researchers, startups, and tech giants has released 
-                            "Foundation-7," a state-of-the-art open source AI model that rivals 
-                            commercial offerings. The release signals a fundamental shift in how 
-                            advanced AI capabilities are distributed and accessed globally.
-                        </p>
-                        <p>
-                            Unlike proprietary systems locked behind API paywalls, Foundation-7 
-                            can be downloaded, modified, and deployed by anyone. Advocates argue 
-                            this democratization prevents AI power from concentrating in a handful 
-                            of corporations, while critics worry about potential misuse without 
-                            commercial safeguards.
-                        </p>
-                        
-                        <footer class="article-footer">
-                            <a href="https://huggingface.co/" class="article-source" target="_blank" rel="noopener noreferrer">
-                                Source: Hugging Face Community
-                            </a>
-                            <a href="#gallery" class="article-readmore">View gallery →</a>
-                        </footer>
-                    </div>
-                </div>
-            </article>
-        </section>
-
-        <!-- 
-        ======================================================================
-        IMAGE GALLERY
-        ======================================================================
-        CSS Grid gallery with hover effects.
-        Images will be generated/added - currently using placeholders.
-        Meets assignment requirement for CSS image gallery.
-        ====================================================================== 
-        -->
-        <section id="gallery" class="gallery-section" aria-labelledby="gallery-heading">
-            <div class="gallery-container">
-                <header class="gallery-header">
-                    <h2 id="gallery-heading" class="section-heading">Visual Stories</h2>
-                    <p class="gallery-description">
-                        Exploring the intersection of technology and humanity through imagery
-                    </p>
-                </header>
+            <div class="stories-grid">
                 
-                <div class="gallery-grid" role="list">
-                    <!-- Gallery Item 1 -->
-                    <figure class="gallery-item" role="listitem">
-                        <div class="gallery-image-placeholder">
-                            <span class="gallery-icon">🤖</span>
+                <!-- Story 2 -->
+                <article class="story story--card">
+                    <figure class="story__figure">
+                        <div class="img-placeholder">
+                            <span class="img-placeholder__icon">△</span>
                         </div>
-                        <figcaption class="gallery-caption">
-                            <span class="gallery-title">Neural Networks</span>
-                            <span class="gallery-credit">AI Generated Concept</span>
-                        </figcaption>
                     </figure>
+                    
+                    <div class="story__body">
+                        <div class="story__meta">
+                            <span class="tag tag--outline">Policy</span>
+                            <time datetime="2026-01-25" class="story__date">25.01.26</time>
+                        </div>
 
-                    <!-- Gallery Item 2 -->
-                    <figure class="gallery-item gallery-item-tall" role="listitem">
-                        <div class="gallery-image-placeholder">
-                            <span class="gallery-icon">🌐</span>
-                        </div>
-                        <figcaption class="gallery-caption">
-                            <span class="gallery-title">Global Connectivity</span>
-                            <span class="gallery-credit">AI Generated Concept</span>
-                        </figcaption>
-                    </figure>
+                        <h3 class="story__title">
+                            Europe drew a line in the sand. Big Tech just tripped over it.
+                        </h3>
 
-                    <!-- Gallery Item 3 -->
-                    <figure class="gallery-item" role="listitem">
-                        <div class="gallery-image-placeholder">
-                            <span class="gallery-icon">⚡</span>
-                        </div>
-                        <figcaption class="gallery-caption">
-                            <span class="gallery-title">Processing Power</span>
-                            <span class="gallery-credit">AI Generated Concept</span>
-                        </figcaption>
-                    </figure>
+                        <p class="story__excerpt">
+                            The EU AI Act is now law. Companies have 6 months to comply or face fines 
+                            that make GDPR look like a parking ticket. The era of "move fast and break things" 
+                            just hit a wall called Brussels.
+                        </p>
 
-                    <!-- Gallery Item 4 -->
-                    <figure class="gallery-item gallery-item-wide" role="listitem">
-                        <div class="gallery-image-placeholder">
-                            <span class="gallery-icon">🔮</span>
-                        </div>
-                        <figcaption class="gallery-caption">
-                            <span class="gallery-title">Future Predictions</span>
-                            <span class="gallery-credit">AI Generated Concept</span>
-                        </figcaption>
-                    </figure>
+                        <a href="https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai" class="story__link" target="_blank" rel="noopener">
+                            Read analysis →
+                        </a>
+                    </div>
+                </article>
 
-                    <!-- Gallery Item 5 -->
-                    <figure class="gallery-item" role="listitem">
-                        <div class="gallery-image-placeholder">
-                            <span class="gallery-icon">🎨</span>
+                <!-- Story 3 -->
+                <article class="story story--card">
+                    <figure class="story__figure">
+                        <div class="img-placeholder">
+                            <span class="img-placeholder__icon">○</span>
                         </div>
-                        <figcaption class="gallery-caption">
-                            <span class="gallery-title">Creative AI</span>
-                            <span class="gallery-credit">AI Generated Concept</span>
-                        </figcaption>
                     </figure>
+                    
+                    <div class="story__body">
+                        <div class="story__meta">
+                            <span class="tag tag--outline">Healthcare</span>
+                            <time datetime="2026-01-22" class="story__date">22.01.26</time>
+                        </div>
 
-                    <!-- Gallery Item 6 -->
-                    <figure class="gallery-item" role="listitem">
-                        <div class="gallery-image-placeholder">
-                            <span class="gallery-icon">🔬</span>
+                        <h3 class="story__title">
+                            An AI just discovered antibiotics that work. Actual, new antibiotics.
+                        </h3>
+
+                        <p class="story__excerpt">
+                            MIT researchers fed 12 million chemical compounds into a neural network. 
+                            Three weeks later, it found a class of antibiotics that kills drug-resistant bacteria. 
+                            The normal timeline? A decade. Minimum.
+                        </p>
+
+                        <a href="https://www.nature.com/natmedicine/" class="story__link" target="_blank" rel="noopener">
+                            Read the science →
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Story 4 -->
+                <article class="story story--card">
+                    <figure class="story__figure">
+                        <div class="img-placeholder">
+                            <span class="img-placeholder__icon">□</span>
                         </div>
-                        <figcaption class="gallery-caption">
-                            <span class="gallery-title">Scientific Discovery</span>
-                            <span class="gallery-credit">AI Generated Concept</span>
-                        </figcaption>
                     </figure>
-                </div>
+                    
+                    <div class="story__body">
+                        <div class="story__meta">
+                            <span class="tag tag--outline">Open Source</span>
+                            <time datetime="2026-01-19" class="story__date">19.01.26</time>
+                        </div>
+
+                        <h3 class="story__title">
+                            The best AI model in the world is now free. That changes everything.
+                        </h3>
+
+                        <p class="story__excerpt">
+                            Foundation-7 dropped last week. It matches GPT-4 on benchmarks and anyone can download it. 
+                            No API keys. No usage limits. Just raw intelligence, available to everyone. 
+                            The democratization of AI isn't coming. It's here.
+                        </p>
+
+                        <a href="https://huggingface.co/" class="story__link" target="_blank" rel="noopener">
+                            Explore the model →
+                        </a>
+                    </div>
+                </article>
+
             </div>
         </section>
 
-        <!-- 
-        ======================================================================
-        SUBSCRIBE SECTION
-        ======================================================================
-        Newsletter signup CTA with single clear action.
-        Form styled but non-functional (no JavaScript).
-        ====================================================================== 
-        -->
-        <section id="subscribe" class="subscribe-section" aria-labelledby="subscribe-heading">
-            <div class="subscribe-container">
-                <h2 id="subscribe-heading" class="subscribe-heading">
-                    Stay ahead of the curve
+        <!-- Gallery -->
+        <section id="gallery" class="gallery-section">
+            <header class="section-header section-header--center">
+                <h2 class="section-header__title">Visual Intelligence</h2>
+                <p class="section-header__subtitle">The aesthetics of artificial minds</p>
+            </header>
+
+            <div class="gallery">
+                <figure class="gallery__item gallery__item--tall">
+                    <div class="img-placeholder img-placeholder--gallery">
+                        <span class="img-placeholder__icon">◈</span>
+                    </div>
+                    <figcaption class="gallery__caption">
+                        <span class="gallery__caption-title">Neural Topology</span>
+                        <span class="gallery__caption-credit">Generated</span>
+                    </figcaption>
+                </figure>
+
+                <figure class="gallery__item">
+                    <div class="img-placeholder img-placeholder--gallery">
+                        <span class="img-placeholder__icon">◇</span>
+                    </div>
+                    <figcaption class="gallery__caption">
+                        <span class="gallery__caption-title">Latent Space</span>
+                        <span class="gallery__caption-credit">Generated</span>
+                    </figcaption>
+                </figure>
+
+                <figure class="gallery__item">
+                    <div class="img-placeholder img-placeholder--gallery">
+                        <span class="img-placeholder__icon">△</span>
+                    </div>
+                    <figcaption class="gallery__caption">
+                        <span class="gallery__caption-title">Attention Maps</span>
+                        <span class="gallery__caption-credit">Generated</span>
+                    </figcaption>
+                </figure>
+
+                <figure class="gallery__item gallery__item--wide">
+                    <div class="img-placeholder img-placeholder--gallery">
+                        <span class="img-placeholder__icon">▽</span>
+                    </div>
+                    <figcaption class="gallery__caption">
+                        <span class="gallery__caption-title">Gradient Descent</span>
+                        <span class="gallery__caption-credit">Generated</span>
+                    </figcaption>
+                </figure>
+
+                <figure class="gallery__item">
+                    <div class="img-placeholder img-placeholder--gallery">
+                        <span class="img-placeholder__icon">○</span>
+                    </div>
+                    <figcaption class="gallery__caption">
+                        <span class="gallery__caption-title">Embedding Space</span>
+                        <span class="gallery__caption-credit">Generated</span>
+                    </figcaption>
+                </figure>
+
+                <figure class="gallery__item">
+                    <div class="img-placeholder img-placeholder--gallery">
+                        <span class="img-placeholder__icon">□</span>
+                    </div>
+                    <figcaption class="gallery__caption">
+                        <span class="gallery__caption-title">Token Flow</span>
+                        <span class="gallery__caption-credit">Generated</span>
+                    </figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <!-- Subscribe -->
+        <section id="subscribe" class="subscribe-section">
+            <div class="subscribe__container">
+                <h2 class="subscribe__title">
+                    Intelligence delivered.<br>
+                    <span class="text-muted">Every Sunday.</span>
                 </h2>
-                <p class="subscribe-description">
-                    Get the most important AI stories delivered to your inbox weekly. 
-                    No spam, no hype — just signal.
-                </p>
                 
-                <!-- Note: Form is decorative - no JS means no actual submission -->
-                <form class="subscribe-form" action="#" method="post">
-                    <label for="email-input" class="visually-hidden">Email address</label>
+                <p class="subscribe__description">
+                    Join 12,000+ readers who start their week with clarity on AI. 
+                    Free. No spam. Unsubscribe whenever.
+                </p>
+
+                <form class="subscribe__form" action="#" method="post">
+                    <label for="email" class="visually-hidden">Email address</label>
                     <input 
                         type="email" 
-                        id="email-input" 
+                        id="email" 
                         name="email" 
-                        class="subscribe-input" 
-                        placeholder="your@email.com"
+                        class="input" 
+                        placeholder="you@example.com"
                         required
                     >
-                    <button type="submit" class="subscribe-button">
-                        Subscribe
-                    </button>
+                    <button type="submit" class="btn btn--primary">Subscribe</button>
                 </form>
-                
-                <p class="subscribe-note">
-                    Join 12,000+ readers. Unsubscribe anytime.
-                </p>
             </div>
         </section>
+
     </main>
 
-    <!-- 
-    ==========================================================================
-    FOOTER
-    ==========================================================================
-    Contains about section, source citations, and copyright.
-    Uses deep blue to bookend the page (matches hero).
-    ========================================================================== 
-    -->
-    <footer id="about" class="site-footer" role="contentinfo">
-        <div class="footer-container">
-            <!-- About Section -->
-            <div class="footer-about">
-                <h2 class="footer-logo">THE WAVE <span aria-hidden="true">〰</span></h2>
-                <p class="footer-tagline">Catch the future before it breaks</p>
-                <p class="footer-description">
-                    THE WAVE is an independent publication covering artificial intelligence, 
-                    machine learning, and emerging technology. We believe in thoughtful 
-                    analysis over sensational headlines.
-                </p>
+    <!-- ============================================
+         FOOTER
+         ============================================ -->
+    <footer id="about" class="site-footer">
+        <div class="footer__container">
+            <div class="footer__brand">
+                <p class="footer__logo">THE WAVE</p>
+                <p class="footer__tagline">Signal over noise since 2024.</p>
             </div>
 
-            <!-- Sources & Credits -->
-            <div class="footer-sources">
-                <h3 class="footer-heading">Sources & Credits</h3>
-                <ul class="footer-list">
-                    <li>
-                        <a href="https://openai.com/research" target="_blank" rel="noopener noreferrer">
-                            OpenAI Research
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai" target="_blank" rel="noopener noreferrer">
-                            European Commission
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://www.nature.com/natmedicine/" target="_blank" rel="noopener noreferrer">
-                            Nature Medicine
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://huggingface.co/" target="_blank" rel="noopener noreferrer">
-                            Hugging Face
-                        </a>
-                    </li>
-                </ul>
-            </div>
-
-            <!-- Quick Links -->
-            <div class="footer-links">
-                <h3 class="footer-heading">Quick Links</h3>
-                <ul class="footer-list">
+            <div class="footer__links">
+                <h3 class="footer__heading">Navigate</h3>
+                <ul class="footer__list">
                     <li><a href="#top">Home</a></li>
-                    <li><a href="#featured">Featured</a></li>
-                    <li><a href="#articles">Articles</a></li>
+                    <li><a href="#stories">Stories</a></li>
                     <li><a href="#gallery">Gallery</a></li>
+                    <li><a href="#subscribe">Subscribe</a></li>
                 </ul>
             </div>
 
-            <!-- Legal -->
-            <div class="footer-legal">
-                <p class="footer-copyright">
-                    © 2026 THE WAVE. All rights reserved.
-                </p>
-                <p class="footer-academic">
-                    Created for HEP504 Web Development<br>
-                    Abertay University
-                </p>
+            <div class="footer__links">
+                <h3 class="footer__heading">Sources</h3>
+                <ul class="footer__list">
+                    <li><a href="https://openai.com/research" target="_blank" rel="noopener">OpenAI</a></li>
+                    <li><a href="https://www.nature.com/" target="_blank" rel="noopener">Nature</a></li>
+                    <li><a href="https://huggingface.co/" target="_blank" rel="noopener">Hugging Face</a></li>
+                    <li><a href="https://arxiv.org/" target="_blank" rel="noopener">arXiv</a></li>
+                </ul>
+            </div>
+
+            <div class="footer__legal">
+                <p>© 2026 THE WAVE</p>
+                <p class="footer__academic">HEP504 Web Development — Abertay University</p>
             </div>
         </div>
     </footer>
 
-    <!-- 
-    ==========================================================================
-    SCROLL TO TOP BUTTON
-    ==========================================================================
-    Fixed position button for easy navigation back to top.
-    Uses anchor link (no JavaScript required).
-    ========================================================================== 
-    -->
-    <a href="#top" class="scroll-top" aria-label="Scroll to top">
-        <span class="scroll-top-icon" aria-hidden="true">↑</span>
-    </a>
+    <!-- Scroll to top -->
+    <a href="#top" class="scroll-top" aria-label="Back to top">↑</a>
 
 </body>
 </html>
