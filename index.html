@@ -3,21 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="THE WAVE - Where machine intelligence meets human stories.">
-    <meta name="theme-color" content="#09090b">
+    <meta name="description" content="THE WAVE - Your AI companion for understanding machine intelligence. Weekly dispatches from the frontier.">
+    <meta name="theme-color" content="#0EA5E9">
     
-    <title>THE WAVE</title>
+    <title>THE WAVE — Catch the Future Before It Breaks</title>
     
-    <!-- 
-    Typography System:
-    - Syne: Editorial display face with personality
-    - Instrument Serif: Elegant contrast for article titles  
-    - Space Grotesk: Modern geometric for UI/body
-    - JetBrains Mono: Technical metadata
-    -->
+    <!-- Nunito - same font as Typotab -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Nunito:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     
     <link rel="stylesheet" href="css/styles.css">
 </head>
@@ -26,54 +20,59 @@
     <a href="#main" class="skip-link">Skip to content</a>
 
     <!-- ============================================
-         NAVIGATION
-         Minimal. No glass. Just confidence.
+         NAVIGATION (white bg, blur on scroll)
          ============================================ -->
     <header class="site-header">
         <nav class="nav">
-            <a href="#top" class="nav__logo">
-                <span class="nav__logo-text">THE WAVE</span>
-            </a>
+            <a href="#top" class="nav__logo">THE WAVE</a>
 
             <ul class="nav__links">
                 <li><a href="#stories" class="nav__link">Stories</a></li>
+                <li><a href="#topics" class="nav__link">Topics</a></li>
                 <li><a href="#gallery" class="nav__link">Gallery</a></li>
                 <li><a href="#about" class="nav__link">About</a></li>
             </ul>
 
-            <a href="#subscribe" class="btn btn--primary btn--sm">Subscribe</a>
+            <a href="#subscribe" class="btn btn--secondary">Subscribe</a>
         </nav>
     </header>
 
     <!-- ============================================
-         HERO
-         Editorial confidence. Not corporate drone.
+         HERO (Sky gradient with clouds)
          ============================================ -->
     <section class="hero">
-        <div class="hero__container">
-            <p class="hero__eyebrow">Issue 047 — February 2026</p>
+        <!-- Floating decorative stars -->
+        <div class="hero__stars" aria-hidden="true">
+            <span class="hero__star">✦</span>
+            <span class="hero__star">✧</span>
+            <span class="hero__star">✦</span>
+            <span class="hero__star">★</span>
+        </div>
+
+        <div class="hero__content">
+            <!-- Announcement badge -->
+            <div class="hero__badge">
+                <span class="hero__badge-new">New</span>
+                <span>Issue #047 — February 2026 🎉</span>
+            </div>
             
             <h1 class="hero__title">
-                <span class="hero__title-line">The machines</span>
-                <span class="hero__title-line">are <em>learning.</em></span>
-                <span class="hero__title-line">Are you?</span>
+                Catch the Future<br>Before It Breaks.
             </h1>
             
             <p class="hero__subtitle">
-                Weekly dispatches from the frontier of artificial intelligence. 
-                No hype. No doom. Just the signal.
+                Your AI companion that transforms complex machine learning news 
+                into compelling, digestible stories.
             </p>
 
-            <div class="hero__cta-group">
-                <a href="#featured" class="btn btn--primary">Read This Week's Issue</a>
-                <a href="#subscribe" class="btn btn--ghost">Get the Newsletter</a>
+            <div class="hero__cta">
+                <a href="#stories" class="btn btn--primary btn--lg">Read This Week's Issue</a>
+                <a href="#subscribe" class="btn btn--outline btn--lg">Get the Newsletter</a>
             </div>
         </div>
 
-        <div class="hero__scroll-hint" aria-hidden="true">
-            <span class="hero__scroll-text">Scroll</span>
-            <span class="hero__scroll-line"></span>
-        </div>
+        <!-- Cloud wave transition -->
+        <div class="hero__wave" aria-hidden="true"></div>
     </section>
 
     <!-- ============================================
@@ -81,233 +80,273 @@
          ============================================ -->
     <main id="main">
         
-        <!-- Featured Story -->
-        <article id="featured" class="story story--featured">
-            <div class="story__container">
-                <header class="story__header">
-                    <div class="story__meta">
-                        <span class="tag">Breakthrough</span>
-                        <time datetime="2026-01-28" class="story__date">28.01.26</time>
+        <!-- Featured Article -->
+        <section class="section">
+            <article class="featured-article">
+                <div class="featured-article__inner">
+                    <div class="featured-article__content">
+                        <div class="featured-article__meta">
+                            <span class="tag">Breakthrough</span>
+                            <time class="article-card__date" datetime="2026-01-28">28.01.26</time>
+                        </div>
+                        
+                        <h2 class="featured-article__title">
+                            GPT-5 doesn't just understand you. It reasons with you.
+                        </h2>
+                        
+                        <p class="featured-article__excerpt">
+                            OpenAI just shipped something that feels different. Not incrementally 
+                            better—fundamentally different. The demos are unsettling in the best way.
+                        </p>
+                        
+                        <a href="https://openai.com/research" class="btn btn--primary" target="_blank" rel="noopener">
+                            Read the full story →
+                        </a>
                     </div>
-                </header>
-
-                <h2 class="story__title story__title--xl">
-                    GPT-5 doesn't just understand you. <em>It reasons with you.</em>
-                </h2>
-
-                <figure class="story__figure story__figure--featured">
-                    <div class="img-placeholder img-placeholder--hero">
-                        <span class="img-placeholder__icon">◇</span>
+                    
+                    <div class="featured-article__image">
+                        <div class="img-placeholder">
+                            <span class="img-placeholder__icon">🧠</span>
+                        </div>
                     </div>
-                    <figcaption class="story__caption">Neural pathway visualization</figcaption>
-                </figure>
-
-                <div class="story__content prose">
-                    <p class="lede">
-                        OpenAI just shipped something that feels different. Not incrementally better—fundamentally different. 
-                        GPT-5 doesn't just predict the next word. It builds mental models.
-                    </p>
-                    <p>
-                        The demos are unsettling in the best way. Feed it a physics problem and watch it sketch diagrams, 
-                        backtrack when it hits dead ends, and explain its reasoning like a patient tutor. 
-                        This isn't autocomplete with better training data. This is something new.
-                    </p>
-                    <p>
-                        The implications ripple outward: scientific research accelerates, education transforms, 
-                        and the definition of "intelligence" gets hazier. The question isn't whether AI will change everything. 
-                        It's whether we're ready to change with it.
-                    </p>
                 </div>
+            </article>
+        </section>
 
-                <footer class="story__footer">
-                    <a href="https://openai.com/research" class="story__source" target="_blank" rel="noopener">
-                        Source: OpenAI Research
-                    </a>
-                </footer>
-            </div>
-        </article>
-
-        <!-- Stories Grid -->
-        <section id="stories" class="stories-section">
-            <header class="section-header">
-                <h2 class="section-header__title">This Week</h2>
-                <p class="section-header__count">3 stories</p>
+        <!-- Topic Cards (colorful like Typotab) -->
+        <section id="topics" class="section">
+            <header class="section__header">
+                <h2 class="section__title">Explore by Topic</h2>
+                <p class="section__subtitle">
+                    Deep dives into the themes shaping artificial intelligence today
+                </p>
             </header>
 
-            <div class="stories-grid">
-                
-                <!-- Story 2 -->
-                <article class="story story--card">
-                    <figure class="story__figure">
-                        <div class="img-placeholder">
-                            <span class="img-placeholder__icon">△</span>
+            <div class="features-grid">
+                <!-- Cyan card -->
+                <article class="feature-card feature-card--cyan">
+                    <span class="feature-card__icon">⚡</span>
+                    <h3 class="feature-card__title">Breakthroughs</h3>
+                    <p class="feature-card__text">
+                        The latest advances in AI capabilities, from multimodal reasoning 
+                        to emergent behaviors we didn't expect.
+                    </p>
+                    <div class="feature-card__image">
+                        <div class="img-placeholder" style="background: rgba(255,255,255,0.2);">
+                            <span class="img-placeholder__icon">🔬</span>
                         </div>
-                    </figure>
-                    
-                    <div class="story__body">
-                        <div class="story__meta">
-                            <span class="tag tag--outline">Policy</span>
-                            <time datetime="2026-01-25" class="story__date">25.01.26</time>
+                    </div>
+                </article>
+
+                <!-- Purple card -->
+                <article class="feature-card feature-card--purple">
+                    <span class="feature-card__icon">⚖️</span>
+                    <h3 class="feature-card__title">Policy & Ethics</h3>
+                    <p class="feature-card__text">
+                        How governments and institutions are responding to AI—regulations, 
+                        debates, and the rules being written now.
+                    </p>
+                    <div class="feature-card__image">
+                        <div class="img-placeholder" style="background: rgba(255,255,255,0.2);">
+                            <span class="img-placeholder__icon">🏛️</span>
                         </div>
+                    </div>
+                </article>
 
-                        <h3 class="story__title">
-                            Europe drew a line in the sand. Big Tech just tripped over it.
-                        </h3>
+                <!-- Orange card -->
+                <article class="feature-card feature-card--orange">
+                    <span class="feature-card__icon">🏥</span>
+                    <h3 class="feature-card__title">Healthcare</h3>
+                    <p class="feature-card__text">
+                        AI in medicine—drug discovery, diagnostics, and the transformation 
+                        of how we treat disease.
+                    </p>
+                    <div class="feature-card__image">
+                        <div class="img-placeholder" style="background: rgba(255,255,255,0.2);">
+                            <span class="img-placeholder__icon">🧬</span>
+                        </div>
+                    </div>
+                </article>
 
-                        <p class="story__excerpt">
+                <!-- Green card -->
+                <article class="feature-card feature-card--green">
+                    <span class="feature-card__icon">🌐</span>
+                    <h3 class="feature-card__title">Open Source</h3>
+                    <p class="feature-card__text">
+                        The democratization of AI—open models, community research, and 
+                        accessible intelligence for everyone.
+                    </p>
+                    <div class="feature-card__image">
+                        <div class="img-placeholder" style="background: rgba(255,255,255,0.2);">
+                            <span class="img-placeholder__icon">💻</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- This Week's Stories -->
+        <section id="stories" class="section section--alt">
+            <header class="section__header">
+                <h2 class="section__title">This Week's Stories</h2>
+                <p class="section__subtitle">
+                    Three stories that matter, explained without the jargon
+                </p>
+            </header>
+
+            <div class="articles-grid">
+                <!-- Article 1 -->
+                <article class="article-card">
+                    <div class="article-card__image">
+                        <div class="img-placeholder" style="background: linear-gradient(135deg, #0095FF 0%, #00C6FF 100%);">
+                            <span class="img-placeholder__icon" style="color: white;">🇪🇺</span>
+                        </div>
+                    </div>
+                    <div class="article-card__body">
+                        <div class="article-card__meta">
+                            <span class="tag tag--purple">Policy</span>
+                            <time class="article-card__date" datetime="2026-01-25">25.01.26</time>
+                        </div>
+                        <h3 class="article-card__title">Europe drew a line. Big Tech tripped over it.</h3>
+                        <p class="article-card__excerpt">
                             The EU AI Act is now law. Companies have 6 months to comply or face fines 
-                            that make GDPR look like a parking ticket. The era of "move fast and break things" 
-                            just hit a wall called Brussels.
+                            that make GDPR look like a parking ticket.
                         </p>
-
-                        <a href="https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai" class="story__link" target="_blank" rel="noopener">
+                        <a href="https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai" class="article-card__link" target="_blank" rel="noopener">
                             Read analysis →
                         </a>
                     </div>
                 </article>
 
-                <!-- Story 3 -->
-                <article class="story story--card">
-                    <figure class="story__figure">
-                        <div class="img-placeholder">
-                            <span class="img-placeholder__icon">○</span>
+                <!-- Article 2 -->
+                <article class="article-card">
+                    <div class="article-card__image">
+                        <div class="img-placeholder" style="background: linear-gradient(135deg, #AD6DFF 0%, #FF6DFF 100%);">
+                            <span class="img-placeholder__icon" style="color: white;">💊</span>
                         </div>
-                    </figure>
-                    
-                    <div class="story__body">
-                        <div class="story__meta">
-                            <span class="tag tag--outline">Healthcare</span>
-                            <time datetime="2026-01-22" class="story__date">22.01.26</time>
+                    </div>
+                    <div class="article-card__body">
+                        <div class="article-card__meta">
+                            <span class="tag tag--green">Healthcare</span>
+                            <time class="article-card__date" datetime="2026-01-22">22.01.26</time>
                         </div>
-
-                        <h3 class="story__title">
-                            An AI just discovered antibiotics that work. Actual, new antibiotics.
-                        </h3>
-
-                        <p class="story__excerpt">
-                            MIT researchers fed 12 million chemical compounds into a neural network. 
-                            Three weeks later, it found a class of antibiotics that kills drug-resistant bacteria. 
-                            The normal timeline? A decade. Minimum.
+                        <h3 class="article-card__title">An AI discovered antibiotics that actually work.</h3>
+                        <p class="article-card__excerpt">
+                            MIT fed 12 million compounds into a neural network. Three weeks later: 
+                            a new class of antibiotics. Normal timeline? A decade.
                         </p>
-
-                        <a href="https://www.nature.com/natmedicine/" class="story__link" target="_blank" rel="noopener">
+                        <a href="https://www.nature.com/natmedicine/" class="article-card__link" target="_blank" rel="noopener">
                             Read the science →
                         </a>
                     </div>
                 </article>
 
-                <!-- Story 4 -->
-                <article class="story story--card">
-                    <figure class="story__figure">
-                        <div class="img-placeholder">
-                            <span class="img-placeholder__icon">□</span>
+                <!-- Article 3 -->
+                <article class="article-card">
+                    <div class="article-card__image">
+                        <div class="img-placeholder" style="background: linear-gradient(135deg, #FF7300 0%, #FFB800 100%);">
+                            <span class="img-placeholder__icon" style="color: white;">🔓</span>
                         </div>
-                    </figure>
-                    
-                    <div class="story__body">
-                        <div class="story__meta">
-                            <span class="tag tag--outline">Open Source</span>
-                            <time datetime="2026-01-19" class="story__date">19.01.26</time>
+                    </div>
+                    <div class="article-card__body">
+                        <div class="article-card__meta">
+                            <span class="tag tag--orange">Open Source</span>
+                            <time class="article-card__date" datetime="2026-01-19">19.01.26</time>
                         </div>
-
-                        <h3 class="story__title">
-                            The best AI model in the world is now free. That changes everything.
-                        </h3>
-
-                        <p class="story__excerpt">
-                            Foundation-7 dropped last week. It matches GPT-4 on benchmarks and anyone can download it. 
-                            No API keys. No usage limits. Just raw intelligence, available to everyone. 
-                            The democratization of AI isn't coming. It's here.
+                        <h3 class="article-card__title">The best AI model is now free. That changes everything.</h3>
+                        <p class="article-card__excerpt">
+                            Foundation-7 matches GPT-4 on benchmarks. Anyone can download it. 
+                            No API keys. No limits. Just raw intelligence for everyone.
                         </p>
-
-                        <a href="https://huggingface.co/" class="story__link" target="_blank" rel="noopener">
+                        <a href="https://huggingface.co/" class="article-card__link" target="_blank" rel="noopener">
                             Explore the model →
                         </a>
                     </div>
                 </article>
-
             </div>
         </section>
 
         <!-- Gallery -->
-        <section id="gallery" class="gallery-section">
-            <header class="section-header section-header--center">
-                <h2 class="section-header__title">Visual Intelligence</h2>
-                <p class="section-header__subtitle">The aesthetics of artificial minds</p>
+        <section id="gallery" class="section">
+            <header class="section__header">
+                <h2 class="section__title">Visual Intelligence</h2>
+                <p class="section__subtitle">
+                    The aesthetics of artificial minds
+                </p>
             </header>
 
             <div class="gallery">
                 <figure class="gallery__item gallery__item--tall">
-                    <div class="img-placeholder img-placeholder--gallery">
-                        <span class="img-placeholder__icon">◈</span>
-                    </div>
-                    <figcaption class="gallery__caption">
-                        <span class="gallery__caption-title">Neural Topology</span>
-                        <span class="gallery__caption-credit">Generated</span>
-                    </figcaption>
-                </figure>
-
-                <figure class="gallery__item">
-                    <div class="img-placeholder img-placeholder--gallery">
+                    <div class="img-placeholder" style="background: linear-gradient(180deg, #7DD3FC 0%, #0EA5E9 100%);">
                         <span class="img-placeholder__icon">◇</span>
                     </div>
                     <figcaption class="gallery__caption">
-                        <span class="gallery__caption-title">Latent Space</span>
-                        <span class="gallery__caption-credit">Generated</span>
+                        <span class="gallery__caption-title">Neural Topology</span>
+                        <span class="gallery__caption-credit">AI Generated</span>
                     </figcaption>
                 </figure>
 
                 <figure class="gallery__item">
-                    <div class="img-placeholder img-placeholder--gallery">
+                    <div class="img-placeholder" style="background: linear-gradient(135deg, #AD6DFF 0%, #6D9FFF 100%);">
                         <span class="img-placeholder__icon">△</span>
                     </div>
                     <figcaption class="gallery__caption">
+                        <span class="gallery__caption-title">Latent Space</span>
+                        <span class="gallery__caption-credit">AI Generated</span>
+                    </figcaption>
+                </figure>
+
+                <figure class="gallery__item">
+                    <div class="img-placeholder" style="background: linear-gradient(135deg, #00CE44 0%, #7DD3FC 100%);">
+                        <span class="img-placeholder__icon">○</span>
+                    </div>
+                    <figcaption class="gallery__caption">
                         <span class="gallery__caption-title">Attention Maps</span>
-                        <span class="gallery__caption-credit">Generated</span>
+                        <span class="gallery__caption-credit">AI Generated</span>
                     </figcaption>
                 </figure>
 
                 <figure class="gallery__item gallery__item--wide">
-                    <div class="img-placeholder img-placeholder--gallery">
-                        <span class="img-placeholder__icon">▽</span>
-                    </div>
-                    <figcaption class="gallery__caption">
-                        <span class="gallery__caption-title">Gradient Descent</span>
-                        <span class="gallery__caption-credit">Generated</span>
-                    </figcaption>
-                </figure>
-
-                <figure class="gallery__item">
-                    <div class="img-placeholder img-placeholder--gallery">
-                        <span class="img-placeholder__icon">○</span>
-                    </div>
-                    <figcaption class="gallery__caption">
-                        <span class="gallery__caption-title">Embedding Space</span>
-                        <span class="gallery__caption-credit">Generated</span>
-                    </figcaption>
-                </figure>
-
-                <figure class="gallery__item">
-                    <div class="img-placeholder img-placeholder--gallery">
+                    <div class="img-placeholder" style="background: linear-gradient(135deg, #FF7300 0%, #FF3D00 100%);">
                         <span class="img-placeholder__icon">□</span>
                     </div>
                     <figcaption class="gallery__caption">
+                        <span class="gallery__caption-title">Gradient Descent</span>
+                        <span class="gallery__caption-credit">AI Generated</span>
+                    </figcaption>
+                </figure>
+
+                <figure class="gallery__item">
+                    <div class="img-placeholder" style="background: linear-gradient(135deg, #0095FF 0%, #AD6DFF 100%);">
+                        <span class="img-placeholder__icon">✦</span>
+                    </div>
+                    <figcaption class="gallery__caption">
                         <span class="gallery__caption-title">Token Flow</span>
-                        <span class="gallery__caption-credit">Generated</span>
+                        <span class="gallery__caption-credit">AI Generated</span>
+                    </figcaption>
+                </figure>
+
+                <figure class="gallery__item">
+                    <div class="img-placeholder" style="background: linear-gradient(135deg, #FFB800 0%, #00CE44 100%);">
+                        <span class="img-placeholder__icon">◈</span>
+                    </div>
+                    <figcaption class="gallery__caption">
+                        <span class="gallery__caption-title">Embedding Space</span>
+                        <span class="gallery__caption-credit">AI Generated</span>
                     </figcaption>
                 </figure>
             </div>
         </section>
 
         <!-- Subscribe -->
-        <section id="subscribe" class="subscribe-section">
+        <section id="subscribe" class="subscribe">
             <div class="subscribe__container">
                 <h2 class="subscribe__title">
                     Intelligence delivered.<br>
                     <span class="text-muted">Every Sunday.</span>
                 </h2>
                 
-                <p class="subscribe__description">
+                <p class="subscribe__text">
                     Join 12,000+ readers who start their week with clarity on AI. 
                     Free. No spam. Unsubscribe whenever.
                 </p>
@@ -322,7 +361,7 @@
                         placeholder="you@example.com"
                         required
                     >
-                    <button type="submit" class="btn btn--primary">Subscribe</button>
+                    <button type="submit" class="btn btn--primary btn--lg">Subscribe</button>
                 </form>
             </div>
         </section>
@@ -332,24 +371,24 @@
     <!-- ============================================
          FOOTER
          ============================================ -->
-    <footer id="about" class="site-footer">
+    <footer id="about" class="footer">
         <div class="footer__container">
             <div class="footer__brand">
                 <p class="footer__logo">THE WAVE</p>
-                <p class="footer__tagline">Signal over noise since 2024.</p>
+                <p class="footer__tagline">Catch the future before it breaks.</p>
             </div>
 
-            <div class="footer__links">
+            <div class="footer__col">
                 <h3 class="footer__heading">Navigate</h3>
                 <ul class="footer__list">
                     <li><a href="#top">Home</a></li>
                     <li><a href="#stories">Stories</a></li>
+                    <li><a href="#topics">Topics</a></li>
                     <li><a href="#gallery">Gallery</a></li>
-                    <li><a href="#subscribe">Subscribe</a></li>
                 </ul>
             </div>
 
-            <div class="footer__links">
+            <div class="footer__col">
                 <h3 class="footer__heading">Sources</h3>
                 <ul class="footer__list">
                     <li><a href="https://openai.com/research" target="_blank" rel="noopener">OpenAI</a></li>
@@ -359,9 +398,17 @@
                 </ul>
             </div>
 
-            <div class="footer__legal">
-                <p>© 2026 THE WAVE</p>
-                <p class="footer__academic">HEP504 Web Development — Abertay University</p>
+            <div class="footer__col">
+                <h3 class="footer__heading">Legal</h3>
+                <ul class="footer__list">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#subscribe">Subscribe</a></li>
+                </ul>
+            </div>
+
+            <div class="footer__bottom">
+                <p>© 2026 THE WAVE. All rights reserved.</p>
+                <p>HEP504 Web Development — Abertay University</p>
             </div>
         </div>
     </footer>
