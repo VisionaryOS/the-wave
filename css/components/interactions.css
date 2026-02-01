@@ -28,13 +28,14 @@
 }
 
 .btn--yes {
-	background: transparent;
-	color: var(--color-white);
+	background: var(--color-white);
+	color: var(--color-cyan);
 	border: 2px solid var(--color-white);
-	--btn-hover-bg: var(--white-10);
-	--btn-hover-color: var(--color-white);
+	--btn-hover-lift: -3px;
+	--btn-hover-bg: var(--color-white);
+	--btn-hover-color: var(--gradient-hero-top);
 	--btn-hover-border-color: var(--color-white);
-	--btn-hover-shadow: 0 8px 24px var(--white-30);
+	--btn-hover-shadow: 0 8px 24px var(--black-30);
 }
 
 .btn--no {

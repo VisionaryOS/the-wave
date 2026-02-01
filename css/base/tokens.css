@@ -11,7 +11,6 @@
 
 	/* topic colours - each category gets a signature colour */
 	--color-cyan: rgb(0, 149, 255);
-	--color-blue: rgb(0, 117, 250);
 	--color-purple: rgb(173, 109, 255);
 	--color-orange: rgb(255, 115, 0);
 	--color-green: rgb(0, 206, 68);
@@ -23,7 +22,6 @@
 	--color-text: rgb(38, 38, 38);
 	--color-text-light: #404040;
 	--color-text-muted: rgb(140, 146, 157);
-	--color-text-subtle: rgb(88, 105, 127);
 
 	/* hero gradient - blue to cyan to white, gives that "sky" feel */
 	--gradient-hero-top: rgb(71, 114, 255);

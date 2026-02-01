@@ -5,39 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <!-- page info -->
-    <title>the wave - Catch the Future Before It Breaks</title>
-    <meta name="description" content="AI news that actually makes sense. Three stories, every week. Join 12,000+ readers who start their week with clarity on artificial intelligence.">
-    <meta name="keywords" content="AI news, artificial intelligence, machine learning, tech newsletter, AI policy, AI healthcare">
-    <meta name="author" content="the wave">
-    
-    <!-- social sharing -->
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="the wave - Catch the Future Before It Breaks">
-    <meta property="og:description" content="AI news that actually makes sense. Three stories, every week.">
-    <meta property="og:site_name" content="the wave">
-    
+    <title>the wave | Three tech stories a day. Everything you need, nothing you don't.</title>
+    <meta name="description" content="Three tech stories a day. No hype, no fluff - just the news that matters.">
+    <meta name="author" content="Shamaila Hussain">
     <meta name="theme-color" content="#4772FF">
     
     <!-- fonts - nunito for ui, source serif for reading -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Nunito:wght@400;500;600;700;800;900&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
     
     <link rel="stylesheet" href="css/main.css">
 </head>
 
 <body id="top">
+    <a class="skip-link" href="#main-content">Skip to main content</a>
     <!-- sticky header - shrinks on scroll via css animation -->
     <header class="site-header">
         <nav class="nav" aria-label="Main navigation">
             <a href="#top" class="nav__logo">
                 <span class="wave-text"><span>t</span><span>h</span><span>e</span><span>&nbsp;</span><span>w</span><span>a</span><span>v</span><span>e</span></span>
             </a>
-            <a href="#topics" class="nav__cta">Start reading</a>
         </nav>
     </header>
 
-    <main id="main">
+    <main id="main-content">
         <!-- hero - full viewport intro with featured cards -->
         <section class="hero" aria-labelledby="hero-title">
             <div class="light-rays" aria-hidden="true">
@@ -63,7 +55,8 @@
             <!-- featured story cards - Task 3 image gallery with hover effects -->
             <div class="hero__cards">
                 <a href="#article-15" class="story-card story-card--hero">
-                    <div class="story-card__bg" style="background-image: url('images/articles/wired-ai-toy.jpg')"></div>
+                    <span class="story-card__time">5 min</span>
+                    <div class="story-card__bg" style="background-image: url('images/articles/12-dinosaur-toy.jpg')"></div>
                     <div class="story-card__content">
                         <span class="tag tag--glass">WIRED</span>
                         <h2 class="story-card__title">An AI Toy Exposed 50,000 Kids' Chats to Anyone With Gmail</h2>
@@ -71,7 +64,8 @@
                     <span class="story-card__pill">Read</span>
                 </a>
                 <a href="#article-1" class="story-card story-card--hero">
-                    <div class="story-card__bg" style="background-image: url('images/articles/ars-chatgpt-lullaby.jpg')"></div>
+                    <span class="story-card__time">6 min</span>
+                    <div class="story-card__bg" style="background-image: url('images/articles/01-dark-bedroom.jpg')"></div>
                     <div class="story-card__content">
                         <span class="tag tag--glass">Ars Technica</span>
                         <h2 class="story-card__title">ChatGPT Wrote a Suicide Lullaby Using Goodnight Moon</h2>
@@ -79,7 +73,8 @@
                     <span class="story-card__pill">Read</span>
                 </a>
                 <a href="#article-18" class="story-card story-card--hero">
-                    <div class="story-card__bg" style="background-image: url('images/articles/wired-moltbot.jpg')"></div>
+                    <span class="story-card__time">4 min</span>
+                    <div class="story-card__bg" style="background-image: url('images/articles/15-lobster.jpg')"></div>
                     <div class="story-card__content">
                         <span class="tag tag--glass">WIRED</span>
                         <h2 class="story-card__title">How Moltbot Became the AI Taking Over Silicon Valley</h2>
@@ -106,17 +101,19 @@
         <!-- topics section - css-only tabs, each panel has 3 story cards -->
         <section id="topics" class="section section--topics" aria-labelledby="topics-title">
             <header class="section__header">
-                <h2 id="topics-title" class="section__title">Explore by Topic</h2>
+                <h2 id="topics-title" class="section__title">Past Waves</h2>
+                <p class="section__subtitle">Stories you might have missed, organised by topic</p>
             </header>
             
             <!-- radio inputs control which panel is visible -->
-            <div>
-                <input type="radio" name="topic-tab" id="tab-weird" class="tabs__input" checked>
-                <input type="radio" name="topic-tab" id="tab-money" class="tabs__input">
-                <input type="radio" name="topic-tab" id="tab-relationships" class="tabs__input">
-                <input type="radio" name="topic-tab" id="tab-security" class="tabs__input">
-                <input type="radio" name="topic-tab" id="tab-education" class="tabs__input">
-                <input type="radio" name="topic-tab" id="tab-trust" class="tabs__input">
+            <fieldset class="tabs">
+                <legend class="visually-hidden">Choose a topic</legend>
+                <input type="radio" name="topic-tab" id="tab-weird" class="tabs__input" checked aria-controls="panel-weird">
+                <input type="radio" name="topic-tab" id="tab-money" class="tabs__input" aria-controls="panel-money">
+                <input type="radio" name="topic-tab" id="tab-relationships" class="tabs__input" aria-controls="panel-relationships">
+                <input type="radio" name="topic-tab" id="tab-security" class="tabs__input" aria-controls="panel-security">
+                <input type="radio" name="topic-tab" id="tab-education" class="tabs__input" aria-controls="panel-education">
+                <input type="radio" name="topic-tab" id="tab-trust" class="tabs__input" aria-controls="panel-trust">
                 
                 <div class="tabs__nav">
                     <label for="tab-weird" class="tabs__tab">Weird</label>
@@ -129,7 +126,7 @@
                 
                 <div class="tabs__panels">
                     <!-- weird -->
-                    <article id="panel-weird" class="tabs__panel tabs__panel--weird">
+                    <article id="panel-weird" class="tabs__panel tabs__panel--weird" aria-labelledby="topic-weird-title">
                         <div class="topic-box topic-box--pink">
                             <div class="light-rays" aria-hidden="true">
                                 <span class="light-rays__ray"></span>
@@ -138,12 +135,13 @@
                                 <span class="light-rays__ray"></span>
                             </div>
                             <div class="topic-box__header">
-                                <h3 class="topic-box__title">Weird</h3>
+                                <h3 id="topic-weird-title" class="topic-box__title">Weird</h3>
                                 <p class="topic-box__desc">The strangest stories from the AI frontier</p>
                             </div>
                             <div class="topic-box__cards">
                                 <a href="#article-16" class="story-card story-card--hero">
-                                    <div class="story-card__bg" style="background-image: url('images/articles/wired-anti-ice.jpg')"></div>
+                                    <span class="story-card__time">5 min</span>
+                                    <div class="story-card__bg" style="background-image: url('images/articles/13-protest.jpg')"></div>
                                     <div class="story-card__content">
                                         <span class="tag tag--glass">WIRED</span>
                                         <h4 class="story-card__title">AI-Generated Anti-ICE Videos Are Getting the Fanfic Treatment</h4>
@@ -151,7 +149,8 @@
                                     <span class="story-card__pill">Read</span>
                                 </a>
                                 <a href="#article-17" class="story-card story-card--hero">
-                                    <div class="story-card__bg" style="background-image: url('images/articles/bbc-china-ai.jpg')"></div>
+                                    <span class="story-card__time">3 min</span>
+                                    <div class="story-card__bg" style="background-image: url('images/articles/14-china.jpg')"></div>
                                     <div class="story-card__content">
                                         <span class="tag tag--glass">BBC</span>
                                         <h4 class="story-card__title">Is China Quietly Winning the AI Race?</h4>
@@ -159,7 +158,8 @@
                                     <span class="story-card__pill">Read</span>
                                 </a>
                                 <a href="#article-18" class="story-card story-card--hero">
-                                    <div class="story-card__bg" style="background-image: url('images/articles/wired-moltbot.jpg')"></div>
+                                    <span class="story-card__time">4 min</span>
+                                    <div class="story-card__bg" style="background-image: url('images/articles/15-lobster.jpg')"></div>
                                     <div class="story-card__content">
                                         <span class="tag tag--glass">WIRED</span>
                                         <h4 class="story-card__title">Moltbot Is Taking Over Silicon Valley</h4>
@@ -171,7 +171,7 @@
                     </article>
 
                     <!-- money -->
-                    <article id="panel-money" class="tabs__panel tabs__panel--money">
+                    <article id="panel-money" class="tabs__panel tabs__panel--money" aria-labelledby="topic-money-title">
                         <div class="topic-box topic-box--gold">
                             <div class="light-rays" aria-hidden="true">
                                 <span class="light-rays__ray"></span>
@@ -180,12 +180,13 @@
                                 <span class="light-rays__ray"></span>
                             </div>
                             <div class="topic-box__header">
-                                <h3 class="topic-box__title">Money</h3>
+                                <h3 id="topic-money-title" class="topic-box__title">Money</h3>
                                 <p class="topic-box__desc">Follow the money in the AI gold rush</p>
                             </div>
                             <div class="topic-box__cards">
                                 <a href="#article-19" class="story-card story-card--hero">
-                                    <div class="story-card__bg" style="background-image: url('images/articles/nyt-openai-funding.jpg')"></div>
+                                    <span class="story-card__time">5 min</span>
+                                    <div class="story-card__bg" style="background-image: url('images/articles/16-money.jpg')"></div>
                                     <div class="story-card__content">
                                         <span class="tag tag--glass">New York Times</span>
                                         <h4 class="story-card__title">OpenAI in Talks to Raise as Much as $100 Billion</h4>
@@ -193,7 +194,8 @@
                                     <span class="story-card__pill">Read</span>
                                 </a>
                                 <a href="#article-20" class="story-card story-card--hero">
-                                    <div class="story-card__bg" style="background-image: url('images/articles/nyt-nvidia-chips.jpg')"></div>
+                                    <span class="story-card__time">6 min</span>
+                                    <div class="story-card__bg" style="background-image: url('images/articles/18-chip.jpg')"></div>
                                     <div class="story-card__content">
                                         <span class="tag tag--glass">New York Times</span>
                                         <h4 class="story-card__title">Amazon and Google Eat Into Nvidia's AI Chip Supremacy</h4>
@@ -201,7 +203,8 @@
                                     <span class="story-card__pill">Read</span>
                                 </a>
                                 <a href="#article-21" class="story-card story-card--hero">
-                                    <div class="story-card__bg" style="background-image: url('images/articles/wired-data-centers.jpg')"></div>
+                                    <span class="story-card__time">5 min</span>
+                                    <div class="story-card__bg" style="background-image: url('images/articles/17-datacenter.jpg')"></div>
                                     <div class="story-card__content">
                                         <span class="tag tag--glass">WIRED</span>
                                         <h4 class="story-card__title">Data Centers Are Driving a US Gas Boom</h4>
@@ -213,7 +216,7 @@
                     </article>
 
                     <!-- relationships -->
-                    <article id="panel-relationships" class="tabs__panel tabs__panel--relationships">
+                    <article id="panel-relationships" class="tabs__panel tabs__panel--relationships" aria-labelledby="topic-relationships-title">
                         <div class="topic-box topic-box--purple">
                             <div class="light-rays" aria-hidden="true">
                                 <span class="light-rays__ray"></span>
@@ -222,12 +225,13 @@
                                 <span class="light-rays__ray"></span>
                             </div>
                             <div class="topic-box__header">
-                                <h3 class="topic-box__title">Relationships</h3>
+                                <h3 id="topic-relationships-title" class="topic-box__title">Relationships</h3>
                                 <p class="topic-box__desc">What happens when AI becomes your companion?</p>
                             </div>
                             <div class="topic-box__cards">
                                 <a href="#article-4" class="story-card story-card--hero">
-                                    <div class="story-card__bg" style="background-image: url('images/articles/verge-ai-social.jpg')"></div>
+                                    <span class="story-card__time">3 min</span>
+                                    <div class="story-card__bg" style="background-image: url('images/articles/04-network.jpg')"></div>
                                     <div class="story-card__content">
                                         <span class="tag tag--glass">The Verge</span>
                                         <h4 class="story-card__title">There's a Social Network for AI Agents Now</h4>
@@ -235,7 +239,8 @@
                                     <span class="story-card__pill">Read</span>
                                 </a>
                                 <a href="#article-5" class="story-card story-card--hero">
-                                    <div class="story-card__bg" style="background-image: url('images/articles/404-ai-gaming.jpg')"></div>
+                                    <span class="story-card__time">4 min</span>
+                                    <div class="story-card__bg" style="background-image: url('images/articles/05-gaming.jpg')"></div>
                                     <div class="story-card__content">
                                         <span class="tag tag--glass">404 Media</span>
                                         <h4 class="story-card__title">I Replaced My Friends With AI Gaming Companions</h4>
@@ -243,7 +248,8 @@
                                     <span class="story-card__pill">Read</span>
                                 </a>
                                 <a href="#article-6" class="story-card story-card--hero">
-                                    <div class="story-card__bg" style="background-image: url('images/articles/ars-ai-burnout.jpg')"></div>
+                                    <span class="story-card__time">7 min</span>
+                                    <div class="story-card__bg" style="background-image: url('images/articles/06-coding-tired.jpg')"></div>
                                     <div class="story-card__content">
                                         <span class="tag tag--glass">Ars Technica</span>
                                         <h4 class="story-card__title">I Burned Myself Out With AI Coding Agents</h4>
@@ -255,7 +261,7 @@
                     </article>
 
                     <!-- security -->
-                    <article id="panel-security" class="tabs__panel tabs__panel--security">
+                    <article id="panel-security" class="tabs__panel tabs__panel--security" aria-labelledby="topic-security-title">
                         <div class="topic-box topic-box--cyan">
                             <div class="light-rays" aria-hidden="true">
                                 <span class="light-rays__ray"></span>
@@ -264,12 +270,13 @@
                                 <span class="light-rays__ray"></span>
                             </div>
                             <div class="topic-box__header">
-                                <h3 class="topic-box__title">Security</h3>
+                                <h3 id="topic-security-title" class="topic-box__title">Security</h3>
                                 <p class="topic-box__desc">When AI goes wrong, people get hurt</p>
                             </div>
                             <div class="topic-box__cards">
                                 <a href="#article-1" class="story-card story-card--hero">
-                                    <div class="story-card__bg" style="background-image: url('images/articles/ars-chatgpt-lullaby.jpg')"></div>
+                                    <span class="story-card__time">6 min</span>
+                                    <div class="story-card__bg" style="background-image: url('images/articles/01-dark-bedroom.jpg')"></div>
                                     <div class="story-card__content">
                                         <span class="tag tag--glass">Ars Technica</span>
                                         <h4 class="story-card__title">ChatGPT Wrote a Suicide Lullaby Using Goodnight Moon</h4>
@@ -277,7 +284,8 @@
                                     <span class="story-card__pill">Read</span>
                                 </a>
                                 <a href="#article-2" class="story-card story-card--hero">
-                                    <div class="story-card__bg" style="background-image: url('images/articles/404-chat-leak.jpg')"></div>
+                                    <span class="story-card__time">4 min</span>
+                                    <div class="story-card__bg" style="background-image: url('images/articles/02-phone-dark.jpg')"></div>
                                     <div class="story-card__content">
                                         <span class="tag tag--glass">404 Media</span>
                                         <h4 class="story-card__title">Massive AI Chat App Leaked Millions of Private Conversations</h4>
@@ -285,7 +293,8 @@
                                     <span class="story-card__pill">Read</span>
                                 </a>
                                 <a href="#article-3" class="story-card story-card--hero">
-                                    <div class="story-card__bg" style="background-image: url('images/articles/ars-cisa-chatgpt.jpg')"></div>
+                                    <span class="story-card__time">5 min</span>
+                                    <div class="story-card__bg" style="background-image: url('images/articles/03-government.jpg')"></div>
                                     <div class="story-card__content">
                                         <span class="tag tag--glass">Ars Technica</span>
                                         <h4 class="story-card__title">US Cyber Defense Chief Uploaded Secrets to ChatGPT</h4>
@@ -297,7 +306,7 @@
                     </article>
 
                     <!-- education -->
-                    <article id="panel-education" class="tabs__panel tabs__panel--education">
+                    <article id="panel-education" class="tabs__panel tabs__panel--education" aria-labelledby="topic-education-title">
                         <div class="topic-box topic-box--orange">
                             <div class="light-rays" aria-hidden="true">
                                 <span class="light-rays__ray"></span>
@@ -306,12 +315,13 @@
                                 <span class="light-rays__ray"></span>
                             </div>
                             <div class="topic-box__header">
-                                <h3 class="topic-box__title">Education</h3>
+                                <h3 id="topic-education-title" class="topic-box__title">Education</h3>
                                 <p class="topic-box__desc">AI is reshaping how we learn and cheat</p>
                             </div>
                             <div class="topic-box__cards">
                                 <a href="#article-13" class="story-card story-card--hero">
-                                    <div class="story-card__bg" style="background-image: url('images/articles/nyt-claude-code.jpg')"></div>
+                                    <span class="story-card__time">5 min</span>
+                                    <div class="story-card__bg" style="background-image: url('images/articles/10-code-editor.jpg')"></div>
                                     <div class="story-card__content">
                                         <span class="tag tag--glass">New York Times</span>
                                         <h4 class="story-card__title">This A.I. Tool Is Going Viral. Five Ways People Are Using It.</h4>
@@ -319,7 +329,8 @@
                                     <span class="story-card__pill">Read</span>
                                 </a>
                                 <a href="#article-14" class="story-card story-card--hero">
-                                    <div class="story-card__bg" style="background-image: url('images/articles/bbc-genz-lonely.jpg')"></div>
+                                    <span class="story-card__time">3 min</span>
+                                    <div class="story-card__bg" style="background-image: url('images/articles/11-lonely-phone.jpg')"></div>
                                     <div class="story-card__content">
                                         <span class="tag tag--glass">BBC</span>
                                         <h4 class="story-card__title">UK Gen Z Turning to AI to Cope With Loneliness</h4>
@@ -327,7 +338,8 @@
                                     <span class="story-card__pill">Read</span>
                                 </a>
                                 <a href="#article-15" class="story-card story-card--hero">
-                                    <div class="story-card__bg" style="background-image: url('images/articles/wired-ai-toy.jpg')"></div>
+                                    <span class="story-card__time">5 min</span>
+                                    <div class="story-card__bg" style="background-image: url('images/articles/12-dinosaur-toy.jpg')"></div>
                                     <div class="story-card__content">
                                         <span class="tag tag--glass">WIRED</span>
                                         <h4 class="story-card__title">An AI Toy Exposed 50,000 Kids' Chats to Anyone With Gmail</h4>
@@ -339,7 +351,7 @@
                     </article>
 
                     <!-- trust -->
-                    <article id="panel-trust" class="tabs__panel tabs__panel--trust">
+                    <article id="panel-trust" class="tabs__panel tabs__panel--trust" aria-labelledby="topic-trust-title">
                         <div class="topic-box topic-box--green">
                             <div class="light-rays" aria-hidden="true">
                                 <span class="light-rays__ray"></span>
@@ -348,12 +360,13 @@
                                 <span class="light-rays__ray"></span>
                             </div>
                             <div class="topic-box__header">
-                                <h3 class="topic-box__title">Trust</h3>
+                                <h3 id="topic-trust-title" class="topic-box__title">Trust</h3>
                                 <p class="topic-box__desc">AI-generated slop is flooding everything</p>
                             </div>
                             <div class="topic-box__cards">
                                 <a href="#article-10" class="story-card story-card--hero">
-                                    <div class="story-card__bg" style="background-image: url('images/articles/ars-curl-bounties.jpg')"></div>
+                                    <span class="story-card__time">4 min</span>
+                                    <div class="story-card__bg" style="background-image: url('images/articles/07-terminal.jpg')"></div>
                                     <div class="story-card__content">
                                         <span class="tag tag--glass">Ars Technica</span>
                                         <h4 class="story-card__title">cURL Scraps Bug Bounties Due to AI Slop Tsunami</h4>
@@ -361,7 +374,8 @@
                                     <span class="story-card__pill">Read</span>
                                 </a>
                                 <a href="#article-11" class="story-card story-card--hero">
-                                    <div class="story-card__bg" style="background-image: url('images/articles/verge-youtube-slop.jpg')"></div>
+                                    <span class="story-card__time">3 min</span>
+                                    <div class="story-card__bg" style="background-image: url('images/articles/08-screens.jpg')"></div>
                                     <div class="story-card__content">
                                         <span class="tag tag--glass">The Verge</span>
                                         <h4 class="story-card__title">YouTube's Top AI Slop Channels Are Disappearing</h4>
@@ -369,7 +383,8 @@
                                     <span class="story-card__pill">Read</span>
                                 </a>
                                 <a href="#article-12" class="story-card story-card--hero">
-                                    <div class="story-card__bg" style="background-image: url('images/articles/ars-ai-research.jpg')"></div>
+                                    <span class="story-card__time">5 min</span>
+                                    <div class="story-card__bg" style="background-image: url('images/articles/09-papers.jpg')"></div>
                                     <div class="story-card__content">
                                         <span class="tag tag--glass">Ars Technica</span>
                                         <h4 class="story-card__title">AI Slop Is Flooding Scientific Research</h4>
@@ -380,16 +395,16 @@
                         </div>
                     </article>
                 </div>
-            </div>
+            </fieldset>
         </section>
     </main>
 
     <!-- footer with founder story and image credits -->
-    <footer id="founder" class="footer">
+    <footer class="footer">
         <!-- hidden founder note - revealed by clicking "psst" -->
         <details class="secret-reveal">
             <summary class="secret-reveal__trigger">
-                <a href="#founder-note-title" class="secret-reveal__hint">psst... click me</a>
+                <span class="secret-reveal__hint">psst... click me</span>
             </summary>
             
             <article class="founder-note">
@@ -411,7 +426,7 @@
                         
                         <!-- vote buttons - css-only interaction -->
                         <div class="founder-note__cta">
-                            <p class="founder-note__cta-text">Would you read this?</p>
+                            <p class="founder-note__cta-text">Want this in your inbox?</p>
                             <div class="vote" role="group" aria-label="Show interest in this newsletter concept">
                                 <input type="radio" name="vote" id="vote-yes" class="vote__input">
                                 <label for="vote-yes" class="btn btn--vote btn--yes">I'd subscribe</label>
@@ -431,62 +446,29 @@
             <a href="#top" class="footer__logo">
                 <span class="wave-text"><span>t</span><span>h</span><span>e</span><span>&nbsp;</span><span>w</span><span>a</span><span>v</span><span>e</span></span>
             </a>
-            <p class="footer__copy">made with love by Shamaila Hussain <span class="footer__copy-break">· HEP504 Web Development · Abertay University</span></p>
+            <p class="footer__copy">made with ❤️ by Shamaila Hussain <span class="footer__copy-break">· HEP504 Web Development · Abertay University</span></p>
             
             <!-- image credits - required for Task 3 -->
             <details class="footer__credits">
                 <summary class="footer__credits-toggle">Image credits</summary>
                 <div class="footer__credits-groups">
+                    <p class="footer__credits-note">All images from <a href="https://unsplash.com" target="_blank" rel="noopener">Unsplash</a> - free to use under the Unsplash License</p>
                     <div class="footer__credits-group">
-                        <span class="footer__credits-source">Ars Technica</span>
+                        <span class="footer__credits-source">Unsplash photographers</span>
                         <span class="footer__credits-links">
-                            <a href="https://arstechnica.com/tech-policy/2026/01/chatgpt-wrote-goodnight-moon-suicide-lullaby-for-man-who-later-killed-himself/" target="_blank" rel="noopener">ChatGPT Lullaby</a>,
-                            <a href="https://arstechnica.com/tech-policy/2026/01/us-cyber-defense-chief-accidentally-uploaded-secret-government-info-to-chatgpt/" target="_blank" rel="noopener">CISA ChatGPT</a>,
-                            <a href="https://arstechnica.com/information-technology/2026/01/10-things-i-learned-from-burning-myself-out-with-ai-coding-agents/" target="_blank" rel="noopener">AI Burnout</a>,
-                            <a href="https://arstechnica.com/security/2026/01/overrun-with-ai-slop-curl-scraps-bug-bounties-to-ensure-intact-mental-health/" target="_blank" rel="noopener">cURL Bug Bounties</a>,
-                            <a href="https://arstechnica.com/ai/2026/01/new-openai-tool-renews-fears-that-ai-slop-will-overwhelm-scientific-research/" target="_blank" rel="noopener">AI Research Slop</a>
-                        </span>
-                    </div>
-                    <div class="footer__credits-group">
-                        <span class="footer__credits-source">The Verge</span>
-                        <span class="footer__credits-links">
-                            <a href="https://www.theverge.com/ai-artificial-intelligence/871006/social-network-facebook-for-ai-agents-moltbook-moltbot-openclaw" target="_blank" rel="noopener">AI Social Network</a>,
-                            <a href="https://www.theverge.com/news/869684/youtube-top-ai-channels-removed-kapwing" target="_blank" rel="noopener">YouTube AI Slop</a>
-                        </span>
-                    </div>
-                    <div class="footer__credits-group">
-                        <span class="footer__credits-source">WIRED</span>
-                        <span class="footer__credits-links">
-                            <a href="https://www.wired.com/story/an-ai-toy-exposed-50000-logs-of-its-chats-with-kids-to-anyone-with-a-gmail-account/" target="_blank" rel="noopener">AI Toy Leak</a>,
-                            <a href="https://www.wired.com/story/anti-ice-videos-are-getting-the-ai-fanfic-treatment-online/" target="_blank" rel="noopener">Anti-ICE AI</a>,
-                            <a href="https://www.wired.com/story/clawdbot-moltbot-viral-ai-assistant/" target="_blank" rel="noopener">Moltbot</a>,
-                            <a href="https://www.wired.com/story/data-centers-are-driving-a-us-gas-boom/" target="_blank" rel="noopener">Data Centers</a>
-                        </span>
-                    </div>
-                    <div class="footer__credits-group">
-                        <span class="footer__credits-source">New York Times</span>
-                        <span class="footer__credits-links">
-                            <a href="https://www.nytimes.com/2026/01/23/technology/claude-code.html" target="_blank" rel="noopener">Claude Code</a>,
-                            <a href="https://www.nytimes.com/2026/01/29/technology/openai-in-talks-to-raise-as-much-as-100-billion.html" target="_blank" rel="noopener">OpenAI Funding</a>,
-                            <a href="https://www.nytimes.com/2026/01/29/technology/amazon-google-nvidia-chips-competition.html" target="_blank" rel="noopener">Nvidia Chips</a>
-                        </span>
-                    </div>
-                    <div class="footer__credits-group">
-                        <span class="footer__credits-source">BBC</span>
-                        <span class="footer__credits-links">
-                            <a href="https://www.bbc.com/news/articles/cg4ewrw2drpo" target="_blank" rel="noopener">Gen Z Loneliness</a>,
-                            <a href="https://www.bbc.com/news/articles/c86v52gv726o" target="_blank" rel="noopener">China AI Race</a>
-                        </span>
-                    </div>
-                    <div class="footer__credits-group">
-                        <span class="footer__credits-source">404 Media</span>
-                        <span class="footer__credits-links">
-                            <a href="https://www.404media.co/massive-ai-chat-app-leaked-millions-of-users-private-conversations/" target="_blank" rel="noopener">Chat App Leak</a>,
-                            <a href="https://www.404media.co/i-replaced-my-friends-with-ai-because-they-wont-play-tarkov-with-me/" target="_blank" rel="noopener">AI Gaming</a>
+                            <a href="https://unsplash.com/photos/OfgYGYBNcB4" target="_blank" rel="noopener">Protest</a>,
+                            <a href="https://unsplash.com/photos/uKyzXEc2k_s" target="_blank" rel="noopener">Shanghai</a>,
+                            <a href="https://unsplash.com/photos/BmW-9U2VnqU" target="_blank" rel="noopener">Lobster</a>,
+                            <a href="https://unsplash.com/photos/oW6LlU_VZkc" target="_blank" rel="noopener">Currency</a>,
+                            <a href="https://unsplash.com/photos/M5tzZtFCOfs" target="_blank" rel="noopener">Data Center</a>,
+                            <a href="https://unsplash.com/photos/FO7JIlwjOtU" target="_blank" rel="noopener">Circuit Board</a>,
+                            <a href="https://unsplash.com/photos/qoU5SsqIHJY" target="_blank" rel="noopener">Top Secret</a>,
+                            <a href="https://unsplash.com/photos/alNlyjzup80" target="_blank" rel="noopener">Robot Toys</a>,
+                            <a href="https://unsplash.com/photos/iZVRrfL_oDQ" target="_blank" rel="noopener">Silhouette</a>,
+                            <a href="https://unsplash.com/photos/lwGfBjfKW2U" target="_blank" rel="noopener">Science Papers</a>
                         </span>
                     </div>
                 </div>
-                <p class="footer__credits-note">Used under fair use for educational commentary</p>
             </details>
         </div>
     </footer>

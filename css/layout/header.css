@@ -23,19 +23,17 @@
 .nav {
 	display: flex;
 	align-items: center;
-	justify-content: space-between;
-	max-width: 40rem;
+	justify-content: center;
+	max-width: 12rem;
 	margin: 0 auto;
 	padding: 0.625rem 1.5rem;
 	background: transparent;
 	border-radius: var(--radius-pill);
 	box-shadow: none;
 	transition: all var(--duration-normal) var(--ease-out);
-	animation: 
-		anim-scroll-nav-pill linear both,
-		anim-scroll-nav-center linear both;
-	animation-timeline: scroll(), scroll();
-	animation-range: 0 300px, 60vh 80vh;
+	animation: anim-scroll-nav-pill linear both;
+	animation-timeline: scroll();
+	animation-range: 0 300px;
 }
 
 /* logo - white on hero, cyan once scrolled */
@@ -95,14 +93,12 @@
 	}
 
 	.nav {
-		background: var(--white-90);
+		background: var(--color-cyan);
 		box-shadow: var(--black-10) 0px 4px 12px -2px;
-		backdrop-filter: blur(var(--blur-strong));
-		-webkit-backdrop-filter: blur(var(--blur-strong));
 	}
 
 	.nav__logo {
-		color: var(--color-cyan);
+		color: var(--color-white);
 	}
 
 	.nav__cta {

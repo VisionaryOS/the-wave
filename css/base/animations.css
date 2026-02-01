@@ -1,10 +1,4 @@
 /* entrance animations - elements appearing on page load */
-
-@keyframes anim-reveal-fade {
-	from { opacity: 0; }
-	to   { opacity: 1; }
-}
-
 @keyframes anim-reveal-up {
 	from {
 		opacity: 0;
@@ -13,29 +7,6 @@
 	to {
 		opacity: 1;
 		transform: translateY(0);
-	}
-}
-
-@keyframes anim-reveal-scale {
-	from {
-		opacity: 0;
-		transform: scale(0.95);
-	}
-	to {
-		opacity: 1;
-		transform: scale(1);
-	}
-}
-
-/* cards get both slide + scale for more punch */
-@keyframes anim-reveal-card {
-	from {
-		opacity: 0;
-		transform: translateY(24px) scale(0.95);
-	}
-	to {
-		opacity: 1;
-		transform: translateY(0) scale(1);
 	}
 }
 
@@ -86,26 +57,22 @@
 	}
 }
 
-/* nav becomes floating white pill */
+/* nav becomes floating blue pill */
 @keyframes anim-scroll-nav-pill {
 	0% {
-		max-width: 40rem;
 		background: transparent;
 		box-shadow: none;
-		padding: 0.625rem 1.5rem;
 	}
 	100% {
-		max-width: 28rem;
-		background: var(--color-white);
+		background: var(--color-cyan);
 		box-shadow: var(--black-10) 0px 5px 20px -5px;
-		padding: 0.625rem 1.5rem;
 	}
 }
 
-/* colors flip once nav is solid white */
+/* logo stays white throughout */
 @keyframes anim-scroll-logo-color {
 	0%   { color: var(--color-white); }
-	100% { color: var(--color-cyan); }
+	100% { color: var(--color-white); }
 }
 
 @keyframes anim-scroll-cta-style {

@@ -83,6 +83,41 @@
 	text-shadow: 0 2px 8px var(--black-30);
 }
 
+/* read time - glass pill that slides down from top on hover */
+.story-card__time {
+	position: absolute;
+	top: var(--space-4);
+	left: 50%;
+	transform: translateX(-50%) translateY(-10px);
+	opacity: 0;
+	display: inline-flex;
+	align-items: center;
+	gap: var(--space-1);
+	padding: var(--space-1) var(--space-3);
+	font-size: var(--text-xs);
+	font-weight: var(--weight-semibold);
+	white-space: nowrap;
+	background: var(--white-10);
+	backdrop-filter: blur(var(--blur));
+	-webkit-backdrop-filter: blur(var(--blur));
+	color: var(--white-90);
+	border: 1px solid var(--white-10);
+	border-radius: var(--radius-pill);
+	text-shadow: 0 1px 3px var(--black-30);
+	z-index: 5;
+	transition: 
+		transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+		opacity 0.25s ease,
+		background var(--duration-normal) ease;
+}
+
+.story-card:hover .story-card__time {
+	transform: translateX(-50%) translateY(0);
+	opacity: 1;
+	background: var(--white-30);
+	border-color: var(--white-30);
+}
+
 /* "Read" pill - slides up on hover. translateY is smoother than 
    animating height/bottom because it's compositor-only (no layout) */
 .story-card__pill {
