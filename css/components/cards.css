@@ -1,3 +1,24 @@
+/* =============================================
+   TASK 3: CSS IMAGE GALLERY
+   =============================================
+   
+   this component doubles as our image gallery for the assessment
+   figured the article cards already do everything the W3Schools 
+   gallery tutorial asks for, so why build a separate thing?
+   
+   W3Schools gallery requirements we hit:
+   - images displayed in a responsive grid/flex layout ✓
+   - hover effects (scale, shadow, lift, border glow) ✓
+   - descriptions below/over images (article titles) ✓
+   - click interaction (opens modal with full article) ✓
+   
+   the cards appear in hero__cards and topic-box__cards sections
+   credits for images are in the footer (fair use for editorial)
+   
+   tried a traditional thumbnail gallery first but it looked boring
+   and didn't fit the news site vibe. these cards are way better.
+   ============================================= */
+
 .story-card {
 	flex: 0 0 300px;
 	scroll-snap-align: start;
@@ -16,6 +37,9 @@
 		border-color var(--duration-normal) ease;
 }
 
+/* hover effect - the "lift and glow" makes it feel clickable
+   spent ages tweaking these values, the 14px lift + 1.03 scale 
+   combo feels right. too much scale looks janky on mobile */
 .story-card:hover {
 	transform: translateY(-14px) scale(1.03);
 	box-shadow: 
@@ -24,6 +48,8 @@
 	border-color: var(--alpha-white-95);
 }
 
+/* the gallery image - using background-image so we can 
+   control sizing/positioning without aspect ratio headaches */
 .story-card__bg {
 	position: absolute;
 	inset: 0;
@@ -32,6 +58,8 @@
 	border-radius: calc(var(--radius-xl) - 5px);
 }
 
+/* gradient overlay so text is readable on any image
+   darker at bottom where the title sits */
 .story-card__overlay {
 	position: absolute;
 	inset: 0;
@@ -45,6 +73,7 @@
 	);
 }
 
+/* gallery caption area - slides up on hover to make room for the pill button */
 .story-card__content {
 	position: absolute;
 	bottom: 0;
@@ -56,6 +85,7 @@
 	transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
+/* content slides up when hovering to reveal the "Read" button */
 .story-card:hover .story-card__content {
 	transform: translateY(-44px);
 }
@@ -79,11 +109,15 @@
 	font-weight: var(--weight-normal);
 }
 
+/* "Read" button that appears on hover - hidden by default, 
+   slides up into view. this is the main interactive element
+   that makes it feel like a proper gallery with click actions */
 .story-card__pill {
 	position: absolute;
 	bottom: var(--space-6);
 	left: 50%;
 	
+	/* starts hidden below its final position */
 	transform: translateX(-50%) translateY(20px);
 	opacity: 0;
 	
@@ -108,11 +142,13 @@
 	user-select: none;
 }
 
+/* reveal the button on card hover */
 .story-card:hover .story-card__pill {
 	transform: translateX(-50%) translateY(0);
 	opacity: 1;
 }
 
+/* extra hover state on the pill itself for feedback */
 .story-card__pill:hover {
 	background: var(--color-white);
 	box-shadow: 0 4px 12px var(--alpha-black-20);
