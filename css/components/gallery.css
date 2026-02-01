@@ -48,6 +48,9 @@
 .topic-box--purple { background: var(--color-purple); }
 .topic-box--orange { background: var(--color-orange); }
 .topic-box--green { background: var(--color-green); }
+.topic-box--blue { background: var(--color-blue); }
+.topic-box--pink { background: var(--color-pink); }
+.topic-box--gold { background: var(--color-gold); }
 
 /* Cards row - flex to fill width */
 .topic-box__cards {

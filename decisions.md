@@ -914,4 +914,125 @@ If this project grows:
 
 ---
 
+## [2026-02-01] STYLE: Founder Note Title Typography
+
+- **Goal:** Make the founder quote "I just wanted clarity..." visually match the "Want this in your inbox?" CTA heading
+- **Tried:** Compared `.subscribe__title` and `.founder-note__title` styles
+- **Outcome:** Updated `.founder-note__title` to use identical typography: `clamp(2rem, 5vw, var(--text-5xl))` font-size, `--weight-black` font-weight, `--leading-tight` line-height, and `--tracking-tight` letter-spacing. Creates consistent visual hierarchy for key section headings.
+
+---
+
+## [2026-02-01] STYLE: Vote CTA Box Scale Reduction
+
+- **Goal:** Make the "Want this in your inbox?" vote CTA box less dominant
+- **Tried:** Subtle ~20% reduction across all dimensions
+- **Outcome:** Applied balanced scaling:
+  - Container: `760px` → `640px` max-width, reduced padding
+  - Title: `clamp(2rem, 5vw, --text-5xl)` → `clamp(1.75rem, 4vw, --text-4xl)`
+  - Text: `--text-lg` → `--text-base`
+  - Buttons: smaller padding and min-width
+  - Tighter margins throughout
+
+---
+
+## [2026-02-01] STYLE: Tabs Section Bottom Spacing
+
+- **Goal:** Add more white space below tabbed cards for smoother gradient transition
+- **Tried:** Added margin-bottom to `.tabs__panels`
+- **Outcome:** Added `margin-bottom: var(--space-16)` to create breathing room between cards and the footer gradient
+
+---
+
+## [2026-02-01] STYLE: Footer Gradient Smoothing
+
+- **Goal:** Make white-to-cyan gradient transition less abrupt
+- **Tried:** Adjusted gradient stops - original had mid-color at 25% (too early)
+- **Outcome:** Extended white to 15%, pushed mid-color to 50%. Now: `white 0% → white 15% → mid 50% → cyan 100%` for a gentler, more gradual fade
+
+---
+
+## [2026-02-01] CODE: Unified Button Hover System
+
+- **Goal:** Create single source of truth for button hover effects across all components
+- **Tried:** Audited all `:hover` rules for button-like elements - found 6 different patterns with inconsistent lift values (-1px to -4px), different effects (opacity, scale, background, border)
+- **Outcome:** 
+  - Created CSS custom properties in `.btn`: `--btn-hover-lift`, `--btn-hover-scale`, `--btn-hover-shadow`, `--btn-hover-bg`, `--btn-hover-color`, `--btn-hover-border-color`
+  - Single `.btn:hover` rule uses these tokens
+  - Each variant (`.btn--primary`, `.btn--secondary`, etc.) sets its own token values
+  - Extended pattern to non-`.btn` elements: `.scroll-top`, `.nav__cta`, `.modal__close`
+  - These elements define the same tokens locally and use matching `:hover` selectors
+  - Standardized lift to `-2px` across all buttons (was -1px to -4px)
+  - Close buttons get `--btn-hover-lift: 0` (subtle effect appropriate for dismiss actions)
+
+---
+
+## [2026-02-01] CODE: Added 3 New Topic Tabs with 9 Articles
+
+- **Goal:** Expand content coverage with Education, Weird, and Money topic categories
+- **Tried:** Followed existing tab panel and modal patterns for consistency
+- **Outcome:**
+  - Added 3 new tab panels to index.html (Education, Weird, Money)
+  - Created 9 new story cards (articles 13-21) with real Ars Technica sources
+  - Built 9 corresponding modals with TLDR summaries fetched from actual articles
+  - Added CSS color variants for new categories:
+    - Education = Blue (`--color-blue`)
+    - Weird = Pink (`--color-pink`)
+    - Money = Gold (`--color-gold`)
+  - Extended `.topic-box--*` classes in gallery.css
+  - Extended `.tag--*` classes in tags.css
+  - CSS selectors already existed in tabs.css (added during earlier work)
+  - All articles from January 2026, sources verified and linked
+
+---
+
+## [2026-02-01] STYLE: Dramatic Article-Relevant Images
+
+- **Goal:** Replace generic placeholder images with dramatic, attention-grabbing images relevant to each article's content
+- **Tried:** 
+  - Could not use original article images due to copyright restrictions (assessment requires Unsplash/Pexels)
+  - Searched Unsplash for thematically appropriate, visually dramatic images for each of 21 articles
+- **Outcome:**
+  - Downloaded 21 new images from Unsplash, each matching article theme:
+    - **Security:** phone-dark.jpg (suicide lullaby), matrix-code.jpg (data breach), top-secret.jpg (government leak)
+    - **Relationships:** neural-network.jpg (AI social), gamer-dark.jpg (gaming companions), burnout-dev.jpg (coding burnout)
+    - **Careers:** dev-worried.jpg (AI anxiety), empty-office.jpg (layoffs), game-dev.jpg (game industry)
+    - **Trust:** code-error.jpg (bug bounty), glitch.jpg (YouTube slop), paper-stack.jpg (science slop)
+    - **Education:** students-phones.jpg (viral AI), lonely-phone.jpg (Gen Z loneliness), child-screen.jpg (kids privacy)
+    - **Weird:** protest-fist.jpg (anti-ICE videos), shanghai-neon.jpg (China AI), robot-face.jpg (Moltbot)
+    - **Money:** skyscraper-night.jpg ($100B fundraise), chip-macro.jpg (Nvidia chips), server-room.jpg (data centers)
+  - Updated all image references in index.html (hero cards + 7 topic panels)
+  - Updated footer image credits with 21 new entries organised by topic
+  - Images convey emotional tone matching article content (dark/moody for security, corporate for money, etc.)
+
+---
+
+## [2026-02-01] CODE: FAB CSS Cleanup - Removed Unused Popover Styles
+
+- **Goal:** Clean up subscribe.css after simplifying FAB from complex popover menu to simple back-to-top link
+- **Tried:** FAB was previously a `<details>` element with popover menu for topic navigation. We simplified to a basic `<a>` link but CSS still had ~130 lines of unused popover styles
+- **Outcome:**
+  - Removed unused classes: `.fab__menu`, `.fab__trigger`, `.fab__popover`, `.fab__link`, `.fab__divider`
+  - Removed unused media queries for popover positioning on mobile
+  - Removed `.fab__menu[open]` state selectors
+  - Consolidated FAB styling into the `.fab` class itself (was split across `.fab` and `.fab__trigger`)
+  - Fixed mobile hover: now uses `transform: translateX(-50%) translateY(-2px)` to maintain centering
+  - Combined scroll-driven animations: reveal (10vh-20vh) and glass effect (80%-90%) now in single animation declaration
+  - Kept `.fab__icon` and `.fab__label` for child element styling
+  - Reduced FAB CSS from ~165 lines to ~75 lines
+
+---
+
+## [2026-02-01] STYLE: Fixed Inappropriate Article Image
+
+- **Goal:** Replace tone-deaf image for suicide lullaby article
+- **Tried:** Original image `phone-dark.jpg` showed a lightbox sign saying "TURN IDEAS INTO REALITY" - actively offensive when paired with an article about AI-encouraged suicide
+- **Outcome:**
+  - Downloaded new `dark-window.jpg` - somber, moody window image that conveys isolation and darkness
+  - Replaced all instances of `phone-dark.jpg` with `dark-window.jpg` in index.html
+  - Updated footer image credits
+  - Deleted the old inappropriate image file
+  - Lesson: Always visually verify image-content pairings, not just filename matches
+
+---
+
 *Last updated: February 2026*

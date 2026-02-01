@@ -66,7 +66,7 @@
 	display: none;
 }
 
-/* Close button */
+/* Close button - uses unified hover token pattern */
 .modal__close {
 	position: absolute;
 	top: var(--space-4);
@@ -81,13 +81,24 @@
 	font-size: var(--text-2xl);
 	line-height: 1;
 	color: var(--color-text-muted);
-	transition: all var(--duration-fast) var(--ease-out);
 	z-index: 10;
+	
+	/* Hover tokens - no lift for close buttons (subtle effect) */
+	--btn-hover-lift: 0;
+	--btn-hover-bg: var(--color-text);
+	--btn-hover-color: var(--color-white);
+	
+	transition: 
+		transform var(--duration-fast) var(--ease-out),
+		background var(--duration-fast) var(--ease-out),
+		color var(--duration-fast) var(--ease-out);
 }
 
+/* Uses same hover pattern as unified button system */
 .modal__close:hover {
-	background: var(--color-text);
-	color: var(--color-white);
+	transform: translateY(var(--btn-hover-lift));
+	background: var(--btn-hover-bg);
+	color: var(--btn-hover-color);
 }
 
 /* Header */

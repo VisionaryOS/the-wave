@@ -125,7 +125,7 @@
 	opacity: 0.6;
 }
 
-/* CTA button */
+/* CTA button - uses unified hover token pattern */
 .nav__cta {
 	padding: 0.625rem 1.25rem;
 	font-size: var(--text-base);
@@ -133,6 +133,12 @@
 	border-radius: var(--radius-full);
 	background: var(--color-white);
 	color: var(--color-text);
+	
+	/* Hover tokens - matches unified button system */
+	--btn-hover-lift: -2px;
+	--btn-hover-scale: 1.03;
+	--btn-hover-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+	
 	/* Bouncy spring - uses global token for consistency */
 	transition: 
 		transform var(--duration-slow) var(--ease-spring),
@@ -156,9 +162,10 @@
 	}
 }
 
+/* Uses same hover pattern as unified button system */
 .nav__cta:hover {
-	transform: translateY(-3px) scale(1.03);
-	box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+	transform: translateY(var(--btn-hover-lift)) scale(var(--btn-hover-scale));
+	box-shadow: var(--btn-hover-shadow);
 }
 
 /* Fallback for browsers without scroll-timeline */

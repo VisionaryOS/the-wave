@@ -35,11 +35,44 @@
 
 .logo-bar__item:hover { opacity: 0.6; }
 
-/* Brand typography variants */
-.logo-bar__item--bold   { font-weight: var(--weight-black); letter-spacing: -0.02em; }
-.logo-bar__item--caps   { font-weight: var(--weight-black); text-transform: uppercase; letter-spacing: 0.15em; }
-.logo-bar__item--serif  { font-family: var(--font-serif); font-style: italic; }
-.logo-bar__item--tight  { font-weight: var(--weight-extrabold); letter-spacing: -0.03em; }
+/* Brand-accurate typography variants */
+
+/* Ars Technica: Mixed case, slightly condensed, technical feel */
+.logo-bar__item--ars { 
+	font-weight: var(--weight-bold); 
+	letter-spacing: -0.01em; 
+}
+
+/* THE VERGE: All caps (in HTML), very tight condensed */
+.logo-bar__item--verge { 
+	font-weight: var(--weight-black); 
+	letter-spacing: -0.04em; 
+}
+
+/* 404 Media: Bold, modern, slight negative tracking */
+.logo-bar__item--404 { 
+	font-weight: var(--weight-black); 
+	letter-spacing: -0.02em; 
+}
+
+/* WIRED: All caps (in HTML), condensed black weight */
+.logo-bar__item--wired { 
+	font-weight: var(--weight-black); 
+	letter-spacing: -0.03em; 
+}
+
+/* The New York Times: Classic serif, elegant */
+.logo-bar__item--nyt { 
+	font-family: var(--font-serif); 
+	font-weight: var(--weight-normal);
+	letter-spacing: 0.01em;
+}
+
+/* BBC: Bold blocky, already caps */
+.logo-bar__item--bbc { 
+	font-weight: var(--weight-black); 
+	letter-spacing: 0.08em; 
+}
 
 @media (max-width: 600px) {
 	.logo-bar__list { gap: var(--space-3) var(--space-6); }

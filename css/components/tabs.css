@@ -50,28 +50,46 @@
 }
 
 /* --- Color-coded active states matching topic colors --- */
-#tab-human-ai:checked ~ .tabs__nav label[for="tab-human-ai"] {
+#tab-security:checked ~ .tabs__nav label[for="tab-security"] {
 	background: var(--color-cyan);
 	color: var(--color-white);
 	border-color: var(--color-cyan);
 }
 
-#tab-design:checked ~ .tabs__nav label[for="tab-design"] {
+#tab-relationships:checked ~ .tabs__nav label[for="tab-relationships"] {
 	background: var(--color-purple);
 	color: var(--color-white);
 	border-color: var(--color-purple);
 }
 
-#tab-accessibility:checked ~ .tabs__nav label[for="tab-accessibility"] {
+#tab-careers:checked ~ .tabs__nav label[for="tab-careers"] {
 	background: var(--color-orange);
 	color: var(--color-white);
 	border-color: var(--color-orange);
 }
 
-#tab-ethics:checked ~ .tabs__nav label[for="tab-ethics"] {
+#tab-trust:checked ~ .tabs__nav label[for="tab-trust"] {
 	background: var(--color-green);
 	color: var(--color-white);
 	border-color: var(--color-green);
+}
+
+#tab-education:checked ~ .tabs__nav label[for="tab-education"] {
+	background: var(--color-blue);
+	color: var(--color-white);
+	border-color: var(--color-blue);
+}
+
+#tab-weird:checked ~ .tabs__nav label[for="tab-weird"] {
+	background: var(--color-pink);
+	color: var(--color-white);
+	border-color: var(--color-pink);
+}
+
+#tab-money:checked ~ .tabs__nav label[for="tab-money"] {
+	background: var(--color-gold);
+	color: var(--color-white);
+	border-color: var(--color-gold);
 }
 
 /* --- Tab panels container --- */
@@ -79,15 +97,19 @@
 	display: grid;
 	max-width: 1150px;
 	margin: 0 auto;
+	margin-bottom: var(--space-16);
 	padding: 0 var(--gutter);
 }
 
 /* --- Individual panels (stacked in same grid cell) --- */
 .tabs__panel {
 	grid-area: 1 / 1; /* All panels stack in same cell */
+	position: relative;
 	opacity: 0;
 	visibility: hidden;
 	pointer-events: none;
+	/* Scroll offset for anchor links */
+	scroll-margin-top: 6rem;
 }
 
 /* Cards inside panels - staggered cascade animation */
@@ -106,20 +128,40 @@
 .tabs__panel .story-card:nth-child(3) { transition-delay: 0.16s; }
 
 /* --- Show panel when corresponding radio is checked --- */
-#tab-human-ai:checked ~ .tabs__panels .tabs__panel--human-ai,
-#tab-design:checked ~ .tabs__panels .tabs__panel--design,
-#tab-accessibility:checked ~ .tabs__panels .tabs__panel--accessibility,
-#tab-ethics:checked ~ .tabs__panels .tabs__panel--ethics {
+#tab-security:checked ~ .tabs__panels .tabs__panel--security,
+#tab-relationships:checked ~ .tabs__panels .tabs__panel--relationships,
+#tab-careers:checked ~ .tabs__panels .tabs__panel--careers,
+#tab-trust:checked ~ .tabs__panels .tabs__panel--trust,
+#tab-education:checked ~ .tabs__panels .tabs__panel--education,
+#tab-weird:checked ~ .tabs__panels .tabs__panel--weird,
+#tab-money:checked ~ .tabs__panels .tabs__panel--money {
 	opacity: 1;
 	visibility: visible;
 	pointer-events: auto;
 }
 
+/* --- Also show panel when directly targeted via anchor link --- */
+/* :target panel appears on top with higher z-index and solid background */
+.tabs__panel:target {
+	opacity: 1;
+	visibility: visible;
+	pointer-events: auto;
+	z-index: 10;
+}
+
+.tabs__panel:target .story-card {
+	opacity: 1;
+	transform: translateY(0) scale(1);
+}
+
 /* Animate cards when panel is active */
-#tab-human-ai:checked ~ .tabs__panels .tabs__panel--human-ai .story-card,
-#tab-design:checked ~ .tabs__panels .tabs__panel--design .story-card,
-#tab-accessibility:checked ~ .tabs__panels .tabs__panel--accessibility .story-card,
-#tab-ethics:checked ~ .tabs__panels .tabs__panel--ethics .story-card {
+#tab-security:checked ~ .tabs__panels .tabs__panel--security .story-card,
+#tab-relationships:checked ~ .tabs__panels .tabs__panel--relationships .story-card,
+#tab-careers:checked ~ .tabs__panels .tabs__panel--careers .story-card,
+#tab-trust:checked ~ .tabs__panels .tabs__panel--trust .story-card,
+#tab-education:checked ~ .tabs__panels .tabs__panel--education .story-card,
+#tab-weird:checked ~ .tabs__panels .tabs__panel--weird .story-card,
+#tab-money:checked ~ .tabs__panels .tabs__panel--money .story-card {
 	opacity: 1;
 	transform: translateY(0) scale(1);
 }
@@ -136,7 +178,7 @@
 	align-items: center;
 	justify-content: center;
 	text-align: center;
-	gap: var(--space-2);
+	gap: var(--space-1);
 	margin-bottom: var(--space-8);
 }
 
@@ -148,7 +190,7 @@
 
 .tabs__panel .topic-box__desc {
 	font-family: var(--font-primary);
-	font-size: var(--text-lg);
+	font-size: var(--text-xl);
 	font-weight: var(--weight-medium);
 	opacity: 0.9;
 }

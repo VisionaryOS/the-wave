@@ -7,6 +7,16 @@
 	padding: var(--space-12) var(--gutter);
 }
 
+/* Topics section - gradient blends into footer */
+.section--topics {
+	padding-bottom: 0;
+	background: linear-gradient(180deg,
+		var(--color-white) 0%,
+		var(--color-white) 70%,
+		var(--color-hero-bottom) 100%
+	);
+}
+
 .section--alt {
 	background: var(--color-surface);
 }

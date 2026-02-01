@@ -3,7 +3,20 @@
    Reusable button component styles
    =========================================== */
 
+/* ===========================================
+   UNIFIED HOVER SYSTEM
+   Single source of truth for button hover effects.
+   Variants override these custom properties as needed.
+   =========================================== */
 .btn {
+	/* Hover tokens - override per variant */
+	--btn-hover-lift: -2px;
+	--btn-hover-scale: 1;
+	--btn-hover-shadow: none;
+	--btn-hover-bg: inherit;
+	--btn-hover-color: inherit;
+	--btn-hover-border-color: inherit;
+	
 	display: inline-flex;
 	align-items: center;
 	justify-content: center;
@@ -11,8 +24,22 @@
 	font-family: var(--font-primary);
 	font-weight: var(--weight-bold);
 	border-radius: var(--radius-full);
-	transition: all var(--duration-fast) var(--ease-out);
+	transition: 
+		transform var(--duration-fast) var(--ease-out),
+		box-shadow var(--duration-fast) var(--ease-out),
+		background var(--duration-fast) var(--ease-out),
+		color var(--duration-fast) var(--ease-out),
+		border-color var(--duration-fast) var(--ease-out);
 	cursor: pointer;
+}
+
+/* Unified hover behavior - uses custom properties */
+.btn:hover {
+	transform: translateY(var(--btn-hover-lift)) scale(var(--btn-hover-scale));
+	box-shadow: var(--btn-hover-shadow);
+	background: var(--btn-hover-bg);
+	color: var(--btn-hover-color);
+	border-color: var(--btn-hover-border-color);
 }
 
 /* Size variants */
@@ -26,17 +53,15 @@
 	font-size: var(--text-sm);
 }
 
-/* Color variants */
+/* Color variants - each sets hover tokens */
 .btn--primary {
 	padding: var(--space-3) var(--space-6);
 	font-size: var(--text-sm);
 	background: var(--color-text);
 	color: var(--color-white);
-}
-
-.btn--primary:hover {
-	background: #404040;
-	transform: translateY(-1px);
+	/* Hover: darken background, lift */
+	--btn-hover-bg: #404040;
+	--btn-hover-color: var(--color-white);
 }
 
 .btn--secondary {
@@ -44,10 +69,9 @@
 	font-size: var(--text-sm);
 	background: var(--color-cyan);
 	color: var(--color-white);
-}
-
-.btn--secondary:hover {
-	opacity: 0.9;
+	/* Hover: slightly lighter cyan, lift */
+	--btn-hover-bg: oklch(from var(--color-cyan) calc(l + 0.05) c h);
+	--btn-hover-color: var(--color-white);
 }
 
 .btn--outline {
@@ -56,10 +80,10 @@
 	background: var(--color-white);
 	color: var(--color-text);
 	border: 1px solid #e5e5e5;
-}
-
-.btn--outline:hover {
-	border-color: #cccccc;
+	/* Hover: darken border, lift */
+	--btn-hover-bg: var(--color-white);
+	--btn-hover-color: var(--color-text);
+	--btn-hover-border-color: #cccccc;
 }
 
 .btn--white {
@@ -67,10 +91,9 @@
 	font-size: var(--text-sm);
 	background: var(--color-white);
 	color: var(--color-text);
-}
-
-.btn--white:hover {
-	background: rgba(255, 255, 255, 0.9);
+	/* Hover: subtle transparency, lift */
+	--btn-hover-bg: rgba(255, 255, 255, 0.9);
+	--btn-hover-color: var(--color-text);
 }
 
 /* ===========================================

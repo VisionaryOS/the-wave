@@ -31,6 +31,21 @@
 	color: var(--color-green);
 }
 
+.tag--blue {
+	background: rgba(0, 117, 250, 0.14);
+	color: var(--color-blue);
+}
+
+.tag--pink {
+	background: rgba(236, 72, 153, 0.14);
+	color: var(--color-pink);
+}
+
+.tag--gold {
+	background: rgba(234, 179, 8, 0.14);
+	color: var(--color-gold);
+}
+
 /* Sleek minimal variant for dark backgrounds (story cards) */
 .tag--glass {
 	/* Minimal pill shape - less padding, more refined */
