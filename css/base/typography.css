@@ -19,7 +19,7 @@ body {
 	font-size: var(--text-base);
 	line-height: var(--leading-relaxed);
 	color: var(--color-text);
-	background: var(--color-background);
+	background: var(--color-white);
 }
 
 /* chunky headlines grab attention in the feed */
@@ -33,7 +33,7 @@ h1, h2, h3, h4, h5, h6 {
 .prose {
 	font-family: var(--font-serif);
 	font-size: var(--text-xl);
-	line-height: var(--leading-loose);
+	line-height: var(--leading-relaxed);
 	color: var(--color-text);
 }
 

@@ -19,7 +19,7 @@
 	);
 	transform-origin: top center;
 	transform: rotate(var(--angle, 0deg));
-	filter: blur(var(--blur-lg));
+	filter: blur(var(--blur-md));
 	animation: anim-pulse-ray var(--ray-duration, 5s) ease-in-out infinite var(--ray-delay, 0s);
 }
 

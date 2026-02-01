@@ -1,7 +1,6 @@
 :root {
 	/* base colors */
 	--color-white: #ffffff;
-	--color-background: #ffffff;
 	--color-surface: #f7f7f6;
 
 	/* brand palette - vibrant but not neon, works on white and dark backgrounds */
@@ -47,15 +46,12 @@
 	--weight-black: 900;
 
 	/* negative tracking for big headlines */
-	--tracking-tighter: -0.175rem;
 	--tracking-tight: -0.125rem;
 
 	/* line heights */
 	--leading-none: 0.9;
 	--leading-tight: 1.1;
-	--leading-normal: 1.5;
 	--leading-relaxed: 1.6;
-	--leading-loose: 1.75;
 
 	/* spacing scale - 4px base, gaps in the middle where we dont need them */
 	--space-1: 0.25rem;
@@ -72,7 +68,6 @@
 
 	/* border radius - sm for inputs, lg+ for cards and sections */
 	--radius-sm: 0.25rem;
-	--radius-lg: 1.25rem;
 	--radius-xl: 1.5rem;
 	--radius-2xl: 1.75rem;
 	--radius-full: 9999px;
@@ -97,7 +92,6 @@
 	/* blur for glassmorphism */
 	--blur-sm: 8px;
 	--blur-md: 12px;
-	--blur-lg: 20px;
 
 	/* easing - ease-out for most things, spring for playful interactions */
 	--ease-out: cubic-bezier(0.16, 1, 0.3, 1);

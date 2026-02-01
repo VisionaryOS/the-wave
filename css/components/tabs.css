@@ -23,7 +23,7 @@
 	font-weight: var(--weight-bold);
 	color: var(--color-text-muted);
 	background: var(--color-surface);
-	border-radius: var(--radius-lg);
+	border-radius: var(--radius-xl);
 	border: 2px solid transparent;
 	cursor: pointer;
 	user-select: none;
