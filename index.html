@@ -8,7 +8,7 @@
     
     <title>the wave - Catch the Future Before It Breaks</title>
     
-    <!-- Nunito - same font as Typotab -->
+    <!-- Nunito font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Nunito:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -20,26 +20,26 @@
     <a href="#main" class="skip-link">Skip to content</a>
 
     <!-- ============================================
-         HERO (with embedded transparent navigation)
+         FLOATING NAVIGATION (Typotab style)
+         ============================================ -->
+    <header class="site-header">
+        <nav class="nav">
+            <a href="#top" class="nav__logo">the wave</a>
+
+            <ul class="nav__links">
+                <li><a href="#stories" class="nav__link">Stories</a></li>
+                <li><a href="#topics" class="nav__link">Topics</a></li>
+                <li><a href="#about" class="nav__link">About</a></li>
+            </ul>
+
+            <a href="#subscribe" class="nav__cta">Start here</a>
+        </nav>
+    </header>
+
+    <!-- ============================================
+         HERO SECTION
          ============================================ -->
     <section class="hero">
-        <!-- Navigation - transparent over hero -->
-        <header class="site-header">
-            <nav class="nav">
-                <a href="#top" class="nav__logo">the wave</a>
-
-                <ul class="nav__links">
-                    <li><a href="#stories" class="nav__link">Stories</a></li>
-                    <li><a href="#topics" class="nav__link">Topics</a></li>
-                    <li><a href="#gallery" class="nav__link">Gallery</a></li>
-                    <li><a href="#about" class="nav__link">About</a></li>
-                </ul>
-
-                <a href="#subscribe" class="nav__cta">Start here</a>
-            </nav>
-        </header>
-
-        <!-- Floating decorative stars -->
         <div class="hero__stars" aria-hidden="true">
             <span class="hero__star">&#10022;</span>
             <span class="hero__star">&#10023;</span>
@@ -48,7 +48,6 @@
         </div>
 
         <div class="hero__content">
-            <!-- Announcement badge - text is BLUE -->
             <div class="hero__badge">
                 <span class="hero__badge-new">New</span>
                 <span>Issue #047 - February 2026</span>
@@ -69,7 +68,6 @@
             </div>
         </div>
 
-        <!-- Cloud wave transition -->
         <div class="hero__wave" aria-hidden="true"></div>
     </section>
 
@@ -85,7 +83,7 @@
                     <div class="featured-article__content">
                         <div class="featured-article__meta">
                             <span class="tag">Breakthrough</span>
-                            <time class="article-card__date" datetime="2026-01-28">28.01.26</time>
+                            <time class="featured-article__date" datetime="2026-01-28">28.01.26</time>
                         </div>
                         
                         <h2 class="featured-article__title">
@@ -111,7 +109,7 @@
             </article>
         </section>
 
-        <!-- Topic Cards (colorful like Typotab) -->
+        <!-- Topic Cards -->
         <section id="topics" class="section">
             <header class="section__header">
                 <h2 class="section__title">Explore by Topic</h2>
@@ -121,7 +119,6 @@
             </header>
 
             <div class="features-grid">
-                <!-- Cyan card -->
                 <article class="feature-card feature-card--cyan">
                     <span class="feature-card__icon">&#9889;</span>
                     <h3 class="feature-card__title">Breakthroughs</h3>
@@ -136,7 +133,6 @@
                     </div>
                 </article>
 
-                <!-- Purple card -->
                 <article class="feature-card feature-card--purple">
                     <span class="feature-card__icon">&#9878;</span>
                     <h3 class="feature-card__title">Policy & Ethics</h3>
@@ -151,7 +147,6 @@
                     </div>
                 </article>
 
-                <!-- Orange card -->
                 <article class="feature-card feature-card--orange">
                     <span class="feature-card__icon">&#127973;</span>
                     <h3 class="feature-card__title">Healthcare</h3>
@@ -166,7 +161,6 @@
                     </div>
                 </article>
 
-                <!-- Green card -->
                 <article class="feature-card feature-card--green">
                     <span class="feature-card__icon">&#127760;</span>
                     <h3 class="feature-card__title">Open Source</h3>
@@ -183,7 +177,7 @@
             </div>
         </section>
 
-        <!-- This Week's Stories -->
+        <!-- This Week's Stories - Swipeable Carousel -->
         <section id="stories" class="section section--alt">
             <header class="section__header">
                 <h2 class="section__title">This Week's Stories</h2>
@@ -192,147 +186,73 @@
                 </p>
             </header>
 
-            <div class="articles-grid">
-                <!-- Article 1 -->
-                <article class="article-card">
-                    <div class="article-card__image">
-                        <div class="img-placeholder" style="background: linear-gradient(135deg, #0095FF 0%, #00C6FF 100%);">
-                            <span class="img-placeholder__icon" style="color: white;">&#127466;&#127482;</span>
+            <div class="stories-carousel">
+                <div class="stories-carousel__track">
+                    <!-- Story 1 -->
+                    <article class="story-card">
+                        <div class="story-card__bg" style="background: linear-gradient(135deg, #0095FF 0%, #00C6FF 100%);"></div>
+                        <div class="story-card__overlay"></div>
+                        <div class="story-card__content">
+                            <span class="story-card__tag">Policy</span>
+                            <h3 class="story-card__title">Europe drew a line. Big Tech tripped over it.</h3>
+                            <a href="https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai" class="story-card__btn" target="_blank" rel="noopener">
+                                Read story
+                            </a>
                         </div>
-                    </div>
-                    <div class="article-card__body">
-                        <div class="article-card__meta">
-                            <span class="tag tag--purple">Policy</span>
-                            <time class="article-card__date" datetime="2026-01-25">25.01.26</time>
+                    </article>
+
+                    <!-- Story 2 -->
+                    <article class="story-card">
+                        <div class="story-card__bg" style="background: linear-gradient(135deg, #AD6DFF 0%, #FF6DFF 100%);"></div>
+                        <div class="story-card__overlay"></div>
+                        <div class="story-card__content">
+                            <span class="story-card__tag">Healthcare</span>
+                            <h3 class="story-card__title">An AI discovered antibiotics that actually work.</h3>
+                            <a href="https://www.nature.com/natmedicine/" class="story-card__btn" target="_blank" rel="noopener">
+                                Read story
+                            </a>
                         </div>
-                        <h3 class="article-card__title">Europe drew a line. Big Tech tripped over it.</h3>
-                        <p class="article-card__excerpt">
-                            The EU AI Act is now law. Companies have 6 months to comply or face fines 
-                            that make GDPR look like a parking ticket.
-                        </p>
-                        <a href="https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai" class="article-card__link" target="_blank" rel="noopener">
-                            Read analysis
-                        </a>
-                    </div>
-                </article>
+                    </article>
 
-                <!-- Article 2 -->
-                <article class="article-card">
-                    <div class="article-card__image">
-                        <div class="img-placeholder" style="background: linear-gradient(135deg, #AD6DFF 0%, #FF6DFF 100%);">
-                            <span class="img-placeholder__icon" style="color: white;">&#128138;</span>
+                    <!-- Story 3 -->
+                    <article class="story-card">
+                        <div class="story-card__bg" style="background: linear-gradient(135deg, #FF7300 0%, #FFB800 100%);"></div>
+                        <div class="story-card__overlay"></div>
+                        <div class="story-card__content">
+                            <span class="story-card__tag">Open Source</span>
+                            <h3 class="story-card__title">The best AI model is now free. That changes everything.</h3>
+                            <a href="https://huggingface.co/" class="story-card__btn" target="_blank" rel="noopener">
+                                Read story
+                            </a>
                         </div>
-                    </div>
-                    <div class="article-card__body">
-                        <div class="article-card__meta">
-                            <span class="tag tag--green">Healthcare</span>
-                            <time class="article-card__date" datetime="2026-01-22">22.01.26</time>
+                    </article>
+
+                    <!-- Story 4 -->
+                    <article class="story-card">
+                        <div class="story-card__bg" style="background: linear-gradient(135deg, #00CE44 0%, #7DD3FC 100%);"></div>
+                        <div class="story-card__overlay"></div>
+                        <div class="story-card__content">
+                            <span class="story-card__tag">Research</span>
+                            <h3 class="story-card__title">DeepMind just solved protein folding. Again.</h3>
+                            <a href="https://deepmind.google/" class="story-card__btn" target="_blank" rel="noopener">
+                                Read story
+                            </a>
                         </div>
-                        <h3 class="article-card__title">An AI discovered antibiotics that actually work.</h3>
-                        <p class="article-card__excerpt">
-                            MIT fed 12 million compounds into a neural network. Three weeks later: 
-                            a new class of antibiotics. Normal timeline? A decade.
-                        </p>
-                        <a href="https://www.nature.com/natmedicine/" class="article-card__link" target="_blank" rel="noopener">
-                            Read the science
-                        </a>
-                    </div>
-                </article>
+                    </article>
 
-                <!-- Article 3 -->
-                <article class="article-card">
-                    <div class="article-card__image">
-                        <div class="img-placeholder" style="background: linear-gradient(135deg, #FF7300 0%, #FFB800 100%);">
-                            <span class="img-placeholder__icon" style="color: white;">&#128275;</span>
+                    <!-- Story 5 -->
+                    <article class="story-card">
+                        <div class="story-card__bg" style="background: linear-gradient(135deg, #4772FF 0%, #AD6DFF 100%);"></div>
+                        <div class="story-card__overlay"></div>
+                        <div class="story-card__content">
+                            <span class="story-card__tag">Industry</span>
+                            <h3 class="story-card__title">Apple's on-device AI is changing mobile forever.</h3>
+                            <a href="https://machinelearning.apple.com/" class="story-card__btn" target="_blank" rel="noopener">
+                                Read story
+                            </a>
                         </div>
-                    </div>
-                    <div class="article-card__body">
-                        <div class="article-card__meta">
-                            <span class="tag tag--orange">Open Source</span>
-                            <time class="article-card__date" datetime="2026-01-19">19.01.26</time>
-                        </div>
-                        <h3 class="article-card__title">The best AI model is now free. That changes everything.</h3>
-                        <p class="article-card__excerpt">
-                            Foundation-7 matches GPT-4 on benchmarks. Anyone can download it. 
-                            No API keys. No limits. Just raw intelligence for everyone.
-                        </p>
-                        <a href="https://huggingface.co/" class="article-card__link" target="_blank" rel="noopener">
-                            Explore the model
-                        </a>
-                    </div>
-                </article>
-            </div>
-        </section>
-
-        <!-- Gallery -->
-        <section id="gallery" class="section">
-            <header class="section__header">
-                <h2 class="section__title">Visual Intelligence</h2>
-                <p class="section__subtitle">
-                    The aesthetics of artificial minds
-                </p>
-            </header>
-
-            <div class="gallery">
-                <figure class="gallery__item gallery__item--tall">
-                    <div class="img-placeholder" style="background: linear-gradient(180deg, #7DD3FC 0%, #0EA5E9 100%);">
-                        <span class="img-placeholder__icon">&#9671;</span>
-                    </div>
-                    <figcaption class="gallery__caption">
-                        <span class="gallery__caption-title">Neural Topology</span>
-                        <span class="gallery__caption-credit">AI Generated</span>
-                    </figcaption>
-                </figure>
-
-                <figure class="gallery__item">
-                    <div class="img-placeholder" style="background: linear-gradient(135deg, #AD6DFF 0%, #6D9FFF 100%);">
-                        <span class="img-placeholder__icon">&#9651;</span>
-                    </div>
-                    <figcaption class="gallery__caption">
-                        <span class="gallery__caption-title">Latent Space</span>
-                        <span class="gallery__caption-credit">AI Generated</span>
-                    </figcaption>
-                </figure>
-
-                <figure class="gallery__item">
-                    <div class="img-placeholder" style="background: linear-gradient(135deg, #00CE44 0%, #7DD3FC 100%);">
-                        <span class="img-placeholder__icon">&#9675;</span>
-                    </div>
-                    <figcaption class="gallery__caption">
-                        <span class="gallery__caption-title">Attention Maps</span>
-                        <span class="gallery__caption-credit">AI Generated</span>
-                    </figcaption>
-                </figure>
-
-                <figure class="gallery__item gallery__item--wide">
-                    <div class="img-placeholder" style="background: linear-gradient(135deg, #FF7300 0%, #FF3D00 100%);">
-                        <span class="img-placeholder__icon">&#9633;</span>
-                    </div>
-                    <figcaption class="gallery__caption">
-                        <span class="gallery__caption-title">Gradient Descent</span>
-                        <span class="gallery__caption-credit">AI Generated</span>
-                    </figcaption>
-                </figure>
-
-                <figure class="gallery__item">
-                    <div class="img-placeholder" style="background: linear-gradient(135deg, #0095FF 0%, #AD6DFF 100%);">
-                        <span class="img-placeholder__icon">&#10022;</span>
-                    </div>
-                    <figcaption class="gallery__caption">
-                        <span class="gallery__caption-title">Token Flow</span>
-                        <span class="gallery__caption-credit">AI Generated</span>
-                    </figcaption>
-                </figure>
-
-                <figure class="gallery__item">
-                    <div class="img-placeholder" style="background: linear-gradient(135deg, #FFB800 0%, #00CE44 100%);">
-                        <span class="img-placeholder__icon">&#10696;</span>
-                    </div>
-                    <figcaption class="gallery__caption">
-                        <span class="gallery__caption-title">Embedding Space</span>
-                        <span class="gallery__caption-credit">AI Generated</span>
-                    </figcaption>
-                </figure>
+                    </article>
+                </div>
             </div>
         </section>
 
@@ -382,7 +302,6 @@
                     <li><a href="#top">Home</a></li>
                     <li><a href="#stories">Stories</a></li>
                     <li><a href="#topics">Topics</a></li>
-                    <li><a href="#gallery">Gallery</a></li>
                 </ul>
             </div>
 
