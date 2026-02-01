@@ -118,6 +118,7 @@
 .modal__content p {
 	margin-bottom: var(--space-4);
 	line-height: var(--leading-relaxed);
+	color: var(--color-text-muted);
 }
 
 .modal__content p:last-child {
@@ -126,9 +127,10 @@
 
 .modal__lead {
 	font-size: var(--text-xl);
+	font-weight: var(--weight-medium);
 	line-height: var(--leading-relaxed);
 	color: var(--color-text);
-	margin-bottom: var(--space-4);
+	margin-bottom: var(--space-6);
 }
 
 .modal__action.btn {
