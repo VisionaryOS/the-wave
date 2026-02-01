@@ -1,20 +1,15 @@
-/* cards - story cards with image backgrounds */
-
-/* --- Story Cards --- */
 .story-card {
 	flex: 0 0 300px;
 	scroll-snap-align: start;
 	position: relative;
 	height: 450px;
 	border-radius: var(--radius-xl);
-	/* Allow island to extend below into border area */
 	overflow: visible;
 	cursor: pointer;
 	text-decoration: none;
 	display: block;
-	border: 5px solid rgba(255, 255, 255, 0.6);
-	box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-	/* TODO: test this animation on safari */
+	border: 5px solid var(--alpha-white-60);
+	box-shadow: 0 4px 20px var(--alpha-black-10);
 	transition: 
 		transform 0.5s var(--ease-spring-bouncy),
 		box-shadow var(--duration-slow) ease-out,
@@ -22,12 +17,11 @@
 }
 
 .story-card:hover {
-	/* Playful lift with subtle scale */
 	transform: translateY(-14px) scale(1.03);
 	box-shadow: 
-		0 24px 48px rgba(0, 0, 0, 0.18),
-		0 8px 16px rgba(0, 0, 0, 0.1);
-	border-color: rgba(255, 255, 255, 0.95);
+		0 24px 48px var(--alpha-black-18),
+		0 8px 16px var(--alpha-black-10);
+	border-color: var(--alpha-white-95);
 }
 
 .story-card__bg {
@@ -35,23 +29,19 @@
 	inset: 0;
 	background-size: cover;
 	background-position: center;
-	/* Clip to rounded corners since card has overflow:visible */
 	border-radius: calc(var(--radius-xl) - 5px);
 }
-
-/* images use inline styles now, removed the old --policy/healthcare/etc classes */
 
 .story-card__overlay {
 	position: absolute;
 	inset: 0;
-	/* Clip to rounded corners since card has overflow:visible */
 	border-radius: calc(var(--radius-xl) - 5px);
 	background: linear-gradient(
 		180deg,
-		rgba(0, 0, 0, 0.1) 0%,
-		rgba(0, 0, 0, 0.2) 30%,
-		rgba(0, 0, 0, 0.6) 60%,
-		rgba(0, 0, 0, 0.95) 100%
+		var(--alpha-black-10) 0%,
+		var(--alpha-black-20) 30%,
+		var(--alpha-black-60) 60%,
+		var(--alpha-black-95) 100%
 	);
 }
 
@@ -66,12 +56,10 @@
 	transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-/* Content lifts up on hover to reveal pill */
 .story-card:hover .story-card__content {
 	transform: translateY(-44px);
 }
 
-/* Uses .tag.tag--glass from tags.css */
 .story-card__content .tag {
 	margin-bottom: var(--space-2);
 }
@@ -80,68 +68,56 @@
 	font-size: var(--text-xl);
 	font-weight: var(--weight-black);
 	line-height: 1.3;
-	color: #fff;
-	text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+	color: var(--color-white);
+	text-shadow: 0 2px 8px var(--alpha-black-50);
 }
 
 .story-card__meta {
 	margin-top: var(--space-2);
 	font-size: var(--text-sm);
-	color: rgba(255, 255, 255, 0.7);
+	color: var(--alpha-white-70);
 	font-weight: var(--weight-normal);
 }
 
-/* pill slides up on hover - translateY smoother than animating height */
 .story-card__pill {
-	/* Position at bottom center */
 	position: absolute;
 	bottom: var(--space-6);
 	left: 50%;
 	
-	/* Initial state: hidden below */
 	transform: translateX(-50%) translateY(20px);
 	opacity: 0;
 	
-	/* Slim pill styling */
 	padding: var(--space-2) var(--space-5);
 	white-space: nowrap;
 	
-	/* Clean white pill */
-	background: rgba(255, 255, 255, 0.95);
+	background: var(--alpha-white-95);
 	
 	color: var(--color-text);
 	font-size: var(--text-sm);
 	font-weight: var(--weight-semibold);
 	
-	/* Fully rounded pill */
 	border-radius: var(--radius-full);
 	
-	/* Subtle shadow */
-	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+	box-shadow: 0 2px 8px var(--alpha-black-15);
 	
-	/* Smooth slide up animation */
 	transition: 
 		transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
 		opacity 0.25s ease;
 	
-	/* Above overlay but below content */
 	z-index: 5;
 	user-select: none;
 }
 
-/* Pill slides up on card hover */
 .story-card:hover .story-card__pill {
 	transform: translateX(-50%) translateY(0);
 	opacity: 1;
 }
 
-/* Pill direct hover - brighten */
 .story-card__pill:hover {
-	background: rgba(255, 255, 255, 1);
-	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+	background: var(--color-white);
+	box-shadow: 0 4px 12px var(--alpha-black-20);
 }
 
-/* Hero variant - used in hero section */
 .story-card--hero {
 	flex: 0 0 300px;
 	width: 300px;
@@ -150,166 +126,6 @@
 	scroll-snap-align: start;
 }
 
-/* founder section - kept simple so it doesn't compete with cards */
-.founder-note {
-	max-width: 42rem;
-	margin: 0 auto;
-	padding: var(--space-8) var(--gutter) 0;
-	text-align: center;
-}
-
-.founder-note__inner {
-	padding: var(--space-4) 0;
-}
-
-.founder-note__content {
-	display: flex;
-	flex-direction: column;
-}
-
-.founder-note__title {
-	font-size: clamp(2rem, 5vw, var(--text-5xl));
-	font-weight: var(--weight-black);
-	line-height: var(--leading-tight);
-	letter-spacing: var(--tracking-tight);
-	margin-bottom: var(--space-6);
-	text-align: center;
-	color: var(--color-white);
-	/* Scroll offset for fixed nav when anchor-linked */
-	scroll-margin-top: 6rem;
-}
-
-.founder-note__text {
-	font-size: var(--text-xl);
-	color: rgba(255, 255, 255, 0.85);
-	line-height: var(--leading-relaxed);
-}
-
-.founder-note__text p {
-	margin-bottom: var(--space-4);
-}
-
-.founder-note__text p:last-child {
-	margin-bottom: var(--space-6);
-}
-
-.founder-note__author {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	gap: var(--space-4);
-}
-
-.founder-note__avatar-wrap {
-	width: 4rem;
-	height: 4rem;
-	border-radius: 50%;
-	overflow: hidden;
-	flex-shrink: 0;
-}
-
-.founder-note__avatar {
-	width: 100%;
-	height: 100%;
-	object-fit: cover;
-	object-position: 55% 35%;
-	scale: 1.5;
-}
-
-.founder-note__info {
-	display: flex;
-	flex-direction: column;
-	gap: 0.125rem;
-	text-align: left;
-}
-
-.founder-note__name {
-	font-size: var(--text-lg);
-	font-weight: var(--weight-bold);
-	color: var(--color-white);
-}
-
-.founder-note__role {
-	font-size: var(--text-base);
-	color: rgba(255, 255, 255, 0.7);
-}
-
-/* Integrated CTA inside founder note */
-.founder-note__cta {
-	margin-top: var(--space-8);
-	padding-top: var(--space-6);
-	border-top: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-.founder-note__cta-text {
-	font-size: var(--text-lg);
-	font-weight: var(--weight-bold);
-	color: var(--color-white);
-	margin-bottom: var(--space-4);
-}
-
-/* secret reveal - details/summary gives us toggle for free */
-.secret-reveal {
-	position: relative;
-	z-index: 1;
-	text-align: center;
-	margin-bottom: var(--space-12);
-}
-
-.secret-reveal__trigger {
-	display: inline-block;
-	cursor: pointer;
-	list-style: none; /* Remove default arrow */
-}
-
-.secret-reveal__trigger::-webkit-details-marker {
-	display: none; /* Remove arrow in Safari/Chrome */
-}
-
-.secret-reveal__hint {
-	display: inline-block;
-	font-family: var(--font-primary);
-	font-size: clamp(1.5rem, 4vw, var(--text-4xl));
-	font-weight: var(--weight-black);
-	letter-spacing: var(--tracking-tight);
-	padding: var(--space-4) var(--space-8);
-	border-radius: var(--radius-full);
-	color: var(--color-white);
-	text-decoration: none;
-	background: rgba(255, 255, 255, 0.15);
-	backdrop-filter: blur(8px);
-	-webkit-backdrop-filter: blur(8px);
-	border: 1px solid rgba(255, 255, 255, 0.3);
-	transition: all var(--duration-normal) var(--ease-out);
-}
-
-.secret-reveal__trigger:hover .secret-reveal__hint {
-	transform: scale(1.05);
-	background: rgba(255, 255, 255, 0.25);
-}
-
-/* When open, hide the trigger text */
-.secret-reveal[open] .secret-reveal__trigger {
-	display: none;
-}
-
-/* Animate the content reveal */
-.secret-reveal[open] .founder-note {
-	animation: secret-fade-in 0.5s var(--ease-out) forwards;
-}
-
-@keyframes secret-fade-in {
-	from {
-		opacity: 0;
-		transform: translateY(20px);
-	}
-	to {
-		opacity: 1;
-		transform: translateY(0);
-	}
-}
-
-/* --- Responsive --- */
 @media (max-width: 768px) {
 	.story-card {
 		flex: 0 0 85vw;

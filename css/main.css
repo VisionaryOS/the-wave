@@ -1,19 +1,14 @@
-/* the wave - main stylesheet
-   layers keep specificity wars under control */
+@layer base, layout, components, utilities;
 
-@layer base, layout, components, pages, utilities;
-
-/* base */
 @import url("base/tokens.css") layer(base);
-@import url("base/reset.css") layer(base);
+@import url("base/animations.css") layer(base);
 @import url("base/typography.css") layer(base);
 
-/* layout */
 @import url("layout/header.css") layer(layout);
-@import url("layout/sections.css") layer(layout);
+@import url("layout/hero.css") layer(layout);
+@import url("layout/topics.css") layer(layout);
 @import url("layout/footer.css") layer(layout);
 
-/* components */
 @import url("components/buttons.css") layer(components);
 @import url("components/badge.css") layer(components);
 @import url("components/tags.css") layer(components);
@@ -22,12 +17,6 @@
 @import url("components/tabs.css") layer(components);
 @import url("components/logo-bar.css") layer(components);
 @import url("components/light-rays.css") layer(components);
-@import url("components/gallery.css") layer(components);
-
-/* pages */
-@import url("pages/hero.css") layer(pages);
-@import url("pages/subscribe.css") layer(pages);
-
-/* utilities */
-@import url("utilities/accessibility.css") layer(utilities);
-@import url("utilities/print.css") layer(utilities);
+@import url("components/topic-box.css") layer(components);
+@import url("components/founder-note.css") layer(components);
+@import url("components/interactions.css") layer(components);

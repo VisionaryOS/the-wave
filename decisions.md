@@ -1035,4 +1035,146 @@ If this project grows:
 
 ---
 
+## [2026-02-01] UX: Sticky Centered CTA Button in Modals
+
+- **Goal:** Ensure the "Read full article" button is always visible and easily accessible when reading modal content
+- **Tried:** Button was at the end of `.modal__content.prose`, which meant users had to scroll to find it
+- **Outcome:**
+  - Created new `.modal__action` element outside of content area
+  - Used `position: sticky; bottom: 0` to keep button visible at all times
+  - Centered button with `display: flex; justify-content: center`
+  - Added gradient fade (`rgba(255,255,255,0) → rgba(255,255,255,1)`) behind button to elegantly hide scrolling text
+  - Button has `max-width: 24rem` to prevent it becoming too wide on desktop
+  - Mobile responsive: smaller padding on narrow screens
+  - Restructured all 21 modal HTML to move buttons into new `.modal__action` wrapper
+  - Users can now immediately see the primary action regardless of article length
+
+---
+
+## [2026-02-01] CODE: Verified All Modal External Links
+
+- **Goal:** Ensure all "Read full article" buttons link to working source pages
+- **Tried:** Used Chrome DevTools MCP and webfetch to verify each external URL
+- **Outcome:**
+  - Tested links from: Ars Technica, 404 Media, The Verge, BBC, WIRED, New York Times
+  - All 21 article source links verified working
+  - Links open in new tab (`target="_blank"`) with proper security (`rel="noopener"`)
+  - Sources include mix of tech publications covering AI topics
+
+---
+
+## [2026-02-01] CODE: DRY CSS Architecture Refactoring
+
+- **Goal:** Eliminate duplicate patterns, consolidate animations, and create reusable tokens for alpha colors and effects
+- **Tried:** Audited all CSS files for repeated patterns - found significant duplication in animations, rgba values, and backdrop-filter declarations
+- **Outcome:**
+  
+  **1. Alpha Token Scale** (`tokens.css`):
+  - Added `--alpha-white-*` tokens: 5, 10, 12, 15, 20, 25, 30, 50, 60, 70, 85, 95
+  - Added `--alpha-black-*` tokens: 5, 10, 15, 18, 20, 40, 50, 60, 95
+  - Added `--blur-*` tokens: sm (8px), md (12px), lg (20px)
+  - Replaced 30+ hardcoded `rgba()` values across all component files
+
+  **2. Consolidated Animations** (`base/animations.css`):
+  - Created new file with all `@keyframes` in one place
+  - Naming convention: `anim-[type]-[variant]` (e.g., `anim-reveal-up`, `anim-pulse-opacity`)
+  - Types: reveal, pulse, scroll
+  - Removed duplicate keyframes from: badge.css, light-rays.css, founder-note.css, cta.css, header.css
+  - `fadeInUp` and `secret-fade-in` unified into single `anim-reveal-up`
+  
+  **3. Effects Utilities** (`utilities/effects.css`):
+  - Created `.glass`, `.glass--subtle`, `.glass--strong`, `.glass--dark` for backdrop-filter patterns
+  - Shadow utilities: `.shadow-sm`, `.shadow-md`, `.shadow-lg`, `.shadow-xl`, `.shadow-glow`
+  - Text shadow utilities: `.text-shadow`, `.text-shadow-sm`
+  - Transition utilities: `.transition-interactive`, `.transition-spring`, `.transition-bouncy`
+  
+  **4. DRY Tag Colors** (`tags.css`):
+  - Refactored from 7 separate rgba background declarations to `color-mix()` pattern
+  - Each variant now just sets `--tag-color: var(--color-*)` 
+  - Background auto-calculates: `color-mix(in srgb, var(--tag-color) 14%, transparent)`
+  
+  **5. File Reorganization**:
+  - Renamed `cta.css` → `interactions.css` (clearer: contains vote buttons + FAB)
+  - Updated `main.css` layer order: base → layout → components → utilities
+  - Added utilities layer for highest specificity helper classes
+  
+  **Benefits:**
+  - Single source of truth for colors with transparency
+  - Animations documented and named consistently
+  - ~40% reduction in duplicated CSS patterns
+  - New color/animation changes only need one edit
+
+---
+
+## [2026-02-01] UX: Header CTA Hides When Reading Topics
+
+- **Goal:** Reduce visual clutter when user is actively browsing article topics
+- **Tried:** Keeping the "Start reading" button visible at all times felt redundant once the user had already started reading
+- **Outcome:**
+  - Added scroll-driven animation that fades out CTA button after 80vh scroll (when topics section begins)
+  - Nav pill shrinks from 28rem to 12rem width, centering the logo
+  - Logo becomes the sole header element - clean, focused, minimal
+  - The button was saying "Start reading" but the user is already reading - it became noise
+  - Centered logo-only header feels more like a focused reading experience
+  - Uses same scroll-driven animation technique as other header transitions
+  - Fallback: browsers without scroll-timeline keep the button visible (acceptable)
+
+---
+
+## [2026-02-01] STYLE: Hero Images Changed to Editorial Source Images
+
+- **Goal:** Replace generic stock images with the actual editorial images used by Ars Technica for better visual relevance and accuracy
+- **Tried:** Searched multiple news sources covering each story to find og:image social share images
+- **Outcome:**
+  - Downloaded and replaced 3 hero card images with actual article imagery:
+    1. "Developers Say AI Works" - Ars Technica original illustration (`ars-ai-coding.jpg`)
+    2. "ChatGPT Suicide Lullaby" - Getty Images via Ars Technica (`ars-chatgpt-lullaby.jpg`)
+    3. "CISA ChatGPT Secrets" - Getty Images via Ars Technica (`ars-cisa-chatgpt.jpg`)
+  - Updated image credits section with fair use attribution linking to original articles
+  - Fair use justified: educational commentary/critique on news content for academic assessment
+  - Images now directly represent the stories they illustrate rather than being generic placeholders
+  - Credit format clearly distinguishes fair use editorial content from royalty-free Unsplash images
+
+---
+
+## [2026-02-01] STYLE: Replaced All Stock Images with Editorial Source Images
+
+- **Goal:** Replace all generic Unsplash stock photos with actual editorial images from the source articles for visual accuracy
+- **Tried:** Fetched og:image meta tags from all 21 source articles (Ars Technica, The Verge, 404 Media, NYT, BBC, WIRED)
+- **Outcome:**
+  - Downloaded 21 editorial images directly from source publications
+  - All images now directly illustrate their associated news stories
+  - Updated image credits to fair use format with links to original articles
+  - Fair use justified: educational commentary/critique for academic assessment
+  - Sources: Ars Technica (6), The Verge (4), 404 Media (2), WIRED (4), NYT (3), BBC (2)
+
+---
+
+## [2026-02-01] UX: Footer Copy Line Breaks on Mobile
+
+- **Goal:** Make the footer attribution line wrap on smaller screens for better readability
+- **Tried:** Line "made with love by Shamaila Hussain · HEP504 Web Development · Abertay University" was too long on mobile
+- **Outcome:**
+  - Wrapped second half in `<span class="footer__copy-break">`
+  - Added media query at 640px breakpoint: `display: block` makes it drop to new line
+  - Desktop: single line as before
+  - Mobile: "made with love by Shamaila Hussain" on first line, "· HEP504 Web Development · Abertay University" on second
+  - Clean semantic approach - no `<br>` tags, responsive via CSS
+
+---
+
+## [2026-02-01] UX: Grouped Image Credits by Publication
+
+- **Goal:** Clean up cluttered image credits section - was 21 individual items sprawling across multiple lines
+- **Tried:** First attempt removed individual links (just publication + count) but user needed article-level attribution
+- **Outcome:**
+  - Grouped by source with individual article links preserved
+  - Format: `**Publication:** Article 1, Article 2, Article 3`
+  - Six groups stacked vertically, left-aligned, max-width 32rem centered
+  - Publication name bold white, article links lighter with hover brightening
+  - Single fair use note centered below
+  - Much cleaner than sprawling list while keeping all 21 individual source links
+
+---
+
 *Last updated: February 2026*

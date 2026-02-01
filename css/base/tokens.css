@@ -1,14 +1,10 @@
-/* tokens - change these to update colors/spacing everywhere */
-
 :root {
-	/* Colors - Brand */
 	--color-white: #ffffff;
 	--color-background: #ffffff;
 	--color-surface: #f7f7f6;
 	--color-surface-alt: #f4f6fa;
 	--color-surface-hover: #efeef3;
 
-	/* Colors - Accent */
 	--color-cyan: rgb(0, 149, 255);
 	--color-blue: rgb(0, 117, 250);
 	--color-purple: rgb(173, 109, 255);
@@ -18,22 +14,18 @@
 	--color-pink: rgb(236, 72, 153);
 	--color-gold: rgb(234, 179, 8);
 
-	/* Colors - Text */
 	--color-text: rgb(38, 38, 38);
 	--color-text-muted: rgb(140, 146, 157);
 	--color-text-subtle: rgb(88, 105, 127);
 
-	/* Colors - Hero Gradient */
 	--color-hero-top: rgb(71, 114, 255);
 	--color-hero-mid: rgb(0, 172, 255);
 	--color-hero-bottom: rgb(255, 255, 255);
 
-	/* Typography - Font Families */
 	--font-primary: "Nunito", system-ui, sans-serif;
 	--font-serif: "Source Serif 4", Georgia, serif;
 	--font-mono: "JetBrains Mono", monospace;
 
-	/* Typography - Scale */
 	--text-xs: 0.75rem;
 	--text-sm: 0.875rem;
 	--text-base: 1rem;
@@ -45,11 +37,9 @@
 	--text-5xl: 3.125rem;
 	--text-6xl: 4.375rem;
 
-	/* Typography - Icons */
 	--icon-md: 2rem;
 	--icon-lg: 3rem;
 
-	/* Typography - Weights */
 	--weight-normal: 400;
 	--weight-medium: 500;
 	--weight-semibold: 600;
@@ -57,13 +47,11 @@
 	--weight-extrabold: 800;
 	--weight-black: 900;
 
-	/* Typography - Letter Spacing */
 	--tracking-tighter: -0.175rem;
 	--tracking-tight: -0.125rem;
 	--tracking-normal: -0.045rem;
 	--tracking-heading: -0.1rem;
 
-	/* Typography - Line Heights */
 	--leading-none: 0.9;
 	--leading-tight: 1.1;
 	--leading-snug: 1.2;
@@ -71,7 +59,6 @@
 	--leading-relaxed: 1.6;
 	--leading-loose: 1.75;
 
-	/* Spacing Scale */
 	--space-1: 0.25rem;
 	--space-2: 0.5rem;
 	--space-3: 0.75rem;
@@ -86,7 +73,6 @@
 	--space-24: 6rem;
 	--space-32: 8rem;
 
-	/* Border Radius */
 	--radius-sm: 0.25rem;
 	--radius-md: 0.75rem;
 	--radius-lg: 1.25rem;
@@ -95,22 +81,49 @@
 	--radius-3xl: 2.5rem;
 	--radius-full: 9999px;
 
-	/* Layout */
 	--max-width: 62.5rem;
 	--max-width-wide: 75rem;
 	--nav-height: 3.4375rem;
 	--gutter: 1.5rem;
 	--grid-gap: 1.5rem;
 
-	/* Animation */
+	--alpha-white-5: rgba(255, 255, 255, 0.05);
+	--alpha-white-10: rgba(255, 255, 255, 0.1);
+	--alpha-white-12: rgba(255, 255, 255, 0.12);
+	--alpha-white-15: rgba(255, 255, 255, 0.15);
+	--alpha-white-20: rgba(255, 255, 255, 0.2);
+	--alpha-white-25: rgba(255, 255, 255, 0.25);
+	--alpha-white-30: rgba(255, 255, 255, 0.3);
+	--alpha-white-50: rgba(255, 255, 255, 0.5);
+	--alpha-white-60: rgba(255, 255, 255, 0.6);
+	--alpha-white-70: rgba(255, 255, 255, 0.7);
+	--alpha-white-85: rgba(255, 255, 255, 0.85);
+	--alpha-white-95: rgba(255, 255, 255, 0.95);
+
+	--alpha-black-5: rgba(0, 0, 0, 0.05);
+	--alpha-black-10: rgba(0, 0, 0, 0.1);
+	--alpha-black-15: rgba(0, 0, 0, 0.15);
+	--alpha-black-18: rgba(0, 0, 0, 0.18);
+	--alpha-black-20: rgba(0, 0, 0, 0.2);
+	--alpha-black-40: rgba(0, 0, 0, 0.4);
+	--alpha-black-50: rgba(0, 0, 0, 0.5);
+	--alpha-black-60: rgba(0, 0, 0, 0.6);
+	--alpha-black-95: rgba(0, 0, 0, 0.95);
+
+	--tag-alpha: 0.14;
+
+	--blur-sm: 8px;
+	--blur-md: 12px;
+	--blur-lg: 20px;
+
 	--ease-out: cubic-bezier(0.16, 1, 0.3, 1);
 	--ease-spring: cubic-bezier(0.175, 0.885, 0.32, 1.275);
 	--ease-spring-bouncy: cubic-bezier(0.175, 0.885, 0.32, 1.4);
+
 	--duration-fast: 200ms;
 	--duration-normal: 300ms;
 	--duration-slow: 400ms;
 
-	/* Z-Index Scale */
 	--z-base: 1;
 	--z-sticky: 100;
 	--z-overlay: 1000;

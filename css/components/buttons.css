@@ -1,7 +1,4 @@
-/* buttons - had like 6 different hover patterns before, unified them here */
-
 .btn {
-	/* Hover tokens - override per variant */
 	--btn-hover-lift: -2px;
 	--btn-hover-scale: 1;
 	--btn-hover-shadow: none;
@@ -25,7 +22,6 @@
 	cursor: pointer;
 }
 
-/* Unified hover behavior - uses custom properties */
 .btn:hover {
 	transform: translateY(var(--btn-hover-lift)) scale(var(--btn-hover-scale));
 	box-shadow: var(--btn-hover-shadow);
@@ -39,12 +35,10 @@
 	font-size: var(--text-sm);
 	background: var(--color-text);
 	color: var(--color-white);
-	/* Hover: darken background, lift */
 	--btn-hover-bg: #404040;
 	--btn-hover-color: var(--color-white);
 }
 
-/* 44px min for fat fingers */
 @media (max-width: 768px) {
 	.btn {
 		min-height: 44px;

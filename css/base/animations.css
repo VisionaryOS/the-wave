@@ -1,0 +1,135 @@
+@keyframes anim-reveal-up {
+	from {
+		opacity: 0;
+		transform: translateY(20px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+@keyframes anim-reveal-fade {
+	from { opacity: 0; }
+	to   { opacity: 1; }
+}
+
+@keyframes anim-reveal-scale {
+	from {
+		opacity: 0;
+		transform: scale(0.95);
+	}
+	to {
+		opacity: 1;
+		transform: scale(1);
+	}
+}
+
+@keyframes anim-reveal-card {
+	from {
+		opacity: 0;
+		transform: translateY(24px) scale(0.95);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0) scale(1);
+	}
+}
+
+@keyframes anim-pulse-opacity {
+	0%, 100% { opacity: 1; }
+	50%      { opacity: 0.3; }
+}
+
+@keyframes anim-pulse-ray {
+	0%, 100% { 
+		opacity: 0.3; 
+		transform: rotate(var(--angle, 0deg)) scaleX(0.6); 
+	}
+	50% { 
+		opacity: 1; 
+		transform: rotate(var(--angle, 0deg)) scaleX(1.4); 
+	}
+}
+
+@keyframes anim-scroll-reveal {
+	to {
+		opacity: 1;
+		pointer-events: auto;
+	}
+}
+
+@keyframes anim-scroll-glass {
+	to {
+		background: var(--alpha-white-15);
+		backdrop-filter: blur(var(--blur-sm));
+		-webkit-backdrop-filter: blur(var(--blur-sm));
+	}
+}
+
+@keyframes anim-scroll-header-shrink {
+	0% {
+		background: transparent;
+		padding: var(--space-4) var(--gutter);
+	}
+	100% {
+		background: transparent;
+		padding: var(--space-2) var(--gutter);
+	}
+}
+
+@keyframes anim-scroll-nav-pill {
+	0% {
+		max-width: 40rem;
+		background: transparent;
+		box-shadow: none;
+		padding: 0.625rem 1.5rem;
+	}
+	100% {
+		max-width: 28rem;
+		background: var(--color-white);
+		box-shadow: var(--alpha-black-15) 0px 5px 20px -5px;
+		padding: 0.625rem 1.5rem;
+	}
+}
+
+@keyframes anim-scroll-logo-color {
+	0%   { color: var(--color-white); }
+	100% { color: var(--color-cyan); }
+}
+
+@keyframes anim-scroll-cta-style {
+	0% {
+		background: var(--color-white);
+		color: var(--color-text);
+	}
+	100% {
+		background: var(--color-cyan);
+		color: var(--color-white);
+	}
+}
+
+@keyframes anim-scroll-cta-hide {
+	0% {
+		opacity: 1;
+		max-width: 200px;
+		padding: 0.625rem 1.25rem;
+	}
+	100% {
+		opacity: 0;
+		max-width: 0;
+		padding: 0;
+		visibility: hidden;
+		pointer-events: none;
+	}
+}
+
+@keyframes anim-scroll-nav-center {
+	0% {
+		max-width: 28rem;
+	}
+	100% {
+		max-width: 12rem;
+		justify-content: center;
+	}
+}

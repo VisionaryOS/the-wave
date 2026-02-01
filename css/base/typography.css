@@ -1,4 +1,23 @@
-/* typography - headings and prose for modal articles */
+*, *::before, *::after { box-sizing: border-box; }
+* { margin: 0; padding: 0; }
+
+html {
+	scroll-behavior: smooth;
+	scroll-padding-top: calc(var(--nav-height) + var(--space-8));
+}
+
+body {
+	font-family: var(--font-primary);
+	font-size: var(--text-base);
+	line-height: var(--leading-relaxed);
+	color: var(--color-text);
+	background: var(--color-background);
+}
+
+img, svg { display: block; max-width: 100%; }
+ul, ol { list-style: none; }
+a { color: inherit; text-decoration: none; }
+button, input { font: inherit; border: none; background: transparent; cursor: pointer; }
 
 h1, h2, h3, h4, h5, h6 {
 	font-family: var(--font-primary);
@@ -6,7 +25,6 @@ h1, h2, h3, h4, h5, h6 {
 	color: var(--color-text);
 }
 
-/* prose for article body text */
 .prose {
 	font-family: var(--font-serif);
 	font-size: var(--text-xl);
@@ -29,4 +47,44 @@ h1, h2, h3, h4, h5, h6 {
 .prose--lead {
 	font-size: var(--text-xl);
 	color: var(--color-text-subtle);
+}
+
+.wave-text {
+	display: inline-block;
+}
+
+.wave-text span {
+	display: inline-block;
+	animation: wave 3s ease-in-out infinite;
+}
+
+.wave-text span:nth-child(1)  { animation-delay: 0s; }
+.wave-text span:nth-child(2)  { animation-delay: 0.08s; }
+.wave-text span:nth-child(3)  { animation-delay: 0.16s; }
+.wave-text span:nth-child(4)  { animation-delay: 0.24s; }
+.wave-text span:nth-child(5)  { animation-delay: 0.32s; }
+.wave-text span:nth-child(6)  { animation-delay: 0.4s; }
+.wave-text span:nth-child(7)  { animation-delay: 0.48s; }
+.wave-text span:nth-child(8)  { animation-delay: 0.56s; }
+.wave-text span:nth-child(9)  { animation-delay: 0.64s; }
+.wave-text span:nth-child(10) { animation-delay: 0.72s; }
+.wave-text span:nth-child(11) { animation-delay: 0.8s; }
+.wave-text span:nth-child(12) { animation-delay: 0.88s; }
+.wave-text span:nth-child(13) { animation-delay: 0.96s; }
+.wave-text span:nth-child(14) { animation-delay: 1.04s; }
+.wave-text span:nth-child(15) { animation-delay: 1.12s; }
+
+@keyframes wave {
+	0%, 100% { transform: translateY(0); }
+	50% { transform: translateY(-6px); }
+}
+
+.wave-text--sm span {
+	animation: wave-sm 1.8s var(--ease-spring-bouncy) infinite;
+}
+
+@keyframes wave-sm {
+	0%, 100% { transform: translateY(0) scale(1); }
+	40% { transform: translateY(-3px) scale(1.05); }
+	60% { transform: translateY(-3px) scale(1.05); }
 }
