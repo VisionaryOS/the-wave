@@ -398,12 +398,12 @@ select {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	max-width: var(--max-w);
 	margin: 0 auto;
 	padding: 10px 20px;
 	transition: all 0.3s var(--ease);
 
-	/* Start transparent */
+	/* Start full width, transparent */
+	max-width: 100%;
 	background: transparent;
 	border-radius: var(--r-pill);
 	box-shadow: none;
@@ -416,14 +416,18 @@ select {
 
 @keyframes nav-pill {
 	0% {
+		max-width: 100%;
 		background: transparent;
 		box-shadow: none;
 		border-radius: var(--r-pill);
+		padding: 10px 20px;
 	}
 	100% {
+		max-width: 620px;
 		background: white;
 		box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 20px -5px;
 		border-radius: var(--r-pill);
+		padding: 10px 24px;
 	}
 }
 
